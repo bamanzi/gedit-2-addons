@@ -1,0 +1,9 @@
+[Gedit Plugin]
+Loader=python
+Module=pythoncompletion
+IAge=2
+Name=Python Completion
+Description=Python Completion Plugin for GEdit
+Authors=Eiichi Sato <sato.eiichi+github@gmail.com>
+Copyright=Copyright (C) 2006-2007 Osmo Salomaa / 2008 Rodrigo Pinheiro Marques de Araujo / 2011 Eiichi Sato
+

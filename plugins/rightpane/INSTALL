@@ -1,0 +1,15 @@
+Gedit Right Pane Plugin
+Copyright (C) 2009 Tournier Guillaume <tournier.guillaume@gmail.com>
+
+INSTALLATION INSTRUCTIONS
+1) Extract contents of archive
+2) Copy files from gedit-rightpane directory to
+   ~/.gnome2/gedit/plugins
+   Create-it if not exists
+3) Fire up gedit, go to Edit->Preferences, select the
+   Plugins tab, and make sure "Right Pane" is checked
+   
+TROUBLESHOOTING
+- If you try to move tabs on right pane just after installation, you can have a segfault when you'll close gedit.
+- Actually it depends of the tab you moved. So, to avoid that, restart gedit just after rightpane installation ;-)
+

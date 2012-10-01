@@ -1,0 +1,15 @@
+[Gedit Plugin]
+Loader=python
+Module=template
+IAge=2
+Name=New File From a Template 1.04
+Name[de]=Neu von Vorlage 1.04
+Name[en_CA]=New File From a Template 1.04
+Name[en_GB]=New File From a Template 1.04
+Description=Create a new file based on a custom defined template
+Description[de]=Ein neues Dokument aus einer eigenen Vorlage erstellen
+Description[en_CA]=Create a new file based on a custom defined template
+Description[en_GB]=Create a new file based on a custom defined template
+Authors=rob miller <funky.style@gmail.com>, Eckhard M. Jäger <Bart@neeneenee.de>
+Copyright=Copyright @ 2008 area42 - Agentur & Systempartner
+Website=http://www.area42.de

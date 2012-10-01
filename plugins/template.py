@@ -21,7 +21,10 @@
 #  Foundation, Inc., 59 Temple Place, Suite 330,
 #  Boston, MA 02111-1307, USA.
 
-import gedit
+try:
+    import gedit
+except:
+    import pluma as gedit
 import gtk
 import gtk.glade
 import re

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #  Code comment plugin
-#  This file is part of gedit
+#  This file is part of pluma
 #
 #  Copyright (C) 2005-2006 Igalia
 #  Copyright (C) 2006 Matthew Dugan
@@ -21,7 +21,7 @@
 #  Foundation, Inc., 59 Temple Place, Suite 330,
 #  Boston, MA 02111-1307, USA.
 
-import gedit
+import pluma
 import gtk
 import copy
 import gettext
@@ -259,11 +259,11 @@ class CodeCommentWindowHelper(object):
         self._action_group.set_sensitive(False)
 
 
-class CodeCommentPlugin(gedit.Plugin):
+class CodeCommentPlugin(pluma.Plugin):
     DATA_TAG = "CodeCommentPluginWindowHelper"
 
     def __init__(self):
-        gedit.Plugin.__init__(self)
+        pluma.Plugin.__init__(self)
 
     def activate(self, window):
         window.set_data(self.DATA_TAG, CodeCommentWindowHelper(self, window))

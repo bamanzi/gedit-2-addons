@@ -20,7 +20,10 @@
 
 import sys
 import gtk
-import gedit
+try:
+    import gedit
+except:
+    import pluma as gedit
 import gobject
 import subprocess
 

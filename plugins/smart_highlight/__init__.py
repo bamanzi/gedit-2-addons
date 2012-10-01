@@ -22,8 +22,10 @@
 #
 
 
-
-import gedit
+try:
+    import gedit
+except:
+    import pluma as gedit
 import gtk
 from smart_highlight import SmartHighlightWindowHelper
 from config_ui import ConfigUI

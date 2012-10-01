@@ -1,0 +1,8 @@
+[Pluma Plugin]
+Loader=python
+Module=rightpane
+IAge=2
+Name=Right Pane
+Description=Display a right pane & manage it
+Authors=Tournier Guillaume
+Copyright=Copyright © 2009 Tournier Guillaume <tournier.guillaume@gmail.com>

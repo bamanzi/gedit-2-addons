@@ -27,9 +27,13 @@
 from gettext import gettext as _
 
 import gtk
-import gedit
+try:
+    import gedit
+    import gconf
+except:
+    import pluma as gedit
+    import mateconf as gconf
 import functools
-import gconf
 
 # All encodings names
 enclist_func = lambda i=0: [gedit.encoding_get_from_index(i)] + enclist_func(i+1) if gedit.encoding_get_from_index(i) else []

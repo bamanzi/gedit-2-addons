@@ -17,7 +17,10 @@
 
 import gtk
 import gobject
-import gedit
+try:
+    import gedit
+except:
+    import pluma as gedit
 import options
 import imagelibrary
 

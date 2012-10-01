@@ -20,7 +20,12 @@
 import pygtk
 pygtk.require("2.0")
 import gtk
-import gedit
+try:
+    import gedit
+    is_mate = False
+except:
+    import pluma as gedit
+    is_mate = True
 import time
 import os
 import sys
@@ -29,7 +34,11 @@ import ConfigParser
 import gettext
 
 APP_NAME = "plugin"
-LOC_PATH = os.path.join(os.path.expanduser("~/.gnome2/gedit/plugins/reopen-tabs/lang"))
+if is_mate:
+    LOC_PATH = os.path.join(os.path.expanduser("~/.gnome2/gedit/plugins/reopen-tabs/lang"))
+else:
+    LOC_PATH = os.path.join(os.path.expanduser("~/.config/pluma/plugins/reopen-tabs/lang"))
+DEBUG = False
 
 gettext.find(APP_NAME, LOC_PATH)
 gettext.install(APP_NAME, LOC_PATH, True)
@@ -41,7 +50,8 @@ RELOADER_STATE_DONE         = "done"
 RELOADER_STATE_CLOSING      = "closing"
 
 def log(msg):
-	print '\033[32m' + msg + '\033[0m'
+	if DEBUG:
+		print '\033[32m' + msg + '\033[0m'
 
 
 class ReopenTabsPlugin(gedit.Plugin):
@@ -75,7 +85,10 @@ class ReopenTabsPlugin(gedit.Plugin):
 
 	def read_config(self): # Reads configuration from a file
 		# Get configuration dictionary
-		self._conf_path = os.path.join(os.path.expanduser("~/.gnome2/gedit/plugins/"), "reopen-tabs/plugin.conf")
+		plugin_dir = "~/.gnome2/gedit/plugins/"
+		if is_mate:
+			plugin_dir = "~/.config/pluma/plugins/"    
+		self._conf_path = os.path.join(os.path.expanduser(plugin_dir), "reopen-tabs/plugin.conf")
 
 		# Check if configuration file does not exists
 		if not os.path.exists(self._conf_path):
@@ -234,6 +247,7 @@ class ReopenTabsPlugin(gedit.Plugin):
 				if not os.path.exists(uri.replace('file://', '', 1)): continue
 
 				# Create new tab
+				log('ACTION: restore tab "%s"' % uri)
 				tab = window.create_tab_from_uri(uri, None, 0, True, False)
 		
 				# Check if document was active (and there is NOT file in command line)
@@ -246,7 +260,8 @@ class ReopenTabsPlugin(gedit.Plugin):
 		if active_tab:
 			def on_doc_loaded(doc, arg):
 				window.set_active_tab(active_tab)
-				if empty_tab:
+				if empty_tab and empty_tab.get_state() == gedit.TAB_STATE_NORMAL:
+					log('ACTION: closing empty tab')
 					_state = self._state
 					self._state = RELOADER_STATE_CLOSING
 					window.close_tab(empty_tab)

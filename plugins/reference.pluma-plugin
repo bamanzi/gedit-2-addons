@@ -1,0 +1,16 @@
+[Pluma Plugin]
+Loader=python
+Module=reference
+IAge=2
+Name=Language Reference 1.05
+Name[de]=Sprachreferenz 1.05
+Name[en_CA]=Language Reference 1.05
+Name[en_GB]=Language Reference 1.05
+Description=Language Reference 1.05
+Description[de]=Ruft eine externe Sprachreferenz (XML DocBook, PDF, HTML, CHM, PostScript) aus "~/.gnome2/gedit/help" auf
+Description[en_CA]=Showing a external Language Reference (XML DocBook, PDF, HTML, CHM, PostScript) from "~/.gnome2/gedit/help"
+Description[en_GB]=Showing a external Language Reference (XML DocBook, PDF, HTML, CHM, PostScript) from "~/.gnome2/gedit/help"
+Icon=gtk-help
+Authors=Eckhard M. Jäger <Bart@neeneenee.de>
+Copyright=Copyright @ 2008 area42 - Agentur & Systempartner
+Website=http://www.area42.de

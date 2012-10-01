@@ -1,5 +1,3 @@
-Current version: 1.2.1
-
 Todo:
     Selection support
     Translation support (and translations)
@@ -7,6 +5,9 @@ Todo:
     Look into event duplication (rather than action duplication) [branch]
 
 Releases:
+    1.2.2:
+        Fixed: Ctrl+Alt+PgDown/PgUp bug
+    
     1.2.1:
         Fixed: Escape key no longer prints the unicode escape char
     

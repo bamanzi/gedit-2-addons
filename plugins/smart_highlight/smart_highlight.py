@@ -25,7 +25,10 @@
 
 
 import gtk
-import gedit
+try:
+    import gedit
+except:
+    import pluma as gedit
 import re
 import os.path
 #import pango

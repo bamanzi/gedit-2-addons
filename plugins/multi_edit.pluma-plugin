@@ -1,4 +1,4 @@
-[Gedit Plugin]
+[Pluma Plugin]
 Loader=python
 Module=multi_edit
 IAge=2

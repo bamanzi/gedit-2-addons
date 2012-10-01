@@ -17,7 +17,12 @@
 
 import gobject
 import gtk
-import gconf
+
+try:
+    import gedit
+    import gconf
+except:
+    import mateconf as gconf
 
 def singleton():
     if Options.singleton is None:

@@ -11,7 +11,11 @@
 # GNU General Public License for more details.
 
 
-import gedit, gtk
+try:
+    import gedit
+except:
+    import pluma as gedit
+import gtk
 import os, os.path, ConfigParser
 
 ui_str="""<ui>

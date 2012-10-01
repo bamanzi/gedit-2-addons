@@ -71,8 +71,14 @@ PYTERM_MATCH_FONT = True
 import os
 import sys
 
-import gedit
-import gconf
+try:
+    import gedit
+    import gconf
+    is_mate = False
+except:
+    import pluma as gedit
+    import mateconf as gconf
+    is_mate = True
 import gtk
 import gtksourceview2
 import pango
@@ -155,7 +161,10 @@ class ColorPanesPlugin(gedit.Plugin):
         LOGGER.log()
         if not self.gconf_client:
             self.gconf_client = gconf.client_get_default()
-            gconf_dir = '/apps/gedit-2/preferences'
+            if not is_mate:
+                gconf_dir = '/apps/gedit-2/preferences'
+            else:
+                gconf_dir = '/apps/pluma/preferences'
             self.gconf_client.add_dir(gconf_dir, gconf.CLIENT_PRELOAD_NONE)
             gconf_key = gconf_dir + '/editor'
             self._gconf_cnxn = self.gconf_client.notify_add(
@@ -541,8 +550,12 @@ class ColorPanesWindowHelper(object):
     def _get_gedit_scheme(self):
         """Return Gedit's color scheme."""
         LOGGER.log()
-        scheme_name = self._plugin.gconf_client.get_string(
-            '/apps/gedit-2/preferences/editor/colors/scheme') or 'classic'
+        if not is_mate:
+            scheme_name = self._plugin.gconf_client.get_string(
+                '/apps/gedit-2/preferences/editor/colors/scheme') or 'classic'
+        else:
+            scheme_name = self._plugin.gconf_client.get_string(
+                '/apps/pluma/preferences/editor/colors/scheme') or 'classic'
         LOGGER.log('Gedit color scheme: %s' % scheme_name)
         scheme_manager = self._get_gedit_style_scheme_manager()
         style_scheme = scheme_manager.get_scheme(scheme_name)
@@ -658,16 +671,28 @@ class ColorPanesWindowHelper(object):
     def _get_gedit_font(self):
         """Return the font string for the font used in Gedit's editor."""
         LOGGER.log()
-        gedit_uses_system_font = self._plugin.gconf_client.get_bool(
-            '/apps/gedit-2/preferences/editor/font/use_default_font')
-        if gedit_uses_system_font:
-            gedit_font = self._plugin.gconf_client.get_string(
-                '/desktop/gnome/interface/monospace_font_name')
-            LOGGER.log('System font: %s' % gedit_font)
+        if not is_mate:
+            gedit_uses_system_font = self._plugin.gconf_client.get_bool(
+                '/apps/gedit-2/preferences/editor/font/use_default_font')
+            if gedit_uses_system_font:
+                gedit_font = self._plugin.gconf_client.get_string(
+                    '/desktop/gnome/interface/monospace_font_name')
+                LOGGER.log('System font: %s' % gedit_font)
+            else:
+                gedit_font = self._plugin.gconf_client.get_string(
+                    '/apps/gedit-2/preferences/editor/font/editor_font')
+                LOGGER.log('Gedit font: %s' % gedit_font)
         else:
-            gedit_font = self._plugin.gconf_client.get_string(
-                '/apps/gedit-2/preferences/editor/font/editor_font')
-            LOGGER.log('Gedit font: %s' % gedit_font)
+            gedit_uses_system_font = self._plugin.gconf_client.get_bool(
+                '/apps/pluma/preferences/editor/font/use_default_font')
+            if gedit_uses_system_font:
+                gedit_font = self._plugin.gconf_client.get_string(
+                    '/desktop/mate/interface/monospace_font_name')
+                LOGGER.log('System font: %s' % gedit_font)
+            else:
+                gedit_font = self._plugin.gconf_client.get_string(
+                    '/apps/pluma/preferences/editor/font/editor_font')
+                LOGGER.log('Gedit font: %s' % gedit_font)            
         return gedit_font
     
     # Record original terminal colors and font for restoring on deactivation.
@@ -683,15 +708,19 @@ class ColorPanesWindowHelper(object):
     def _get_term_colors_from_gconf(self):
         """Get the text colors from the Gnome Terminal profile in GConf."""
         LOGGER.log()
+        if not is_mate:
+            termapp = 'gnome-terminal'
+        else:
+            termapp = 'mate-terminal'
         profile = self._plugin.gconf_client.get_string(
-            '/apps/gnome-terminal/global/default_profile')
+            '/apps/%s/global/default_profile' % termapp)
         # The Embedded Terminal plugin has 'Default' hard coded.
         profile = 'Default'
         term_fg_desc = self._plugin.gconf_client.get_string(
-            '/apps/gnome-terminal/profiles/%s/foreground_color' % profile)
+            '/apps/%s/profiles/%s/foreground_color' % (termapp, profile))
         term_fg = gtk.gdk.color_parse(term_fg_desc)
         term_bg_desc = self._plugin.gconf_client.get_string(
-            '/apps/gnome-terminal/profiles/%s/background_color' % profile)
+            '/apps/%s/profiles/%s/background_color' % (termapp, profile))
         term_bg = gtk.gdk.color_parse(term_bg_desc)
         return term_fg, term_bg
     

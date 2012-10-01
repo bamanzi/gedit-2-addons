@@ -24,7 +24,10 @@ should set tab width to 4 and choose to insert spaces instead of tabs.
 """
 
 from gtk import gdk
-import gedit
+try:
+    import gedit
+except:
+    import pluma as gedit
 
 class Plugin(gedit.Plugin):
     """The python indentation plugin

@@ -1,6 +1,11 @@
 import gtk
-import gconf
-import gedit
+
+try:
+    import gedit
+    import gconf
+except:
+    import pluma as gedit
+    import mateconf as gconf
 import copy
 
 version = "0.1"

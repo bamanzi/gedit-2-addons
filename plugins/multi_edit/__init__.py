@@ -19,8 +19,12 @@
 import csv
 
 import gtk
-import gedit
-import gconf
+try:
+    import gedit
+    import gconf
+except:
+    import pluma as gedit
+    import mateconf as gconf
 
 import me_window
 import me_config
@@ -49,7 +53,7 @@ class MultiEditPlugin(gedit.Plugin):
         ))
         
         # Advanced config
-        self._sc_add_mark_def = 'r'
+        self._sc_add_mark_def = 'e'
         self._sc_level_marks_def = 'l'
         self._sc_temp_incr_def = 'i'
         self._sc_mark_vert_def = {

@@ -19,7 +19,10 @@
 
 
 from gettext import gettext as _
-import gedit
+try:
+    import gedit
+except:
+    import pluma as gedit
 import gtk
 import gtk.glade
 import os

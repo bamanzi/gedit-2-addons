@@ -19,8 +19,14 @@
 #
 
 import gtk
-import gedit
-import gconf
+try:
+    import gedit
+    import gconf
+    is_mate = False
+except:
+    import pluma as gedit
+    import mateconf as gconf
+    is_mate = True
 client = gconf.client_get_default()
 
 # Find widget by name
@@ -60,7 +66,10 @@ class TabsExtendWindowHelper:
   def __init__(self, plugin, window):
     """Activate plugin."""
     self.window = window
-    self.notebook = lookup_widget(self.window, 'GeditNotebook')[0]
+    if not is_mate:
+        self.notebook = lookup_widget(self.window, 'GeditNotebook')[0]
+    else:
+        self.notebook = lookup_widget(self.window, 'PlumaNotebook')[0]      
     self.handler_ids = []
     self.tabs_closed = []
 

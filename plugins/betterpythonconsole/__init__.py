@@ -19,7 +19,10 @@
 """IDLE like Console for Gedit, hit F5 and it executes the module"""
 
 import gtk
-import gedit
+try:
+    import gedit
+except:
+    import pluma as gedit
 import consolefunctions
 import sys
 

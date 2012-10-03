@@ -71,17 +71,24 @@ PYTERM_MATCH_FONT = True
 import os
 import sys
 
+import gtk
+import gtksourceview2
+import pango
+
 try:
     import gedit
     import gconf
     is_mate = False
+    APP_KEY = 'gedit-2'
+    DE_KEY  = 'gnome'
 except:
     import pluma as gedit
     import mateconf as gconf
     is_mate = True
-import gtk
-import gtksourceview2
-import pango
+    APP_KEY = 'pluma'
+    DE_KEY  = 'mate'
+    
+
 
 from .logger import Logger
 LOGGER = Logger(level=('DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL')[2])
@@ -161,10 +168,7 @@ class ColorPanesPlugin(gedit.Plugin):
         LOGGER.log()
         if not self.gconf_client:
             self.gconf_client = gconf.client_get_default()
-            if not is_mate:
-                gconf_dir = '/apps/gedit-2/preferences'
-            else:
-                gconf_dir = '/apps/pluma/preferences'
+            gconf_dir = '/apps/%s/preferences' % APP_KEY
             self.gconf_client.add_dir(gconf_dir, gconf.CLIENT_PRELOAD_NONE)
             gconf_key = gconf_dir + '/editor'
             self._gconf_cnxn = self.gconf_client.notify_add(
@@ -550,12 +554,9 @@ class ColorPanesWindowHelper(object):
     def _get_gedit_scheme(self):
         """Return Gedit's color scheme."""
         LOGGER.log()
-        if not is_mate:
-            scheme_name = self._plugin.gconf_client.get_string(
-                '/apps/gedit-2/preferences/editor/colors/scheme') or 'classic'
-        else:
-            scheme_name = self._plugin.gconf_client.get_string(
-                '/apps/pluma/preferences/editor/colors/scheme') or 'classic'
+        scheme_name = self._plugin.gconf_client.get_string(
+                '/apps/%s/preferences/editor/colors/scheme' % APP_KEY) or 'classic'
+
         LOGGER.log('Gedit color scheme: %s' % scheme_name)
         scheme_manager = self._get_gedit_style_scheme_manager()
         style_scheme = scheme_manager.get_scheme(scheme_name)
@@ -587,7 +588,7 @@ class ColorPanesWindowHelper(object):
             LOGGER.log('Gedit base color: %s' % base_color.to_string())
         else:
             gtk_theme = self._plugin.gconf_client.get_string(
-                '/desktop/gnome/interface/gtk_theme')
+                '/desktop/%s/interface/gtk_theme' % DE_KEY)
             LOGGER.log('GTK theme: %s' % gtk_theme)
             state = gtk.STATE_NORMAL
             gtk_theme_text_color = self._window.get_style().text[state]
@@ -671,28 +672,17 @@ class ColorPanesWindowHelper(object):
     def _get_gedit_font(self):
         """Return the font string for the font used in Gedit's editor."""
         LOGGER.log()
-        if not is_mate:
-            gedit_uses_system_font = self._plugin.gconf_client.get_bool(
-                '/apps/gedit-2/preferences/editor/font/use_default_font')
-            if gedit_uses_system_font:
-                gedit_font = self._plugin.gconf_client.get_string(
-                    '/desktop/gnome/interface/monospace_font_name')
-                LOGGER.log('System font: %s' % gedit_font)
-            else:
-                gedit_font = self._plugin.gconf_client.get_string(
-                    '/apps/gedit-2/preferences/editor/font/editor_font')
-                LOGGER.log('Gedit font: %s' % gedit_font)
+        gedit_uses_system_font = self._plugin.gconf_client.get_bool(
+            '/apps/%s/preferences/editor/font/use_default_font' % APP_KEY)
+        if gedit_uses_system_font:
+            gedit_font = self._plugin.gconf_client.get_string(
+                '/desktop/%s/interface/monospace_font_name' % DE_KEY)
+            LOGGER.log('System font: %s' % gedit_font)
         else:
-            gedit_uses_system_font = self._plugin.gconf_client.get_bool(
-                '/apps/pluma/preferences/editor/font/use_default_font')
-            if gedit_uses_system_font:
-                gedit_font = self._plugin.gconf_client.get_string(
-                    '/desktop/mate/interface/monospace_font_name')
-                LOGGER.log('System font: %s' % gedit_font)
-            else:
-                gedit_font = self._plugin.gconf_client.get_string(
-                    '/apps/pluma/preferences/editor/font/editor_font')
-                LOGGER.log('Gedit font: %s' % gedit_font)            
+            gedit_font = self._plugin.gconf_client.get_string(
+                '/apps/%s/preferences/editor/font/editor_font' % APP_KEY)
+            LOGGER.log('Gedit font: %s' % gedit_font)
+
         return gedit_font
     
     # Record original terminal colors and font for restoring on deactivation.

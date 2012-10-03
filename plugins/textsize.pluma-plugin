@@ -1,0 +1,24 @@
+[Pluma Plugin]
+Loader=python
+Module=textsize
+IAge=2
+Name=Text Size
+Name[cs]=Velikost textu
+Name[da]=Tekststørrelse
+Name[de]=Textgröße
+Name[el]=Μέγεθος κειμένου
+Name[es]=Tamaño del texto
+Name[fr]=Text Size
+Name[pl]=Rozmiar tekstu
+Description=Easily increase and decrease the text size
+Description[cs]=Snadné zvětšení a zmenšení velikosti textu
+Description[da]=Øg og formindsk nemt tekststørrelsen
+Description[de]=Die Textgröße leicht anpassen
+Description[el]=Εύκολη αύξηση και μείωση του μεγέθους του κειμένου
+Description[es]=Aumentar y reducir fácilmente el tamaño del texto
+Description[fr]=Augmenter et diminuer facilement la taille du texte
+Description[pl]=Łatwe powiększanie i pomniejszanie rozmiaru tekstu
+Authors=Konstantin Mikhaylov <jtraub.devel@gmail.com>\nWouter Bolsterlee <wbolster@gnome.org>\nJesse van den Kieboom <jessevdk@gnome.org>
+Copyright=Copyright © 2008 by the authors
+Website=http://www.mate-desktop.org
+Version=1.2.0

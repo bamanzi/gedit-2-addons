@@ -55,7 +55,14 @@ import os.path, sys, traceback
 import pygtk
 pygtk.require('2.0')
 import gtk, pango
-import gconf    
+try:
+    import gconf
+    APP_KEY = 'gedit-2'
+    DE_KEY  = 'gnome'
+except:
+    import mateconf as gconf
+    APP_KEY = 'pluma'
+    DE_KEY  = 'mate'
 
 stdout = sys.stdout
 if not hasattr(sys, 'ps1'):
@@ -207,13 +214,13 @@ class Console (gtk.ScrolledWindow):
         # Get font from gedit's entries in gconf
         client = gconf.client_get_default()
         default_question = client.get_bool(
-            '/apps/gedit-2/preferences/editor/font/use_default_font')
+            '/apps/%s/preferences/editor/font/use_default_font' % APP_KEY)
         if default_question == True:
             userfont = client.get_string(
-                '/desktop/gnome/interface/font_name')
+                '/desktop/%s/interface/font_name' % DE_KEY)
         else: 
             userfont = client.get_string(
-                '/apps/gedit-2/preferences/editor/font/editor_font')
+                '/apps/%s/preferences/editor/font/editor_font' % APP_KEY)
         
         # Setup scrolled window
         gtk.ScrolledWindow.__init__(self)

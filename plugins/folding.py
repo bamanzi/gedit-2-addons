@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 import gtk
-import gedit
+try:
+    import gedit
+except:
+    import pluma as gedit
 
 ui_str = """<ui>
 	<menubar name="MenuBar">

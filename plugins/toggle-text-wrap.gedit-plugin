@@ -1,0 +1,10 @@
+[Gedit Plugin]
+Loader=python
+Module=toggle-text-wrap
+IAge=2
+Name=Toggle text wrapping
+Description=Gedit gets a 'Toggle text wrapping' menu entry!
+Authors=Javier Paniagua <jpaniagualaconich@gmail.com>
+Copyright=Copyright © 2008 Javier Paniagua <jpaniagualaconich@gmail.com>
+Website=
+

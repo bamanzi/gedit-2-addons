@@ -27,18 +27,21 @@
 from gettext import gettext as _
 
 import gtk
+import functools
 try:
     import gedit
     import gconf
+    APPNAME = 'gedit-2'
 except:
     import pluma as gedit
     import mateconf as gconf
-import functools
+    APPNAME = 'pluma'
+
 
 # All encodings names
 enclist_func = lambda i=0: [gedit.encoding_get_from_index(i)] + enclist_func(i+1) if gedit.encoding_get_from_index(i) else []
 
-shown_enc = gconf.client_get_default().get("/apps/gedit-2/preferences/encodings/shown_in_menu")
+shown_enc = gconf.client_get_default().get("/apps/%s/preferences/encodings/shown_in_menu" % APPNAME)
 # show the full list of encodings if not they not configured in the Open/Save Dialog
 enclist = sorted(([gedit.encoding_get_from_charset(enc.to_string()) for enc in shown_enc.get_list()]
                  if shown_enc else enclist_func())

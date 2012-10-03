@@ -1,12 +1,14 @@
 import gtk
+import copy
 
 try:
     import gedit
     import gconf
+    CONFROOT = '/apps/gedit-2/plugins/highlight_edited_lines/'
 except:
     import pluma as gedit
     import mateconf as gconf
-import copy
+    CONFROOT = '/apps/pluma/plugins/highlight_edited_lines/'
 
 version = "0.1"
 
@@ -32,7 +34,7 @@ Xpm_Data = [
   "          XX     "
   ]
 
-CONFROOT = '/apps/gedit-2/plugins/highlight_edited_lines/'
+
 
 PREFS = {
   'show_line_marks': True,

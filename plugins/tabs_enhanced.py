@@ -23,10 +23,12 @@ try:
     import gedit
     import gconf
     is_mate = False
+    APPNAME = 'gedit-2'
 except:
     import pluma as gedit
     import mateconf as gconf
     is_mate = True
+    APPNAME = 'pluma'
 client = gconf.client_get_default()
 
 # Find widget by name
@@ -79,7 +81,7 @@ class TabsExtendWindowHelper:
     self.handler_ids.append((self.notebook, self.notebook.connect("tab_added", self.tab_added_handler) ))
     self.add_actions()
     
-    if self.notebook.get_n_pages() == 1 and client.get_bool("/apps/gedit-2/plugins/tabsenhanced/hide"):
+    if self.notebook.get_n_pages() == 1 and client.get_bool("/apps/%s/plugins/tabsenhanced/hide" % APPNAME):
       self.notebook.set_show_tabs(False)
 
 #    bottomPanel = lookup_widget(self.window.get_bottom_panel(), 'GeditNotebook')[0]
@@ -108,7 +110,7 @@ class TabsExtendWindowHelper:
       self.window.close_tab(tab)
 
   def tab_added_handler(self, widget, tab):
-    if self.notebook.get_n_pages() == 1 and client.get_bool("/apps/gedit-2/plugins/tabsenhanced/close"):
+    if self.notebook.get_n_pages() == 1 and client.get_bool("/apps/%s/plugins/tabsenhanced/close" % APPNAME):
       self.notebook.set_show_tabs(False)
     self.add_middle_click_in_tab(tab)
 
@@ -116,9 +118,9 @@ class TabsExtendWindowHelper:
     if not self.notebook:
       return
     pages = self.notebook.get_n_pages()
-    if pages == 0 and client.get_bool("/apps/gedit-2/plugins/tabsenhanced/close"):
+    if pages == 0 and client.get_bool("/apps/%s/plugins/tabsenhanced/close" % APPNAME):
       return self.window.destroy()
-    if pages == 1 and client.get_bool("/apps/gedit-2/plugins/tabsenhanced/hide"):
+    if pages == 1 and client.get_bool("/apps/%s/plugins/tabsenhanced/hide" % APPNAME):
       self.notebook.set_show_tabs(False)
     self.save_tab_to_undo(tab)
     self.update_ui()
@@ -248,9 +250,9 @@ class TabsExtendPlugin(gedit.Plugin):
         buttons = (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OK, gtk.RESPONSE_OK)
         dialog = gtk.Dialog("Extend Tabs Configuration", None, 0, buttons)
         self.chk_hide = gtk.CheckButton("Auto hide tab bar")
-        self.chk_hide.set_active(client.get_bool("/apps/gedit-2/plugins/tabsenhanced/hide"))
+        self.chk_hide.set_active(client.get_bool("/apps/%s/plugins/tabsenhanced/hide" % APPNAME))
         self.chk_close = gtk.CheckButton("Close gedit when last tab is closed")
-        self.chk_close.set_active(client.get_bool("/apps/gedit-2/plugins/tabsenhanced/close"))
+        self.chk_close.set_active(client.get_bool("/apps/%s/plugins/tabsenhanced/close" % APPNAME))
         dialog.vbox.pack_start(self.chk_hide, True, True, 0)
         dialog.vbox.pack_start(self.chk_close, True, True, 0)
         dialog.connect("response", self.response)
@@ -261,8 +263,8 @@ class TabsExtendPlugin(gedit.Plugin):
         # Hide configuration dialog
         dialog.hide()
         if res == gtk.RESPONSE_OK:
-          client.set_bool("/apps/gedit-2/plugins/tabsenhanced/hide", self.chk_hide.get_active())
-          client.set_bool("/apps/gedit-2/plugins/tabsenhanced/close", self.chk_close.get_active())
+          client.set_bool("/apps/%s/plugins/tabsenhanced/hide" % APPNAME, self.chk_hide.get_active())
+          client.set_bool("/apps/%s/plugins/tabsenhanced/close" % APPNAME, self.chk_close.get_active())
 #          notebook = lookup_widget(self, 'GeditNotebook')[0]
 #          if self.chk_hide.get_active() and notebook.get_n_pages() == 1:
 #            notebook.set_show_tabs(False)

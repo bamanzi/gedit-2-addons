@@ -1,4 +1,4 @@
-# -*- coding: utf8 -*-
+# -*- coding: utf-8 -*-
 #  Line Tools Plugin
 #
 #  Copyright (C) 2007 Shaddy Zeineddine <shaddyz@users.sourceforge.net>
@@ -96,16 +96,16 @@ class LineToolsPlugin(gedit.Plugin):
       ('PasteLine',           None, 'Paste Line',       '<Shift><Control>v', 'Paste the contents of the clipboard to the current line',                   self.paste_line),
       ('ReplaceLine',         None, 'Replace Line',     '',                  'Paste the contents of the clipboard replacing the current line',            self.replace_line),
       ('SetBookmark',         None, 'Set Bookmark'),
-      ('SetBookmark1',        None, 'Set Bookmark 1',   '<Control>!',        'Set a bookmark at the current line',                                       self.set_bookmark_1),
-      ('SetBookmark2',        None, 'Set Bookmark 2',   '<Control>@',        'Set a bookmark at the current line',                                       self.set_bookmark_2),
-      ('SetBookmark3',        None, 'Set Bookmark 3',   '<Control>#',        'Set a bookmark at the current line',                                       self.set_bookmark_3),
-      ('SetBookmark4',        None, 'Set Bookmark 4',   '<Control>$',        'Set a bookmark at the current line',                                       self.set_bookmark_4),
-      ('SetBookmark5',        None, 'Set Bookmark 5',   '<Control>%',        'Set a bookmark at the current line',                                       self.set_bookmark_5),
-      ('SetBookmark6',        None, 'Set Bookmark 6',   '<Control>^',        'Set a bookmark at the current line',                                       self.set_bookmark_6),
-      ('SetBookmark7',        None, 'Set Bookmark 7',   '<Control>&',        'Set a bookmark at the current line',                                       self.set_bookmark_7),
-      ('SetBookmark8',        None, 'Set Bookmark 8',   '<Control>*',        'Set a bookmark at the current line',                                       self.set_bookmark_8),
-      ('SetBookmark9',        None, 'Set Bookmark 9',   '<Control>(',        'Set a bookmark at the current line',                                       self.set_bookmark_9),
-      ('SetBookmark0',        None, 'Set Bookmark 0',   '<Control>)',        'Set a bookmark at the current line',                                       self.set_bookmark_0),
+      ('SetBookmark1',        None, 'Set Bookmark 1',   '<Control><Shift>1',        'Set a bookmark at the current line',                                       self.set_bookmark_1),
+      ('SetBookmark2',        None, 'Set Bookmark 2',   '<Control><Shift>2',        'Set a bookmark at the current line',                                       self.set_bookmark_2),
+      ('SetBookmark3',        None, 'Set Bookmark 3',   '<Control><Shift>3',        'Set a bookmark at the current line',                                       self.set_bookmark_3),
+      ('SetBookmark4',        None, 'Set Bookmark 4',   '<Control><Shift>4',        'Set a bookmark at the current line',                                       self.set_bookmark_4),
+      ('SetBookmark5',        None, 'Set Bookmark 5',   '<Control><Shift>5',        'Set a bookmark at the current line',                                       self.set_bookmark_5),
+      ('SetBookmark6',        None, 'Set Bookmark 6',   '<Control><Shift>6',        'Set a bookmark at the current line',                                       self.set_bookmark_6),
+      ('SetBookmark7',        None, 'Set Bookmark 7',   '<Control><Shift>7',        'Set a bookmark at the current line',                                       self.set_bookmark_7),
+      ('SetBookmark8',        None, 'Set Bookmark 8',   '<Control><Shift>8',        'Set a bookmark at the current line',                                       self.set_bookmark_8),
+      ('SetBookmark9',        None, 'Set Bookmark 9',   '<Control><Shift>9',        'Set a bookmark at the current line',                                       self.set_bookmark_9),
+      ('SetBookmark0',        None, 'Set Bookmark 0',   '<Control><Shift>0',        'Set a bookmark at the current line',                                       self.set_bookmark_0),
       ('RecallBookmark',      None, 'Go to Bookmark'),
       ('RecallBookmark1',     None, 'Go to Bookmark 1', '<Control>1',        'Go to this bookmark',                                                       self.recall_bookmark_1),
       ('RecallBookmark2',     None, 'Go to Bookmark 2', '<Control>2',        'Go to this bookmark',                                                       self.recall_bookmark_2),

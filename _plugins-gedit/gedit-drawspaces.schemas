@@ -1,0 +1,691 @@
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/apps/gedit-2/plugins/drawspaces/enable</key>
+      <applyto>/apps/gedit-2/plugins/drawspaces/enable</applyto>
+      <owner>gedit</owner>
+      <type>bool</type>
+      <default>TRUE</default>
+      <locale name="C">
+	<short>Show White Spaces</short>
+      </locale>
+
+      <locale name="ar">
+	<short>اعرض المسافات</short>
+      </locale>
+
+      <locale name="ca">
+	<short>Mostra els espais en blanc</short>
+      </locale>
+
+      <locale name="cs">
+	<short>Zobrazovat bílé znaky</short>
+      </locale>
+
+      <locale name="de">
+	<short>Leerzeichen anzeigen</short>
+      </locale>
+
+      <locale name="es">
+	<short>Mostrar espacios en blanco</short>
+      </locale>
+
+      <locale name="fr">
+	<short>Afficher les espaces</short>
+      </locale>
+
+      <locale name="gl">
+	<short>Mostrar espazos en branco</short>
+      </locale>
+
+      <locale name="hu">
+	<short>Üres helyek megjelenítése</short>
+      </locale>
+
+      <locale name="it">
+	<short>Mostra spazi bianchi</short>
+      </locale>
+
+      <locale name="pa">
+	<short>ਖਾਲੀ ਥਾਂ ਵੇਖੋ</short>
+      </locale>
+
+      <locale name="pl">
+	<short>Wyświetlanie spacji</short>
+      </locale>
+
+      <locale name="pt">
+	<short>Mostrar espaços em branco</short>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Mostrar espaços em branco</short>
+      </locale>
+
+      <locale name="sl">
+	<short>Pokaži presledne znake</short>
+      </locale>
+
+      <locale name="sv">
+	<short>Visa blanktecken</short>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>显示空白</short>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/gedit-2/plugins/drawspaces/draw_tabs</key>
+      <applyto>/apps/gedit-2/plugins/drawspaces/draw_tabs</applyto>
+      <owner>gedit</owner>
+      <type>bool</type>
+      <default>TRUE</default>
+      <locale name="C">
+	<short>Draw Tabs</short>
+      </locale>
+
+      <locale name="ar">
+	<short>ارسم علامات التبويب</short>
+      </locale>
+
+      <locale name="ca">
+	<short>Dibuixa les tabulacions</short>
+      </locale>
+
+      <locale name="cs">
+	<short>Vykreslovat tabulátory</short>
+      </locale>
+
+      <locale name="de">
+	<short>Einzüge anzeigen</short>
+      </locale>
+
+      <locale name="es">
+	<short>Dibujar tabulaciones</short>
+      </locale>
+
+      <locale name="fr">
+	<short>Indiquer les tabulations</short>
+      </locale>
+
+      <locale name="gl">
+	<short>Debuxar tabulacións</short>
+      </locale>
+
+      <locale name="hu">
+	<short>Tabok rajzolása</short>
+      </locale>
+
+      <locale name="it">
+	<short>Traccia le tabulazioni</short>
+      </locale>
+
+      <locale name="pa">
+	<short>ਟੈਬ ਬਣਾਓ</short>
+      </locale>
+
+      <locale name="pl">
+	<short>Wyświetlanie tabulacji</short>
+      </locale>
+
+      <locale name="pt">
+	<short>Mostrar tabuladores</short>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Desenhar tabulações</short>
+      </locale>
+
+      <locale name="sl">
+	<short>Izris tabulatorjev</short>
+      </locale>
+
+      <locale name="sv">
+	<short>Rita ut tabulatorer</short>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>绘制跳格</short>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/gedit-2/plugins/drawspaces/draw_spaces</key>
+      <applyto>/apps/gedit-2/plugins/drawspaces/draw_spaces</applyto>
+      <owner>gedit</owner>
+      <type>bool</type>
+      <default>TRUE</default>
+      <locale name="C">
+	<short>Draw Spaces</short>
+      </locale>
+
+      <locale name="ar">
+	<short>ارسم المسافات</short>
+      </locale>
+
+      <locale name="as">
+	<short>স্পেচ আঁকক</short>
+      </locale>
+
+      <locale name="be@latin">
+	<short>Pakazvaj prabieły</short>
+      </locale>
+
+      <locale name="bg">
+	<short>Изобразяване на шпации</short>
+      </locale>
+
+      <locale name="bn_IN">
+	<short>শূণ্যস্থান আঁকুন</short>
+      </locale>
+
+      <locale name="ca">
+	<short>Dibuixa els espais</short>
+      </locale>
+
+      <locale name="cs">
+	<short>Vykreslovat mezery</short>
+      </locale>
+
+      <locale name="da">
+	<short>Tegn mellemrum</short>
+      </locale>
+
+      <locale name="de">
+	<short>Leerzeichen anzeigen</short>
+      </locale>
+
+      <locale name="dz">
+	<short>བར་སྟོང་ཚུ་འཐེན་</short>
+      </locale>
+
+      <locale name="en_GB">
+	<short>Draw Spaces</short>
+      </locale>
+
+      <locale name="es">
+	<short>Dibujar espacios</short>
+      </locale>
+
+      <locale name="fi">
+	<short>Näytä tyhjeet</short>
+      </locale>
+
+      <locale name="fr">
+	<short>Indicateur d&apos;espaces</short>
+      </locale>
+
+      <locale name="gl">
+	<short>Debuxar espazos</short>
+      </locale>
+
+      <locale name="gu">
+	<short>જગ્યાઓને દોરો</short>
+      </locale>
+
+      <locale name="hu">
+	<short>Szóközök rajzolása</short>
+      </locale>
+
+      <locale name="it">
+	<short>Traccia gli spazi</short>
+      </locale>
+
+      <locale name="ja">
+	<short>空白文字の表示</short>
+      </locale>
+
+      <locale name="kn">
+	<short>ಖಾಲಿಜಾಗಗಳನ್ನು ಚಿತ್ರಿಸಿ</short>
+      </locale>
+
+      <locale name="lv">
+	<short>Rādīt atstarpes</short>
+      </locale>
+
+      <locale name="ml">
+	<short>സ്പെയിസുകള്‍ നല്‍കുക</short>
+      </locale>
+
+      <locale name="mr">
+	<short>मोकळी जागा बनवा</short>
+      </locale>
+
+      <locale name="nb">
+	<short>Tegn mellomrom</short>
+      </locale>
+
+      <locale name="nl">
+	<short>Spaties tonen</short>
+      </locale>
+
+      <locale name="or">
+	<short>ଖାଲିସ୍ଥାନ ଆଙ୍କନ୍ତୁ</short>
+      </locale>
+
+      <locale name="pa">
+	<short>ਖਾਲੀ ਥਾਂ ਪਾਓ</short>
+      </locale>
+
+      <locale name="pl">
+	<short>Wyświetlanie spacji</short>
+      </locale>
+
+      <locale name="pt">
+	<short>Mostrar Espaços</short>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Desenhar espaços</short>
+      </locale>
+
+      <locale name="ru">
+	<short>Показать пробелы</short>
+      </locale>
+
+      <locale name="sl">
+	<short>Izris presledkov</short>
+      </locale>
+
+      <locale name="sv">
+	<short>Rita ut blanksteg</short>
+      </locale>
+
+      <locale name="ta">
+	<short>இடைவெளிகளை இழுக்கவும்</short>
+      </locale>
+
+      <locale name="te">
+	<short>ఖాళీలను గీయుము</short>
+      </locale>
+
+      <locale name="th">
+	<short>แสดงช่องว่าง</short>
+      </locale>
+
+      <locale name="vi">
+	<short>Vẽ dấu cách</short>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>绘制空白</short>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/gedit-2/plugins/drawspaces/draw_newline</key>
+      <applyto>/apps/gedit-2/plugins/drawspaces/draw_newline</applyto>
+      <owner>gedit</owner>
+      <type>bool</type>
+      <default>FALSE</default>
+      <locale name="C">
+	<short>Draw New lines</short>
+      </locale>
+
+      <locale name="ar">
+	<short>ارسم السطور الجديدة</short>
+      </locale>
+
+      <locale name="ca">
+	<short>Dibuixa les línies noves</short>
+      </locale>
+
+      <locale name="cs">
+	<short>Vykreslovat zakončení řádků</short>
+      </locale>
+
+      <locale name="de">
+	<short>Zeilenumbrüche anzeigen</short>
+      </locale>
+
+      <locale name="es">
+	<short>Dibujar líneas nuevas</short>
+      </locale>
+
+      <locale name="fr">
+	<short>Indiquer les sauts de ligne</short>
+      </locale>
+
+      <locale name="gl">
+	<short>Debuxar o carácter de nova liña</short>
+      </locale>
+
+      <locale name="hu">
+	<short>Új sorok rajzolása</short>
+      </locale>
+
+      <locale name="it">
+	<short>Traccia gli a capo</short>
+      </locale>
+
+      <locale name="pa">
+	<short>ਨਵੀਆਂ ਲਾਈਨਾਂ ਬਣਾਓ</short>
+      </locale>
+
+      <locale name="pl">
+	<short>Wyświetlanie nowych wierszy</short>
+      </locale>
+
+      <locale name="pt">
+	<short>Mostrar novas linhas</short>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Desenhar novas linhas</short>
+      </locale>
+
+      <locale name="sl">
+	<short>Izris znakov za nove vrstice</short>
+      </locale>
+
+      <locale name="sv">
+	<short>Rita ut nya rader</short>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>绘制新行</short>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/gedit-2/plugins/drawspaces/draw_nbsp</key>
+      <applyto>/apps/gedit-2/plugins/drawspaces/draw_nbsp</applyto>
+      <owner>gedit</owner>
+      <type>bool</type>
+      <default>FALSE</default>
+      <locale name="C">
+	<short>Draw Non-Breaking Spaces</short>
+      </locale>
+
+      <locale name="ar">
+	<short>ارسم المسافات غير القابلة للكسر</short>
+      </locale>
+
+      <locale name="ca">
+	<short>Dibuixa els espais durs</short>
+      </locale>
+
+      <locale name="cs">
+	<short>Vykreslovat nezlomitelné mezery</short>
+      </locale>
+
+      <locale name="de">
+	<short>Geschützte Leerzeichen anzeigen</short>
+      </locale>
+
+      <locale name="es">
+	<short>Dibujar espacios de no ruptura</short>
+      </locale>
+
+      <locale name="fr">
+	<short>Indiquer les espaces insécables</short>
+      </locale>
+
+      <locale name="gl">
+	<short>Debuxar os espazos non rotos</short>
+      </locale>
+
+      <locale name="hu">
+	<short>Nem törhető szóközök rajzolása</short>
+      </locale>
+
+      <locale name="it">
+	<short>Traccia gli spazi non terminanti</short>
+      </locale>
+
+      <locale name="pa">
+	<short>ਬਿਨ-ਬਰੇਕ ਖਾਲੀ ਥਾਂ ਦਿਓ</short>
+      </locale>
+
+      <locale name="pl">
+	<short>Wyświetlanie nieprzerywalnych spacji</short>
+      </locale>
+
+      <locale name="pt">
+	<short>Mostrar espaços de não quebra</short>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Desenhar espaços não-quebráveis</short>
+      </locale>
+
+      <locale name="sl">
+	<short>Izriši nedeljive presledke</short>
+      </locale>
+
+      <locale name="sv">
+	<short>Rita ut icke-brytande blanksteg</short>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>绘制非中断空格</short>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/gedit-2/plugins/drawspaces/draw_leading</key>
+      <applyto>/apps/gedit-2/plugins/drawspaces/draw_leading</applyto>
+      <owner>gedit</owner>
+      <type>bool</type>
+      <default>TRUE</default>
+      <locale name="C">
+	<short>Draw Leading Spaces</short>
+      </locale>
+
+      <locale name="ar">
+	<short>ارسم المسافات البادئة</short>
+      </locale>
+
+      <locale name="ca">
+	<short>Dibuixa els espais del principi de la línia</short>
+      </locale>
+
+      <locale name="cs">
+	<short>Vykreslovat úvodní mezery</short>
+      </locale>
+
+      <locale name="de">
+	<short>Vorangestellte Leerzeichen anzeigen</short>
+      </locale>
+
+      <locale name="es">
+	<short>Dibujar espacios iniciales</short>
+      </locale>
+
+      <locale name="fr">
+	<short>Indiquer les espaces de début</short>
+      </locale>
+
+      <locale name="gl">
+	<short>Debuxar espazos finais</short>
+      </locale>
+
+      <locale name="hu">
+	<short>Kezdő szóközök rajzolása</short>
+      </locale>
+
+      <locale name="it">
+	<short>Traccia gli spazi a inizio riga</short>
+      </locale>
+
+      <locale name="pa">
+	<short>ਅੱਗੇ ਖਾਲੀ ਥਾਂ ਦਿਓ</short>
+      </locale>
+
+      <locale name="pl">
+	<short>Wyświetlanie spacji wiodących</short>
+      </locale>
+
+      <locale name="pt">
+	<short>Mostrar espaços iniciais</short>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Desenhar espaços no início</short>
+      </locale>
+
+      <locale name="sl">
+	<short>Izris začetnih presledkov</short>
+      </locale>
+
+      <locale name="sv">
+	<short>Rita ut inledande blanksteg</short>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>绘制开头空格</short>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/gedit-2/plugins/drawspaces/draw_text</key>
+      <applyto>/apps/gedit-2/plugins/drawspaces/draw_text</applyto>
+      <owner>gedit</owner>
+      <type>bool</type>
+      <default>TRUE</default>
+      <locale name="C">
+	<short>Draw Spaces in Text</short>
+      </locale>
+
+      <locale name="ar">
+	<short>ارسم المسافات في النص</short>
+      </locale>
+
+      <locale name="ca">
+	<short>Dibuixa els espais al text</short>
+      </locale>
+
+      <locale name="cs">
+	<short>Vykreslovat mezery v textu</short>
+      </locale>
+
+      <locale name="de">
+	<short>Leerzeichen im Text anzeigen</short>
+      </locale>
+
+      <locale name="es">
+	<short>Dibujar espacios en el texto</short>
+      </locale>
+
+      <locale name="fr">
+	<short>Indique les espaces dans le texte</short>
+      </locale>
+
+      <locale name="gl">
+	<short>Debuxar os espazos no texto</short>
+      </locale>
+
+      <locale name="hu">
+	<short>Szóközök rajzolása a szövegbe</short>
+      </locale>
+
+      <locale name="it">
+	<short>Traccia gli spazi all&apos;interno del testo</short>
+      </locale>
+
+      <locale name="pa">
+	<short>ਟੈਕਸਟ ਵਿੱਚ ਖਾਲੀ ਥਾਂ ਦਿਓ</short>
+      </locale>
+
+      <locale name="pl">
+	<short>Wyświetlanie spacji w tekście</short>
+      </locale>
+
+      <locale name="pt">
+	<short>Mostrar espaços no texto</short>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Desenhar espaços no texto</short>
+      </locale>
+
+      <locale name="sl">
+	<short>Izris presledkov v besedilu</short>
+      </locale>
+
+      <locale name="sv">
+	<short>Rita ut blanksteg i text</short>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>在文本中绘制空格</short>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/gedit-2/plugins/drawspaces/draw_trailing</key>
+      <applyto>/apps/gedit-2/plugins/drawspaces/draw_trailing</applyto>
+      <owner>gedit</owner>
+      <type>bool</type>
+      <default>TRUE</default>
+      <locale name="C">
+	<short>Draw Trailing Spaces</short>
+      </locale>
+
+      <locale name="ar">
+	<short>ارسم المسافات اللاحقة</short>
+      </locale>
+
+      <locale name="ca">
+	<short>Dibuixa els espais del final de la línia</short>
+      </locale>
+
+      <locale name="cs">
+	<short>Vykreslovat koncové mezery</short>
+      </locale>
+
+      <locale name="de">
+	<short>Angehängte Leerzeichen anzeigen</short>
+      </locale>
+
+      <locale name="es">
+	<short>Dibujar espacios adicionales</short>
+      </locale>
+
+      <locale name="fr">
+	<short>Indiquer les espaces de fin</short>
+      </locale>
+
+      <locale name="gl">
+	<short>Debuxar espazos finais</short>
+      </locale>
+
+      <locale name="hu">
+	<short>Záró szóközök rajzolása</short>
+      </locale>
+
+      <locale name="it">
+	<short>Traccia gli spazi a fine riga</short>
+      </locale>
+
+      <locale name="pa">
+	<short>ਪਿੱਛੇ ਖਾਲੀ ਥਾਂ ਦਿਓ</short>
+      </locale>
+
+      <locale name="pl">
+	<short>Wyświetlanie spacji na końcach wierszy</short>
+      </locale>
+
+      <locale name="pt">
+	<short>Mostrar espaços finais</short>
+      </locale>
+
+      <locale name="pt_BR">
+	<short>Desenhar espaços no final</short>
+      </locale>
+
+      <locale name="sl">
+	<short>Izris presledkov na koncu vrstic</short>
+      </locale>
+
+      <locale name="sv">
+	<short>Rita ut efterliggande blanksteg</short>
+      </locale>
+
+      <locale name="zh_CN">
+	<short>绘制结尾空格</short>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

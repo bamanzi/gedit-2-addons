@@ -22,8 +22,10 @@
 
 try:
     import gedit
+    APPNAME = 'gedit-2'
 except:
     import pluma as gedit
+    APPNAME = 'pluma'
 import operator
 
 
@@ -45,12 +47,12 @@ class FakeGConfClient():
     return self
 
   def get_int(self, key):
-    if key == "/apps/gedit-2/preferences/editor/tabs/tabs_size":
+    if key == "/apps/%s/preferences/editor/tabs/tabs_size" % APPNAME:
       return self.size
     return 0
 
   def get_bool(self, key):
-    if key == "/apps/gedit-2/preferences/editor/tabs/insert_spaces":
+    if key == "/apps/%s/preferences/editor/tabs/insert_spaces" % APPNAME:
       return self.spaces
     return False
 
@@ -62,7 +64,10 @@ class FakeGConfClient():
 try:
     import gconf
 except ImportError:
-    gconf = FakeGConfClient()
+    try:
+        import mateconf as gconf
+    except ImportError:
+        gconf = FakeGConfClient()
 
 
 # Main class
@@ -87,8 +92,8 @@ class AutoTab(gedit.Plugin):
 
     self.new_tabs_size(client)
     self.new_insert_spaces(client)
-    client.notify_add("/apps/gedit-2/preferences/editor/tabs/tabs_size", self.new_tabs_size)
-    client.notify_add("/apps/gedit-2/preferences/editor/tabs/insert_spaces", self.new_insert_spaces)
+    client.notify_add("/apps/%s/preferences/editor/tabs/tabs_size" % APPNAME, self.new_tabs_size)
+    client.notify_add("/apps/%s/preferences/editor/tabs/insert_spaces" % APPNAME, self.new_insert_spaces)
 
     for view in window.get_views(): 
       self.connect_handlers(view)
@@ -125,12 +130,12 @@ class AutoTab(gedit.Plugin):
 
   # If default tab size changes
   def new_tabs_size(self, client, id=None, entry=None, data=None):
-    self.tabs_width = client.get_int("/apps/gedit-2/preferences/editor/tabs/tabs_size")
+    self.tabs_width = client.get_int("/apps/%s/preferences/editor/tabs/tabs_size" % APPNAME)
     self.update_tabs(self.tabs_width, self.spaces_instead_of_tabs)
 
   # If default space/tabs changes
   def new_insert_spaces(self, client, id=None, entry=None, data=None):
-    self.spaces_instead_of_tabs = client.get_bool("/apps/gedit-2/preferences/editor/tabs/insert_spaces")
+    self.spaces_instead_of_tabs = client.get_bool("/apps/%s/preferences/editor/tabs/insert_spaces" % APPNAME)
     self.update_tabs(self.tabs_width, self.spaces_instead_of_tabs)
 
   # Update the values and set a new statusbar message  

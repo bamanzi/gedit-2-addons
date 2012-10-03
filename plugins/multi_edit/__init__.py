@@ -22,9 +22,11 @@ import gtk
 try:
     import gedit
     import gconf
+    APP_KEY = 'gedit-2'
 except:
     import pluma as gedit
     import mateconf as gconf
+    APP_KEY = 'pluma'
 
 import me_window
 import me_config
@@ -38,7 +40,7 @@ class MultiEditPlugin(gedit.Plugin):
     def __init__(self):
         gedit.Plugin.__init__(self)
         self._windows = {}
-        self._gconf_key_base = '/apps/gedit-2/plugins/multi_edit/'
+        self._gconf_key_base = '/apps/%s/plugins/multi_edit/' % APP_KEY
         
         # Config defaults
         self._columns_always_avail_def = 'True'

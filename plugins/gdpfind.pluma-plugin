@@ -1,0 +1,9 @@
+[Pluma Plugin]
+Loader=python
+Module=gdpfind
+IAge=2
+Name=GDP Find
+Description=Find matching text in multiple files.
+Authors=Curtis Hovey <sinzui.is@verizon.net>
+Copyright=Copyright © 2008-2009 Curtis Hovey
+Website=http://curtis.hovey.name/sinzui

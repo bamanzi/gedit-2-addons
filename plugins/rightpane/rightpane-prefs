@@ -1,8 +1,10 @@
 [right_pane]
 visible = True
 init = True
-width = 200
-tabs = 2
+width = 116
+tabs = 3,2
+tab-active = Class Browser
+tab3 = Find in files
 tab2 = Class Browser
 
 [left_pane]

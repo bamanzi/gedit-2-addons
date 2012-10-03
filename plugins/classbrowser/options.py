@@ -21,8 +21,11 @@ import gtk
 try:
     import gedit
     import gconf
+    APP_KEY = 'gedit-2'
 except:
+    import pluma as gedit
     import mateconf as gconf
+    APP_KEY = 'pluma'
 
 def singleton():
     if Options.singleton is None:
@@ -40,7 +43,7 @@ class Options(gobject.GObject):
     def __init__(self):
 
         gobject.GObject.__init__(self)
-        self.__gconfDir = "/apps/gedit-2/plugins/classbrowser"
+        self.__gconfDir = "/apps/%s/plugins/classbrowser" % APP_KEY
 
         # default values
         self.verbose = False

@@ -143,7 +143,7 @@ class GeditTerminal(gtk.HBox):
         # Fonts
         desktop = 'gnome' if not is_mate else 'mate'
         if gconf_get_bool(self.GCONF_PROFILE_DIR + "/use_system_font"):
-            font_name = gconf_get_str("/desktop/%s/interface/monospace_font" % desktop
+            font_name = gconf_get_str("/desktop/%s/interface/monospace_font" % desktop,
                                       self.defaults['font_name'])
         else:
             font_name = gconf_get_str(self.GCONF_PROFILE_DIR + "/font",

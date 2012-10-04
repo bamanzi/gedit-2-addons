@@ -1,0 +1,1180 @@
+#+TAGS: TODO(t) DONE(d)
+#+TAGS: GOOD(g) BAD(b) DUP(u) FAIL(f)
+#+TAGS: gedit_2(2) gedit_3(3) mate(m)
+
+# <<#deprecated>>
+# <<#not_useful>>
+# <<#inferior>>
+# <<#nice>>
+# <<#replacement>>
+
+* A
+** Advanced Bookmarks
+# <<advanced_bookmarks>>
+Highlight, remenber and toggle bookmarks in your files.
+
+** Align
+# <<align>>
+Align blocks of text into columns
+http://users.tkk.fi/~otsaloma/gedit
+
+** Align columns
+# <<align-columns>
+Align text blocks into columns separated by pipe ( | )
+** Auto Tab                                                        :gedit_2:
+# <<autotab>>
+http://code.google.com/p/gedit-autotab/
+
+Auto Tab is a plugin for Gedit that auto-detects indent settings (width and tab/spaces) and adjusts
+tabbing accordingly for each buffer on the fly
+
+For Gnome 3 support, for now see: http://git.slashdev.ca/gedit-autotab/
+
+** Auto Tab by Language
+# <<autotablang>>
+http://sites.google.com/site/dvertx
+
+Auto Tab by Language is a gedit plugin, which modifies tab setting within
+currently viewed document by language categories that are recognized by gedit.
+
+https://github.com/dvertx/autotablang
+
+** advanced_editing
+https://live.gnome.org/Gedit/AdvancedEditingPlugin
+
+  * 'Delete To End Of Line'
+  * 'Kill Line'
+  * 'Duplicate Line'
+  * 'Remove Whitespace'
+  * 'Reduce Whitespace'
+
+** Advanced Find                                            :gedit_2:gedit_3:
+website: http://code.google.com/p/advanced-find/
+
+Advanced find / replace is a plugin that improve the find / replace functions of gedit.
+
+Features:
+  * Find / Replace in active document
+  * Find / Replace in all opened documents
+  * Find in all files in selected directory
+  * Find / Replace in current selected text
+  * Support regular expressions
+  * Support multi-lines pattern
+  * Highlight search results
+  * Show results in bottom panel
+  * Select and find next/previous
+  * Multi-language support
+  * Support both gedit2.x and 3.x 
+
+screenshot: https://lh5.googleusercontent.com/-gPOzfd8Lz9k/Tw2UXuiFvCI/AAAAAAAAAE8/3lbUPd9ctJI/s800/Screenshot.png
+** Auto Completion
+# <<auto_completion>>
+Auto completion like it is done in any 'better' console
+
+http://elias.hiex.at/gedit-plugins
+** +AutoComplete+
+# <<autocomplete>>
+http://github.com/nagaozen/gedit-plugin-autocomplete/
+
+Adds a popup dialog completion of words already used in any document currently open in Gedit. 
+In order to play nice with snippets plugin, trigger is set to Enter. 
+
+*DEPRECATED* IN FAVOR OF GEDIT-PLUGIN-CODECOMPLETION.
+** Advanced Find/Replace
+# <<advancedfind>>
+Search and replace in all documents/tabs.
+http://code.google.com/p/advanced-find/
+
+* B
+** bookmarks                                                         :native:
+# <<bookmarks>>
+-> [[advanced_bookmarks]] 
+
+** bracketcompletion
+** Builder
+# <<builder>>
+http://sourceforge.net/projects/geditbuilderplg/
+
+The Gedit "builder" plugin is a plugin for the Gnome Text Editor that allows you to compile source
+code and then click on the compiler output errors to go to those errors in the source code.
+* C
+** charmap                                                           :native:
+** Class Browser                                                    :gedit_2:
+# <<classbrowser>>
+A Classbrowser (depends of ctags, I use exuberant-ctags).
+
+
+http://code.google.com/p/geditclassbrowser/
+http://www.stambouliote.de/projects/gedit_plugins.html
+
+This plugin provides a generic Class Browser for gedit. It is located in the side pane and supports
+a wide range of languages through the use of exuberant ctags, as well as specialised parsers for
+python, ruby, xml/html and diff files.
+
+screenshot: http://www.stambouliote.de/projects/img/gedit-classbrowser-070122.png
+
+*** for gedit-3: Class Browser 3g
+# <<classbrowser3g>>
+https://launchpad.net/gedit-classbrowser3g
+
+Lists functions, classes, etc. in the side pane and supports the languages from ctags, special
+parsers for Python, HTML, XML, Diff, Ruby and Markdown. Project page:
+https://launchpad.net/gedit-classbrowser3g The project is part of Gedit BC Developer Plugins. The
+plugin is a fork of [[Class Browser]] Plugin.
+** Click Config                                             :gedit_2:gedit_3:
+# <<clickconfig>>
+website: http://code.google.com/p/gedit-click-config/
+This plugin provides configurable text selections based on single or multiple left mouse button
+clicks, i.e.,
+
+    single click, double click, triple click, quadruple click, quintuple click. 
+
+For example, a double click can be set to select names that include underscores, or a quadruple
+click can be set to select a paragraph.
+
+screenshot: http://gedit-click-config.googlecode.com/files/Click_Config-1.4.0-configuration-screenshot.png
+** Clientside
+Plugin to minify, beautify, and verify js and css
+
+#+begin_comment
+This Gedit plugin provides common tools for developing with clientside languages javascript and
+css. 
+
+Tools for javascript include:
+
+  * JS-Beautifier to format and "Unminify"
+  * JSMin to minify
+  * JSLint to look for syntax issues
+
+Tools for CSS:
+
+  * CSS Format and clean
+  * CSS Minification (Similar routine as YUICompressor)
+  * CSSLint to look for syntax issues and errors
+#+end_comment
+
+
+https://github.com/dsjoshi/gedit-jslint
+** Column Mode
+# <<columnmode>>
+website: https://live.gnome.org/Gedit/Plugins/ColumnMode
+
+Column-mode editing for gedit.
+
+This plugin is not maintained any more. You can use the [[multi_edit][Multi Edit]] plugin instead, it works much
+better . It is part of [[gedit-plugins]] and some documentation can be found here
+** codecomment
+** Code Formatter
+# <<code_formatter>>
+http://urubatan.info/
+Press Ctrl+Shift+F to format the source code
+** colorpicker
+** commander
+** Word Completion                                                :DUP:
+# <<completion>>
+website: http://users.tkk.fi/~otsaloma/gedit
+
+Complete words with the tab key
+
+This plugin provides a 'stupid' word completion plugin, one that is aware of
+all words in all open documents, but knows nothing of any context or syntax.
+** Evolved Code Completion
+[[codecompletion]]
+(not useful?)
+# <<code
+https://github.com/nagaozen/gedit-plugin-codecompletion/
+
+A code completion framework based on a json library.
+** Control Your Tabs
+# <<controlyourtabs>>
+Switch between tabs using Ctrl-Tab / Ctrl-Shift-Tab and Ctrl-PageUp / Ctrl-PageDown
+http://www.thingsthemselves.com/gedit/
+** Current Line Highlight
+# <<current-line>>
+Ever wanted to change the current line background color? Here's your chance
+http://simplesideias.com.br/
+* D
+** drawspaces                                         :native:
+replacement in python: [[Whitespace]] (?)
+** Deletion
+# <<deletin>>
+Additional methods of removing text
+
+http://users.tkk.fi/~otsaloma/gedit
+** Document Properties
+# <<docprop>>
+Shows various properties of the document (location, owner, modification date, etc.)
+
+http://sayamindu.randomink.org/
+
+* E
+** Encoding 
+# <<encodingpy>>
+Reopen the document in a different encoding
+
+** Edit Shortcut                                                    :gedit_2:
+# <<editshortcut>>
+website: http://empty.23inch.de/pmwiki.php/Main/EditShortcuts (bad)
+
+Enables you to edit all menu shortcuts.
+
+   - [ ] configuration not save, thus not avalable for later usage
+
+*** TODO for gedit-3, check: https://github.com/nacho/gedit-accel-editor (not working yet)
+** Elastic tabstops
+# <<elastictabstops>>                                           :native:editing:
+website: http://nickgravgaard.com/elastictabstops
+
+Align text following tab characters with elastic tabstops.
+* F
+** File Search
+# <<file-search>>
+This is a search plugin for Gedit to search for a text inside a directory. https://github.com/oliver/gedit-file-search
+** Find in Project
+# <<FindInProject>>
+Search in the project with ack/grep. http://github.com/eggegg/find-in-project
+
+** Find In Files                                                    :gedit_2:
+# <<findinfiles>>
+website: (unknown)
+
+Search within files of your filebrowser root. (side panel)
+
+** Simple Folding
+# <<folding>>
+Collapse selected text.
+
+https://github.com/influx6/gedit-folding
+
+  * [ ] gedit-3 version?
+
+** File Search                                                      :gedit_2:
+# <<file-search>>
+http://oliver.github.com/gedit-file-search/
+Gedit plugin to search a text in all files in a directory 
+
+screenshot: http://oliver.github.com/gedit-file-search/gedit-file-search-screenshot-5-thumb.png
+
+** Ftp Browser
+# <<ftp-browser>>
+http://code.google.com/p/gedit-ftp-browser/
+
+FTP Browser is a plugin for Gedit that enable direct editing of files from an FTP location. 
+
+Altough the same thing can be done using the File Browser Pane plugin, but this plugin does not rely on nautilus. 
+** Fullscreen
+# <<fullscreenpy>>
+Adds a menu item (under view) that toggles the view between fullscreen and current.
+
+http://www.gedit.org
+** funcbrowser                                                       :native:
+http://sourceforge.net/projects/gedit-funcbrows
+** Fuzzy Open
+# <<fuzzopen>>
+Quick way to open file in project. http://github.com/eggegg/fuzzyopen
+** Find In Documents
+# <<FindInDocuments>>
+Search all open documents.
+* G
+** Gedit Open File
+# <<gedit_openfiles>>
+Regex based file open (like textmate Go to file…).
+** Gemini                                                   :gedit_2:gedit_3:
+# <<gemini>>
+Pair complete for quotes and braces.
+
+website: http://www.garyharan.com/
+
+Smart completion of common characters we use in pairs. ({["''"]})
+
+** Go to File
+# <<gotofile>>
+
+Easily open and switch between files.
+
+** grep                                                                :TODO:
+
+http://code.google.com/p/gedit-grep/
+
+A plugin allows to search in all opened files (even unsaved) or files in a given directory
+
+** GEdit Encoding Converter                                            :TODO:
+# <<gencodingconverter>>
+http://code.google.com/p/gencodingconverter/
+
+providing text conversions between different encoding on the fly. 
+* H
+** Highlight Text
+Highlights all occurances of selected text.
+http://code.google.com/p/gedit-highlight-text/
+
+-> [[smart highlighting]] is better.
+
+** Highlight Edited Lines.                                          :gedit_2:
+# <<highlight_edited_lines>>
+Highlights lines changed during your edit session. http://1dan.org/gedit-plugins/highlight-edited-lines/
+
+screenshot: http://1dan.org/gedit-plugins/highlight-edited-lines/highlight_edited_lines-screencap1.gif
+
+*** TODO gedit-3 version?
+** Html Tidy
+Clean up your web pages with HTML TIDY
+* I
+** Indent Converter
+# <<indent-converter>>
+Converts tabs to spaces and spaces to tabs.
+** Intelligent Text Completion                              :gedit_2:gedit_3:
+http://code.google.com/p/gedit-intelligent-text-completion/
+
+This plugin intelligently completes your input of tags, lists, brackets, comments and quotes.
+
+Features:
+  * Auto-close brackets and quotes
+  * Auto-complete XML tags
+  * Detects lists and automatically creates new list items
+  * Auto-indent after function or list
+
+screenshot: http://gedit-intelligent-text-completion.googlecode.com/files/Screenshot.png
+
+** Indent Keys                                                      :gedit_3:
+# <<indent_keys>>
+
+This plugin adds a 'indent' and 'unindent' shortcut
+http://code.google.com/p/gedit-improving-plugins
+* J
+** Join/Split Lines
+# <<joinlines>>
+
+Join several lines or split long ones
+
+in [[gedit-plugins]]
+* K
+* L
+** Line Tools
+# <<line_tools>>
+http://live.gnome.org/Gedit/LineToolsPlugin
+
+Advanced line editing functions such as line duplication.
+
+This plugin is a branch of the Gedit/AdvancedEditingPlugin.
+
+#+begin_comment
+Current Features
+
+  * Trim Line : Removes the text from the current cursor position to the end of the line
+  * Clear Line : Removes all the text from the current line
+  * Kill Line : Completely removes the current line
+  * Duplicate Line : Creates a duplicate of the current line
+  * Raise Line : Moves the current line up while moving the line above it down by one line
+  * Lower Line : Moves the current line down while moving the line below it up by one line
+  * Copy Line : Copies the current line to the clipboard
+  * Cut Line : Copies the current line to the clipboard, then completely removes it
+  * Paste Line : Pastes the clipboard at the current line moving the contents of the current line down
+  * Replace Line : Pastes the clipboard at the current line replacing the contents of the current line
+  * Line Bookmarks : Set bookmarks at any line using Shift+Control+Number and then return to it later by pressing Control+Number (Currently there is a GTK issue preventing me from setting menu accelerators as Shift+Control+Number, it must be done manually)
+#+end_comment
+
+*** for gedit-3, check [[gedit-improving-plugins]] 
+
+    <menuitem name="ToggleComment" action="ToggleComment"/>
+    <menuitem name="ToggleIndentedComment" action="ToggleIndentedComment"/>
+    <menuitem name="DuplicateLine" action="DuplicateLine"/>
+    <menuitem name="SelectLine" action="SelectLine"/>
+    <menuitem name="SelectText" action="SelectText"/>
+    <menuitem name="SelectWord" action="SelectWord"/>
+    <menuitem name="AddSemicolon" action="AddSemicolon"/>
+
++ [[text_tools]] ?
+
+  * ClearLine :: Remove all the characters on the current line
+  * DuplicateLine ::Create a duplicate of the current line below the current line
+  * RaiseLine :: Transpose the current line with the line above it
+  * LowerLine :: Transpose the current line with the line below it
+  * SelectEnclosed :: Select the content between enclose chars, quotes or tags
+** Line-spacing
+# <<linespacing>>
+Increase or decrease space between lines
+* M
+** Macropy                                                          :gedit_3:
+This plugin allows to record and execute macros with Gedit 3
+https://github.com/intangir/gedit-macropy
+** Embedded Terminal
+# <<mterminal>>
+Terminal with multiple windows
+A modified terminal plugin for GEdit. It support multiple tabs. Orginally written by Paolo Borelli.
+
+https://github.com/GunioRobot/gedit-mterminal
+
+** Macropy                                                 :gedit_2:gedit_3:
+Record and execute macros. https://github.com/eguaio/gedit-macropy
+** multiedit
+# <<multiedit>>
+better choce:   -> [[multi_edit]]
+** Multi Edit
+# <<multi_edit>>
+# <<imitation>>
+http://codetree.com.au/projects/imitation/
+http://jon-walsh.com/journal/multi-edit (old)
+
+*Imitation* is a plugin for the gedit text editor, that allows the user to edit a document in multiple
+places simultaneously. It does this by enabling the user to place marks in different parts of a
+document that act as virtual text cursors. It is designed to aid repetitive programming tasks.
+
+  * =Multi-edit= (hyphen) was created by me for gedit 2
+  * =Multi Edit= (no hyphen) was based on my work but created by another author
+  * =Imitation= is a sequel to Multi-edit created by me for gedit 3
+
+[[#replacement]] for [[columnmode]], [[multiedit]]  
+
+
+* N
+** Remote File System Save Hack
+# <<netsave>>
+
+For people who want to use gedit to edit files on remote filesystems but don't want to see that
+pesky 'file has been modified since being read' warning every minute.
+
+http://chrisnicholls.ca
+
+
+* O
+** open-folder
+http://code.google.com/p/gedit-open-folder/
+** Open Terminal                                                    :gedit_3:
+# <<open_terminal>>
+
+This plugin adds a 'open terminal' shortcut
+
+http://code.google.com/p/gedit-improving-plugins
+** Open URI Context Menu.                                   :gedit_2:gedit_3:
+# <<open-uri-context-menu>>
+Adds context menu item to open an URI at the pointer
+position. http://www.jpfleury.net/en/software/open-uri-context-menu.php
+* P
+** Pair Character Completion                               :gedit_2:gedit_3:
+## <<pair_char_completion>>
+http://code.google.com/p/gedit-pair-char-autocomplete
+
+Automatically insert closing quotes and parenthesis
+
+Pair complete for quotes and braces, that also wrap selected text.
+
+  * [ ] vs [[gemini]]
+  * [ ] vs [[bracketcompletion]]]
+** Pastie 
+Paste a selection of code or a source file to pastie.org directly from editor http://github.com/ivyl/gedit-pastie
+
+** Project Manager
+http://sourceforge.net/projects/gedit-fileset/
+
+Project Manager - groups files into "projects"
+
+screeshot: http://sourceforge.net/projects/gedit-fileset/screenshots/94132/182/137
+
+* Q
+** Quick Highlight Mode
+# <<quickhighligthmode>>
+Fast change current highlight mode.
+Press Ctrl+Shift+H for quick highlight selection
+
+http://simplesideias.com.br/
+
+* R
+** Regex Search Replace
+# <<regex_replace>>
+Search and replace with regular expressions.
+
+** Reopen Tabs                                                      :gedit_2:
+# <<reopen-tabs>>
+Saves opened tabs on exit to restore them on next run.
+
+http://code.google.com/p/reopen-tabs-gedit-plugin/
+
+Loads recently opened documents when Gedit starts. 
+
+for gedit-3: -> [[Restore Tabs]]
+
+*** Fork with some bug fixes and improvements. More: https://github.com/disfated/gedit-plugin-reopen-tabs
+# <<reopen-tabs_fork>>
+
+#+begin_src python "win32 patch"
+  #reopen-tabs/plugin.py #235
+           # Check if document exists
+           if os.name=='nt':
+                   realpath = uri.replace('file:///', '', 1)
+                   realpath = realpath.replace('%20', ' ')
+                   print "[reopen-tabs]: realpath=%s" % realpath
+                   if not os.path.exists(realpath): continue
+           else:
+                   if not os.path.exists(uri.replace('file://', '', 1)): continue                 
+  
+#+end_src
+
+** Restore Tabs                                                     :gedit_3:
+https://github.com/Quixotix/gedit-restore-tabs
+
+Upon starting Gedit, this plugin will try restore all open documents from the last Gedit window that
+was closed.
+
+This plugin is NOT compatible with Gedit 2.x.
+ 
+** REMOTE EDITING FILE
+# <<remote-editing-file>>
+http://code.google.com/p/gedit-remote-editing-file/
+
+Open files from FTP or SSH and edit, when saved the file will be uploaded back. 
+** Right Pane                                                       :gedit_2:
+# <<rightpane>>
+http://sourceforge.net/projects/gedit-rightpane/
+
+Gedit plugin: Allows to display a right side pane. A left-right pane manager is included.
+
+*** for gedit-3: https://github.com/aniav/gedit-rightpane-plugin (not working yet)
+** Embedded Runcible
+# <<runcible>>
+Embedded Runcible (termnal)
+
+* S
+** sessionsaver
+# <<sessionsaver>>
+ -> [[reopen-tabs]]
+** showtabbar                                                        :native:
+** smartspaces
+** Smart Indent
+# <<smart_indent>>
+Smart Indentation regex based.
+** Smart Highlighting                                       :gedit_2:gedit_3:
+# <<smart_highlight>>
+http://code.google.com/p/smart-highlighting-gedit
+
+support gedit-2 & gedit-3 
+*** similar plugin: highlight-text
+but gedit-2 only
+http://code.google.com/p/gedit-highlight-text 
+** snapopen
+** Split View
+# <<SplitView>>
+website: (unknown)
+Author: Mike Doty
+
+Create a split view.
+*** Split View (gedit-3 port)                                       :gedit_3:
+Show multiple views a single document, editable simultaneously. Project page:
+https://github.com/jonocodes/GeditSplitView
+** sourcecodebrowser                                                :gedit_3:
+https://github.com/Quixotix/gedit-source-code-browser
+
+This plugin will add a new tab to the side pane in the Gedit text editor which shows symbols
+(functions, classes, variables, etc.) for the active document. Clicking a symbol in the list wil
+jump to the line on which that symbol is defined.
+
+screenshot:   http://is.gd/RyaabQ
+
+** symbolbrowser                                                    :gedit_2:
+http://www.micahcarrick.com/gedit-symbol-browser-plugin.html
+
+Features
+  * Supports 34 programming languages (based on ctags)
+  * Symbols displayed in a tree grouped by symbol type
+  * Icons for symbols can be added for any symbol type ctags can parse
+  * Works with local and remote files (SSH, FTP, etc.)
+  * View symbols from active tab or from all opened documents
+  * Optionally show line number, programming language, and source file in the tree
+  * Double-click a symbol to jump to it in the source code
+
+This plugin is for Gedit 2.x only. For a Gedit 3 / GNOME 3 version of this plugin, see my Gedit 3
+[[sourcecodebrowser][Source Code Browser]] plugin that can be found at https://github.com/Quixotix/gedit-source-code-browser.
+** Scratch Tab
+# <<scratchtab>>
+http://www.omacronides.com/project/gedit-scratchtab/
+* T
+** Tabs Enhanced                                                    :gedit_2:
+# <<tabs_enhanced>>
+
+http://code.google.com/p/tabs-enhanced/
+
+Fork of Tabs extend - http://code.google.com/p/gedit-tabsextend/
+
+Features:
+  * Middle-click to close tabs
+  * Middle-click on tab bar to close current tab
+  * Undo closed tabs
+  * Close other tabs
+  * Option: Auto-hide tab-bar when only one tab open
+  * Option: Close gEdit when last tab closes 
+
+  * [ ] no gedit-3 version
+
+** Tabs Extend                                                      :gedit_3:
+# <<tabsextend>>
+Tabs extend options (Undo Close, Close All, Close Others) for gedit editor.
+
+https://github.com/diegoguimaraes/gedit-tabsextend
+
+better replacement -> [[tabs_enhanced]]
+
+** Tabs Shortcuts                                                   :gedit_3:
+# <<tabs_shortcuts>>
+
+Adds shortcuts to switch tabs like in Firefox
+http://code.google.com/p/gedit-improving-plugins
+** TabSwitch                                                        :gedit_3:
+# <<tabswitch>>
+Allows to ctrl+tab-switch between documents
+
+https://github.com/gmate/gmate/tree/master/plugins/gedit2/tabswitch
+** Tabulation
+Auto set tabs and spaces based on file type.
+
+** Gedit Todo
+# <<gedittodo>>
+Find Todo Marks in source files (integrated with filebrowser).
+
+website: http://gedit-todo.sourceforge.net/
+
+** \TODO List
+# <<todo>>
+Textmate TODO List bundle port for Gedit
+http://blog.siverti.com.br/gmate
+
+** Terminal
+# <<terminal>>
+
+** TextMate Completion
+# <<textmate_completion>>
+Code autocompletion pressing ESC
+https://bitbucket.org/pablobm/gedit-textmate_completion
+
+** TextMate Style Autocompletion
+# <<tm_autocomplete>>
+TextMate style autocompletion
+
+Better autocompletion. Tap Esc to cycle through the available completions.
+
+http://code.google.com/p/gedit-tm-autocomplete/
+
+** Text Map
+# <<textmap>>
+Navigatable thumbnail of the entire file http://1dan.org/gedit-plugins/textmap/
+
+screenshot: http://1dan.org/gedit-plugins/textmap/textmap-screencap1.gif
+** Text Size
+# <<textsize>>
+Easily increase and decrease the text size.
+
+** Text Tools
+# <<text_tools>>
+http://blog.siverti.com.br/gmate (bad?)
+
+Some text manipulation improvements (adapted from line tools).
+
+  * ClearLine :: Remove all the characters on the current line
+  * DuplicateLine ::Create a duplicate of the current line below the current line
+  * RaiseLine :: Transpose the current line with the line above it
+  * LowerLine :: Transpose the current line with the line below it
+  * SelectEnclosed :: Select the content between enclose chars, quotes or tags
+
+** Textile Preview
+# <<textilepreview>>
+Show the HTML version of the Textile text you're editing
+** Trailsave
+# <<trailsave>>
+Remove trailing spaces before save a document.
+* U
+* V
+* W
+** Word Completion                                                  :native:
+# <<wordcompletion>>
+Word completion using the completion framework.
+
+replacement in python -> [[completion]]
+
+** Web Browser
+# <<webbrowser>>
+A Web Browser within Gedit
+http://sharkbaitbobby.googlepages.com/gedit-webbrowser
+
+** White Space Terminator                                           :gedit_3:
+# <<whitespace_terminator>>
+https://github.com/Kozea/Gedit-WhiteSpace-Terminator
+
+** whitespaces
+# <<whitespace>>
+https://live.gnome.org/Gedit/PluginsOld#line-696
+
+Show Whitespace Characters.
+
+  - [ ] gedit-2 version not longer available: https://github.com/rcvalle/gedit-2-whitespace
+  - gedit-3 version: https://github.com/yordan94/gedit-3-whitespace/
+
+ [[#replacement]] for [[drawspaces][native drawspaces]]                           :mate:
+* X
+** XML Helper
+# <<xmlhelper>>
+Adds two commands for writing XML documents -- end the currently open XML element, and create a copy
+of the last closed one.
+
+http://matej.ceplovi.cz
+
+* Y
+* Z
+** Zen Coding                                                      :gedit_3:
+# <<zencoding>>
+Tools for faster HTML/CSS coding http://github.com/mikecrittenden/zen-coding-gedit
+** Zoom. 
+Adds the ability to change the text size. http://github.com/algorich/gedit-zoom
+
+
+* official gedit-plugins
+# <<gedit-plugins>>
+** [[bookmarks]]
+** [[bracketcompletion]]
+** [[charmap]]
+** [[codecomment]]
+** [[colorpicker]]
+** [[commander]]
+** [[drawspaces]]
+** [[joinlines]]
+** [[multiedit]]
+** [[sessionsaver]]
+** [[showtabbar]]
+** [[smartspaces]]
+** [[terminal]]
+** [[wordcompletion]]
+* gmate pack
+# <<gmate>>
+** gedit-2                                                          :gedit_2:
+*** [[advanced-bookmarks]]
+*** [[align]]
+*** [[align-columns]]
+*** [[classbrowser]]
+*** [[clickconfig]]
+*** [[completion]]
+*** [[editshortcut]]
+*** [[encoding]]
+*** [[file-search]]
+*** [[FindInFiles]]
+*** [[FindInProject]]
+*** [[folding]]
+*** [[fuzzyopen]]
+*** [[gedit_openfiles]]
+*** [[gemini]]
+*** [[highlight_edited_lines]]
+*** [[indent-converter]]
+*** [[lastdocs]]
+*** [[mterminal]]
+*** [[multi_edit]]
+*** [[pair_char_completion]]
+*** [[pastie]]
+*** [[quickhighlightmode]]
+*** [[rails_extract_partial]]
+*** [[rails_hotcommands]]
+*** [[rails_hotkeys]]
+*** [[regex_replace]]
+*** [[reopen-tabs]]
+*** [[rubyonrailsloader]]
+*** [[smart_indent]]
+*** [[snapopen]]
+*** [[tabswitch]]
+*** [[text_tools]]
+*** [[textmap]]
+*** [[textsize]]
+*** [[tm_autocomplete]]
+*** [[todo]]
+*** [[trailsave]]
+*** [[zencoding]]
+*** [[zoom]]
+
+** gedit-3
+*** [[FindInFiles]]
+*** [[gemini]]
+*** [[macropy]]
+*** [[open-uri-context-menu]]
+*** [[pair_char_completion]]
+*** [[restoretabs]]
+*** [[rubyonrailsloader]]
+*** [[smart_highlight]]
+*** [[snapopen]]
+*** [[tabswitch]]
+*** [[whitespace_terminator]]
+*** [[zencoding]]
+
+* gedit-conf pack                                                   :gedit_2:
+code: https://github.com/ltoth/gedit-conf/tree/master/plugins
+
+** [[FindInFiles]]
+** [[SplitView]]
+** [[classbrowser]]
+** [[columnmode]]
+** [[completion]]                                                       :editing:
+** [[editshortcut]]                                                     :gedit_2:
+** [[elastictabstops]]
+** [[fullscreenpy]]
+** [[gemini]]
+** [[html-tidy]]
+** [[line_tools]]                                                       :editing:
+** [[netsave]]
+** [[quickhighlightmode]]
+** [[rails_extract_partial]]                                              :rails:
+** [[rails_hotcommands]]                                                  :rails:
+** [[rails_hotkeys]]                                                  :rails:
+** [[regex_replace]]                                                    :editing:
+** [[smart_indent]]                                                     :editing:
+** [[snapopen]]
+** [[textilepreview]]
+** [[todo]]
+** [[toggle-text-wrap]]                                                 :editing:
+** [[trailsave]]
+** [[webbrowser]]
+** [[xmlhelper]]
+* gedit-mate pack                                                   :gedit_2:
+https://github.com/aubergene/gedit-mate
+** [[FileInFiles]]
+** [[advanced-bookmarks]]
+** [[align]]
+** [[classbrowser]]
+** [[code_formatter]]
+** [[completion]]
+** [[gemini]]
+** [[gotofile]]
+** [[html-tidy]]
+** [[pastie]]
+** [[quickhighlightmode]]
+** [[rails_extract_partial]]
+** [[smart_indent]]
+** [[snapopen]]
+** [[text_tools]]                                                       :editing:
+** [[todo]]
+** [[trailsave]]
+* power-gedit pack                                                  :gedit_2:
+https://github.com/shiloa/power-gedit/
+
+** [[advanced_editing]]
+** [[auto_completion]]
+** [[classbrowser]]
+** [[code_formatter]]
+** [[completion]]
+** [[html-tidy]]
+** [[line_tools]]
+** [[rails_hotcommands]]
+** [[rails_hotkeys]]
+** [[snapopen]]
+* Gedit Improving Plugins                                          :gedit_3:
+# <<gedit-improving-plugins>>
+
+http://code.google.com/p/gedit-improving-plugins/
+
+#+begin_comment
+Features
+
+  * Indent Key Plugin :: Adds 2 shortcuts (ctrl-T and ctrl-shift-T) for indentation. Also auto-detects
+    lists and changes the bullet.
+  * Intelligent Text Completion :: Saves a lot of typing. For more information, see
+    http://code.google.com/p/gedit-intelligent-text-completion/.
+  * Line Tools Plugin :: Adds 3 shortcuts of which the duplicate shortcut (ctrl-B) is the most handy.
+  * Open Terminal :: Adds a shortcut (ctrl-E) to open the terminal at the current location.
+  * Tabs Shortcuts :: Adds shortcuts to switch between tabs like in Firefox
+  * Word Completion :: Complete your words by already present words. Works like a charm and saves huge
+    amounts of effort
+#+end_comment
+
+** [[completion]]
+** [[indent_keys]]
+** [[intelligent_text_completion]]
+** [[line_tools]]
+** [[open_terminal]]
+** [[tabs_shortcuts]]
+* scite-gedit-plugins pack
+http://code.google.com/p/scite-gedit-plugins
+** [[advanced_editing]]
+** [[advanced-bookmarks]]
+** [[advanced-find]]
+** [[controlyourtabs]]
+** +leap+  
+
+** [[python_indentation]]
+** [[pythoncompletion]]
+** [[runcible]]
+** [[snapopen]]
+* gedit-plugins-extra rpm (mardriva cooker)
+# <<gedit-plugins-extra>>
+** [[current-line]]
+** [[deletion]]
+** [[docprop]]
+** [[FindInDocuments]]
+** [[linespacing]]
+** [[pythonoutline]]
+** [[scratchtab]]
+ 
+
+* python
+** Better Python Console                                    :gedit_2:gedit_3:
+https://github.com/jonocodes/gedit-betterpythonconsole
+
+The Better Python Console Plugin aims to provide a simple IDLE-like Python 
+console for the Gnome Editor. Unlike IDLE, you can open as many consoles 
+as you need. 
+
+gedit-2 & gedit-3
+
+** ipythonconsole                                           :gedit_2:ipython:
+http://code.google.com/p/gedit-ipythonconsole/
+https://github.com/nuxlli/gedit-ipythonconsole
+
+  * [ ]no color on win32?
+** ipython
+https://github.com/smathot/gedit-plugin-ipython
+
+The Gedit IPython plugin allows you to select text in Gedit and run it straight away in an IPython
+shell by pressing Control+R. This is very convenient if you quickly want to run short pieces of
+code. Please note that executing long pieces of code may not work well.
+
+intro:    http://www.cogsci.nl/software/gedit-ipython-plugin
+
+** checkpython                                        :gedit_3:pep8:pyflakes:
+https://github.com/rdunklau/Gedit-checkpython
+
+Gedit Python checker: pep8 & pyflakes (for gedit-3)
+
+** pycheck                                                     :gedit_2:pep8:
+https://github.com/tmf16/gedit-pycheck
+
+Gedit Python pep8 pyflakes
+
+** pylint                                                    :gedit_2:pylint:
+https://github.com/phsilva/gedit-pylint
+
+gedit-pylint is a small Python plugin to use pylint
+(http://www.logilab.org/pylint) inside GNOME's Gedit editor.
+
+** django-project                                            :django:gedit_3:
+https://github.com/Quixotix/gedit-django-project
+
+Gedit Django Project adds GUI interfaces for django-admin.py and manage.py commands within Gedit and
+simplifies working with Django projects.
+
+#+begin_comment
+*Features*
+
+  * Create new projects (manage.py startproject) and apps (manage.py startapp).
+  * Supports most of the django-admin.py and manage.py commands.
+  * Run the Django development server (manage.py runserver) in a dedicated bottom panel.
+  * Run the interactive Python interpreter (manage.py shell) in a dedicated bottom panel.
+  * Run the interactive database shell (manage.py dbshell) in a dedicated bottom panel.
+  * Management commands which produce usable output such as dumpdata, sql, inspectdb can optionally
+    be loaded into a new Gedit document.
+  * Select appropriate apps from a GUI list of available apps for management commands which take a
+    list of apps as parameters.
+#+end_comment
+
+intro:      http://www.micahcarrick.com/gedit-as-a-django-ide-for-linux.html
+screenshot: http://is.gd/jZdMaz
+** Python Kit                                         :GOOD:gedit_2:gedit_3:
+# <<pythonkit>>
+https://github.com/iromli/gedit-pythonkit
+
+A toolkit to ease Python development for Gedit.
+
+Python (including django and virtualenv-based) code completion
+
+gedit-2 & gedit-3
+
+注意: gedit-2的版本在这个tag下: [url]https://github.com/iromli/gedit-pythonkit/tree/0.1[/url]
+
+** PythonDefs                                          :FAIL:gedit_2:gedit_3:
+http://code.google.com/p/gedit-python-defs/
+
+It shows a mini source code browser in the current window, listing all definitions found in the
+current code and a list of source code folders.
+
+It supports c code and python code (it also parses python docs and shows them). 
+
+** pythoncompletion
+Python Completion Plugin
+http://code.google.com/p/scite-gedit-plugins/source/browse/#svn%2Ftrunk%2Fpythoncompletion%253Fstate%253Dclosed
+
+** geditchecker                                       :gedit_2:pep8:pyflakes:
+http://code.google.com/p/geditchecker/
+
+This gedit plugin can check syntax python code with pyflakes and pep8.py a can check css with W3C
+utils.
+
+** rope
+http://code.google.com/p/gedit-rope
+
+A Gedit plugin to use rope project management, refactoring and code completion library. 
+
+** Redirect python traceback
+# <<gedit-python-traceback>>
+https://launchpad.net/gedit-python-traceback
+
+** +pythoncodecompletion+ (too old)
+https://github.com/fenrrir/geditpycompletion/
+
+http://linil.wordpress.com/2008/05/31/using-gedit-to-auto-complete-python-code/
+
+** misc
+*** https://github.com/bigbrozer/gedit-snippets                      :django:
+python & django snippets for gedit
+
+*** https://github.com/flmendes/django-snippets-for-gedit            :django:
+Django Snippets for Gedit, converted from TextMate Snippets to Gedit.
+*** gedit-django-template-language
+http://code.google.com/p/gedit-django-template-language/
+** Python Indentation
+# <<python_indentation>>
+Smart indentation for python code. The code is indented when the previous line ends with ':' and
+un-indented if the previous line starts with 'return', 'pass', 'continue' or 'break'. This plugin
+will use your tab configuration for indentation. To respect PEP8 you should set tab width to 4 and
+choose to insert spaces instead of tabs.
+** Python outline
+# <<pythonoutline>>
+Python code structure outline
+http://www.optionexplicit.be/
+
+* ruby
+** Rails File Loader                                                :gedit_2:
+# <<rubyonrailsloader>>
+website: http://blog.siverti.com.br/gmate  (bad)
+
+Detects if a File is a part of a Rails Project and set the language to RubyOnRails
+
+code: https://github.com/ltoth/gedit-conf/tree/master/plugins
+
+** Rails Extract Partial
+# <<rails_extract_partial>>
+website: http://blog.siverti.com.br/gmate  (bad)
+
+Extract Select Text to a rails partial.
+
+code: https://github.com/ltoth/gedit-conf/tree/master/plugins
+
+** Rails Hot Commands 
+# <<rails_hotcommands>>
+http://tiago.zusee.com/
+
+Run Rails (or shell) Commands!
+Execute Rails Commands (such rake tasks).
+
+code: https://github.com/shiloa/power-gedit/blob/master/plugins
+
+** Rails Hotkeys
+# <<rails_hotkeys>>
+
+http://simplesideias.com.br/
+
+Press Ctrl+Shift+R for Rails shortcuts
+Navigation in Rails Project Files.
+
+code: https://github.com/shiloa/power-gedit/blob/master/plugins
+
+** [[textilepreview]]
+
+** others
+  * https://github.com/janlelis/rubybuntu-gedit
+    
+    Ruby/Rails/Web related gedit language definitions, mime types, styles and snippets.
+
+  * https://github.com/junlai/gedit-rails
+
+    This package provides some helpful plugins and language definitions, for developing ruby and
+    ruby on rails applications with gedit.
+* ui
+** [[splitview]]
+** [[restoretabs]]
+** [[reopen-tabs]]                                                      :gedit_2:
+** [[tabsextend]]
+** [[tabs_enhanced]]                                                      :GOOD:
+** [[TabSwitch]]
+** [[Right Pane]]
+* scm
+** git-gedit
+Run Git Comamnds
+
+https://github.com/GunioRobot/git-gedit
+
+** geditsvnplugin
+http://code.google.com/p/geditsvnplugin/
+
+* completion
+** [[Bracket Completion]] from [[gedit-plugins]]                             :native:
+** [[Word Completion]] from [[gedit-plugins]]                                :native:
+# <<wordcompletion>>
+** [[completion]]
+** [[Auto Completion]]
+** [[autocomplete]]
+** [[codecompletion]]
+** [[gemini]]
+** [[pair-char-auto-complete]]
+
+** [[tm_autocomplete]]
+** [[intelligent_text_completion]]
+** TODO Word Completion for python                                     :MATE:
+Combination of Word Completion and Python Code Completion.
+
+https://live.gnome.org/Gedit/PluginsOld#line-709
+
+  - [ ] not accessible
+** [[Python Kit]]
+** [[pythoncompletion]]
+** [[gdp]] 
+* developer
+** [[classbrowser]]                                                 :gedit_2:
+** [[classbrowser3g]]
+** [[sourcecodebrowser]] 
+** [[symbolbrowser]]
+** [[funcbrowser]]
+** [[builder]]
+** [[clientside]]                                                    :javascript:
+** Gedit Developer Plugins                                  :gedit_2:gedit_3:
+# <<gdp>>
+https://launchpad.net/gdp
+
+Gedit Developer Plugins provides additional editing, checking, and project management features to Gedit
+
+This project provides plugins for word and python symbol completion, text formatting, syntax and
+style checking, find and replace in files, and Bazaar DVCS integration.
+
+** GDP find
+# <<gdpfind>>
+Find matching text in multiple files.
+
+NOTE: =grep= not used.
+
+#+begin_src python "win32 patch"
+  # plugins/gdp/__init__.py #192
+  
+#+end_src
+* my choices
+** [[autotab]]
+** [[classbrowser]]
+** [[clickconfig]]
+** [[editshortcut]]
+** [[folding]]
+** [[multi_edit]]
+** [[line_tools]]
+** [[reopen-tabs_fork]]
+** [[Reopen Tabs]]
+only gedit-2 version
+
+for gedit-3 -> [[Restore Tabs]]
+** [[rightpane]]
+** [[tabs_enhanced]]
+only gedit-2 version
+
+for gedit-3, check [[tabsextend]]
+** [[Smart Highlighting]]
+** [[highlight_edited_lines]]
+
+** [[splitview]]
+* TODO
+** scratchtab: http://www.omacronides.com/projets/gedit-scratchtab/
+ or [[gedit-plugins-extra]]
+** gedit-plugins-extra.rpm 
+http://rpmfind.net//linux/RPM/mandriva/devel/cooker/i586/media/contrib/release/gedit-plugins-extra-2.24.1-7.i586.html
+** splitview
+http://webdav.tielie.com/gedit-plugins/splitview/
+** multiview
+http://webdav.tielie.com/gedit-plugins/multiview/
+
+** http://adi.roiban.ro/2011/01/31/power-to-the-users-editable-menu-shortcut-keys/

@@ -1,0 +1,222 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-02 13:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../advancedfind.py:108 ../advancedfind.py:146 ../advancedfind.py:488
+#: ../FindDialog.glade:24
+msgid "Advanced Find/Replace"
+msgstr ""
+
+#: ../advancedfind.py:147
+msgid "Find Next"
+msgstr ""
+
+#: ../advancedfind.py:148
+msgid "Find Previous"
+msgstr ""
+
+#: ../advancedfind.py:149
+msgid "Select and Find Next"
+msgstr ""
+
+#: ../advancedfind.py:150
+msgid "Select and Find Previous"
+msgstr ""
+
+#: ../advancedfind.py:293
+msgid "Nothing is found."
+msgstr ""
+
+#: ../advancedfind_ui.py:291
+msgid "Finding..."
+msgstr ""
+
+#: ../advancedfind_ui.py:335
+msgid "Replacing..."
+msgstr ""
+
+#: ../advancedfind_ui.py:362
+msgid "Replace in this scope is not supported."
+msgstr ""
+
+#: ../find_result.py:78 ../find_result.py:145
+msgid "Next"
+msgstr ""
+
+#: ../find_result.py:81 ../find_result.py:114 ../find_result.py:146
+msgid "Expand All"
+msgstr ""
+
+#: ../find_result.py:84 ../find_result.py:115 ../find_result.py:147
+msgid "Collapse All"
+msgstr ""
+
+#: ../find_result.py:87 ../find_result.py:116 ../find_result.py:148
+msgid "Clear Highlight"
+msgstr ""
+
+#: ../find_result.py:90 ../find_result.py:117 ../find_result.py:149
+msgid "Clear"
+msgstr ""
+
+#: ../find_result.py:118
+msgid "Markup"
+msgstr ""
+
+#: ../find_result.py:140
+msgid "Show Buttons"
+msgstr ""
+
+#: ../config.glade:6
+msgid "Configuration"
+msgstr ""
+
+#: ../config.glade:33
+msgid "Foreground color : "
+msgstr ""
+
+#: ../config.glade:66
+msgid "Background color : "
+msgstr ""
+
+#: ../config.glade:102
+msgid "<b>Result Highlighting</b>"
+msgstr ""
+
+#: ../config.glade:137
+msgid "Root Follow Filebrowser"
+msgstr ""
+
+#: ../config.glade:173
+msgid "<b>Others</b>"
+msgstr ""
+
+#: ../FindDialog.glade:70
+msgid "Find what : "
+msgstr ""
+
+#: ../FindDialog.glade:81
+msgid "Replace with : "
+msgstr ""
+
+#: ../FindDialog.glade:137
+msgid "Forward"
+msgstr ""
+
+#: ../FindDialog.glade:153
+msgid "Backward"
+msgstr ""
+
+#: ../FindDialog.glade:190
+msgid "<b>Direction</b>"
+msgstr ""
+
+#: ../FindDialog.glade:214
+msgid "Current Document"
+msgstr ""
+
+#: ../FindDialog.glade:230
+msgid "All Opened Documents"
+msgstr ""
+
+#: ../FindDialog.glade:246
+msgid "All Documents in Directory"
+msgstr ""
+
+#: ../FindDialog.glade:262
+msgid "Current Selected Text"
+msgstr ""
+
+#: ../FindDialog.glade:283
+msgid "<b>Scope</b>"
+msgstr ""
+
+#: ../FindDialog.glade:321
+msgid "Match whole word"
+msgstr ""
+
+#: ../FindDialog.glade:331
+msgid "Match case"
+msgstr ""
+
+#: ../FindDialog.glade:345
+msgid "Wrap around"
+msgstr ""
+
+#: ../FindDialog.glade:359
+msgid "Directory follow current doc."
+msgstr ""
+
+#: ../FindDialog.glade:373
+msgid "Directoy include sub-folder"
+msgstr ""
+
+#: ../FindDialog.glade:389
+msgid "Regular expression"
+msgstr ""
+
+#: ../FindDialog.glade:410
+msgid "<b>Options</b>"
+msgstr ""
+
+#: ../FindDialog.glade:435
+msgid "Filter : "
+msgstr ""
+
+#: ../FindDialog.glade:446
+msgid "Directory : "
+msgstr ""
+
+#: ../FindDialog.glade:481
+msgid "..."
+msgstr ""
+
+#: ../FindDialog.glade:505
+msgid "<b>Path</b>"
+msgstr ""
+
+#: ../FindDialog.glade:539
+msgid "Find"
+msgstr ""
+
+#: ../FindDialog.glade:553
+msgid "Replace"
+msgstr ""
+
+#: ../FindDialog.glade:567
+msgid "Find All"
+msgstr ""
+
+#: ../FindDialog.glade:581
+msgid "Replace All"
+msgstr ""
+
+#: ../FindDialog.glade:595
+msgid "Close"
+msgstr ""
+
+#: ../FindDialog.glade:641
+msgid "Select a directory"
+msgstr ""
+
+#: ../FindDialog.glade:664
+msgid "Cancel"
+msgstr ""
+
+#: ../FindDialog.glade:678
+msgid "Ok"
+msgstr ""

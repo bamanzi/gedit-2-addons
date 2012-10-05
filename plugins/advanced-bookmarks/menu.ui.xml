@@ -1,7 +1,7 @@
 <ui>
   <menubar name="MenuBar">
     <menu name="SearchMenu" action="Search">
-      <placeholder name="SearchOps_6">
+      <placeholder name="SearchOps_7">
         <menu name="AdvancedBookmarks" action="AdvancedBookmarks">
           <menu name="NumberedBookmarks" action="NumberedBookmarks">
             <menuitem name="ToggleBookmark0" action="ToggleBookmark0"/>

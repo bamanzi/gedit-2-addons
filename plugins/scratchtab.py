@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-
 
+import os
 try:
     import gedit
-    is_mate = False
+    SCRATCH_FILE = os.path.expanduser('~/.gnome2/gedit/plugins/scratchtab.txt')
 except:
     import pluma as gedit
-    is_mate = True
+    SCRATCH_FILE = os.path.expanduser('~/.config/pluma/plugins/scratchtab.txt')
 import gtk
-import os
 from os import path
 
-scratch_file = os.path.expanduser("~/.gnome2/gedit/plugins/scratchtab.txt")
-if not os.access(scratch_file, os.F_OK):
-	os.system('touch "%s"' % scratch_file)
+
+if not os.access(SCRATCH_FILE, os.F_OK):
+	os.system('touch "%s"' % SCRATCH_FILE)
+
 
 class scratchTabHelper:
 

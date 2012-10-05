@@ -1,0 +1,17 @@
+[Gedit Plugin]
+Loader=python
+Module=advancedfind
+IAge=2
+
+Name=Advanced Find/Replace
+Name[zh_TW]=Advanced Find/Replace
+Name[es_ES]=Buscar/Reemplazar avanzado
+
+Description=Search and replace in all documents/tabs.
+Description[zh_TW]=在所有文件中進行搜尋/取代
+Description[es_ES]=Buscar/Reemplazar avanzado
+
+
+Authors=Swatch
+Copyright=GPLv2
+Website=http://code.google.com/p/advanced-find/

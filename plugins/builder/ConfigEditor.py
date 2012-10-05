@@ -19,11 +19,13 @@ import logging
 import os.path
 
 import gtk
-import gconf
+
 try:
     import gedit
+    import gconf
 except:
-    import mateconf as gedit
+    import pluma as gedit
+    import mateconf as gconf
 
 
 class ConfigEditor(object):

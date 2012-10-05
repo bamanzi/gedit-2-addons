@@ -8,5 +8,5 @@ tab3 = Find in files
 tab2 = Class Browser
 
 [left_pane]
-visible = False
+visible = True
 

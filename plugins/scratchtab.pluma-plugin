@@ -1,0 +1,9 @@
+[Pluma Plugin]
+Loader=python
+Module=scratchtab
+IAge=2
+Name=Scratch Tab
+Description=Take Notes
+Authors=Rui Nibau
+Copyright=Copyright (C) 2007 Rui Nibau
+Website=http://www.omacronides.com/project/gedit-scratchtab/

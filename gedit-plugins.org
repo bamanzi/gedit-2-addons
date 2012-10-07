@@ -48,7 +48,7 @@ https://live.gnome.org/Gedit/AdvancedEditingPlugin
   * 'Remove Whitespace'
   * 'Reduce Whitespace'
 
-** Advanced Find                                            :gedit_2:gedit_3:
+** Advanced Find/Replace                                    :gedit_2:gedit_3:
 # <<advancedfind>>
 website: http://code.google.com/p/advanced-find/
 
@@ -227,10 +227,17 @@ Align text following tab characters with elastic tabstops.
 * F
 ** File Search
 # <<file-search>>
-This is a search plugin for Gedit to search for a text inside a directory. https://github.com/oliver/gedit-file-search
+This is a search plugin for Gedit to search for a text inside a
+directory. https://github.com/oliver/gedit-file-search
+
+screenshot: http://oliver.github.com/gedit-file-search/gedit-file-search-screenshot-5-thumb.png
+
 ** Find in Project
 # <<FindInProject>>
 Search in the project with ack/grep. http://github.com/eggegg/find-in-project
+** Find In Documents
+# <<FindInDocuments>>
+Search all open documents.
 
 ** Find In Files                                                    :gedit_2:
 # <<findinfiles>>
@@ -245,13 +252,6 @@ Collapse selected text.
 https://github.com/influx6/gedit-folding
 
   * [ ] gedit-3 version?
-
-** File Search                                                      :gedit_2:
-# <<file-search>>
-http://oliver.github.com/gedit-file-search/
-Gedit plugin to search a text in all files in a directory 
-
-screenshot: http://oliver.github.com/gedit-file-search/gedit-file-search-screenshot-5-thumb.png
 
 ** Ftp Browser
 # <<ftp-browser>>
@@ -270,9 +270,6 @@ http://sourceforge.net/projects/gedit-funcbrows
 ** Fuzzy Open
 # <<fuzzopen>>
 Quick way to open file in project. http://github.com/eggegg/fuzzyopen
-** Find In Documents
-# <<FindInDocuments>>
-Search all open documents.
 * G
 ** Gedit Open File
 # <<gedit_openfiles>>
@@ -290,7 +287,7 @@ Smart completion of common characters we use in pairs. ({["''"]})
 
 Easily open and switch between files.
 
-** grep                                                                :TODO:
+** grep
 
 http://code.google.com/p/gedit-grep/
 
@@ -414,8 +411,7 @@ a python source code, it can also run it inside a special
 python-specific "running" window, displaying the stdout/stderr from
 your python-program.
 
-
-** Embedded Terminal
+** (Multiple) Embedded Terminal
 # <<mterminal>>
 Terminal with multiple windows
 A modified terminal plugin for GEdit. It support multiple tabs. Orginally written by Paolo Borelli.
@@ -534,7 +530,7 @@ Upon starting Gedit, this plugin will try restore all open documents from the la
 was closed.
 
 This plugin is NOT compatible with Gedit 2.x.
- 
+
 ** REMOTE EDITING FILE
 # <<remote-editing-file>>
 http://code.google.com/p/gedit-remote-editing-file/
@@ -552,6 +548,9 @@ Gedit plugin: Allows to display a right side pane. A left-right pane manager is 
 Embedded Runcible (termnal)
 
 * S
+** Scratch Tab
+# <<scratchtab>>
+http://www.omacronides.com/project/gedit-scratchtab/
 ** sessionsaver
 # <<sessionsaver>>
  -> [[reopen-tabs]]
@@ -569,6 +568,14 @@ support gedit-2 & gedit-3
 but gedit-2 only
 http://code.google.com/p/gedit-highlight-text 
 ** snapopen
+** sourcecodebrowser                                                :gedit_3:
+https://github.com/Quixotix/gedit-source-code-browser
+
+This plugin will add a new tab to the side pane in the Gedit text editor which shows symbols
+(functions, classes, variables, etc.) for the active document. Clicking a symbol in the list wil
+jump to the line on which that symbol is defined.
+
+screenshot:   http://is.gd/RyaabQ
 ** Split View
 # <<SplitView>>
 website: (unknown)
@@ -578,15 +585,6 @@ Create a split view.
 *** Split View (gedit-3 port)                                       :gedit_3:
 Show multiple views a single document, editable simultaneously. Project page:
 https://github.com/jonocodes/GeditSplitView
-** sourcecodebrowser                                                :gedit_3:
-https://github.com/Quixotix/gedit-source-code-browser
-
-This plugin will add a new tab to the side pane in the Gedit text editor which shows symbols
-(functions, classes, variables, etc.) for the active document. Clicking a symbol in the list wil
-jump to the line on which that symbol is defined.
-
-screenshot:   http://is.gd/RyaabQ
-
 ** symbolbrowser                                                    :gedit_2:
 http://www.micahcarrick.com/gedit-symbol-browser-plugin.html
 
@@ -601,9 +599,6 @@ Features
 
 This plugin is for Gedit 2.x only. For a Gedit 3 / GNOME 3 version of this plugin, see my Gedit 3
 [[sourcecodebrowser][Source Code Browser]] plugin that can be found at https://github.com/Quixotix/gedit-source-code-browser.
-** Scratch Tab
-# <<scratchtab>>
-http://www.omacronides.com/project/gedit-scratchtab/
 * T
 ** Tabs Enhanced                                                    :gedit_2:
 # <<tabs_enhanced>>
@@ -915,17 +910,34 @@ http://code.google.com/p/scite-gedit-plugins
 ** [[snapopen]]
 * gedit-plugins-extra rpm (mardriva cooker)
 # <<gedit-plugins-extra>>
+
+http://rpmfind.net//linux/RPM/mandriva/devel/cooker/i586/media/contrib/release/gedit-plugins-extra-2.24.1-7.i586.html
+
+** [[advanced-bookmarks]]
+** [[advanced_editing]]
+** [[align]]
+** [[auto_completion]]
+** [[autotab]]
+** [[browser]]
+** [[completion]]
 ** [[current-line]]
 ** [[deletion]]
 ** [[docprop]]
+** [[editshortcut]]
 ** [[FindInDocuments]]
+** GeditLaTeXPlugin
 ** [[linespacing]]
 ** [[pythonoutline]]
+** [[reopen-tabs]]
 ** [[scratchtab]]
- 
+** [[snapopen]]
+** [[splitview]]
+** [[todo]]
+** [[trailsave]]
 
 * python
-** Better Python Console                                    :gedit_2:gedit_3:
+** console
+*** Better Python Console                                   :gedit_2:gedit_3:
 https://github.com/jonocodes/gedit-betterpythonconsole
 
 The Better Python Console Plugin aims to provide a simple IDLE-like Python 
@@ -934,12 +946,58 @@ as you need.
 
 gedit-2 & gedit-3
 
-** ipythonconsole                                           :gedit_2:ipython:
+*** ipythonconsole                                          :gedit_2:ipython:
 http://code.google.com/p/gedit-ipythonconsole/
 https://github.com/nuxlli/gedit-ipythonconsole
 
   * [ ]no color on win32?
-** ipython
+** linter
+*** checkpython                                       :gedit_3:pep8:pyflakes:
+https://github.com/rdunklau/Gedit-checkpython
+
+Gedit Python checker: pep8 & pyflakes (for gedit-3)
+
+*** pycheck                                                    :gedit_2:pep8:
+https://github.com/tmf16/gedit-pycheck
+
+Gedit Python pep8 pyflakes
+
+*** pylint                                                   :gedit_2:pylint:
+https://github.com/phsilva/gedit-pylint
+
+gedit-pylint is a small Python plugin to use pylint
+(http://www.logilab.org/pylint) inside GNOME's Gedit editor.
+*** geditchecker                                      :gedit_2:pep8:pyflakes:
+http://code.google.com/p/geditchecker/
+
+This gedit plugin can check syntax python code with pyflakes and pep8.py a can check css with W3C
+utils.
+
+
+** completion
+*** pythoncompletion
+Python Completion Plugin
+http://code.google.com/p/scite-gedit-plugins/source/browse/#svn%2Ftrunk%2Fpythoncompletion%253Fstate%253Dclosed
+*** +pythoncodecompletion+ (too old)
+https://github.com/fenrrir/geditpycompletion/
+
+http://linil.wordpress.com/2008/05/31/using-gedit-to-auto-complete-python-code/
+*** Python Kit                                         :GOOD:gedit_2:gedit_3:
+# <<pythonkit>>
+https://github.com/iromli/gedit-pythonkit
+
+A toolkit to ease Python development for Gedit.
+
+Python (including django and virtualenv-based) code completion
+
+gedit-2 & gedit-3
+
+注意: gedit-2的版本在这个tag下: [url]https://github.com/iromli/gedit-pythonkit/tree/0.1[/url]
+
+*** [[gdpcomplete]]
+
+** misc
+*** ipython
 https://github.com/smathot/gedit-plugin-ipython
 
 The Gedit IPython plugin allows you to select text in Gedit and run it straight away in an IPython
@@ -948,23 +1006,7 @@ code. Please note that executing long pieces of code may not work well.
 
 intro:    http://www.cogsci.nl/software/gedit-ipython-plugin
 
-** checkpython                                        :gedit_3:pep8:pyflakes:
-https://github.com/rdunklau/Gedit-checkpython
-
-Gedit Python checker: pep8 & pyflakes (for gedit-3)
-
-** pycheck                                                     :gedit_2:pep8:
-https://github.com/tmf16/gedit-pycheck
-
-Gedit Python pep8 pyflakes
-
-** pylint                                                    :gedit_2:pylint:
-https://github.com/phsilva/gedit-pylint
-
-gedit-pylint is a small Python plugin to use pylint
-(http://www.logilab.org/pylint) inside GNOME's Gedit editor.
-
-** django-project                                            :django:gedit_3:
+*** django-project                                           :django:gedit_3:
 https://github.com/Quixotix/gedit-django-project
 
 Gedit Django Project adds GUI interfaces for django-admin.py and manage.py commands within Gedit and
@@ -986,19 +1028,8 @@ simplifies working with Django projects.
 
 intro:      http://www.micahcarrick.com/gedit-as-a-django-ide-for-linux.html
 screenshot: http://is.gd/jZdMaz
-** Python Kit                                         :GOOD:gedit_2:gedit_3:
-# <<pythonkit>>
-https://github.com/iromli/gedit-pythonkit
 
-A toolkit to ease Python development for Gedit.
-
-Python (including django and virtualenv-based) code completion
-
-gedit-2 & gedit-3
-
-注意: gedit-2的版本在这个tag下: [url]https://github.com/iromli/gedit-pythonkit/tree/0.1[/url]
-
-** PythonDefs                                          :FAIL:gedit_2:gedit_3:
+*** PythonDefs                                         :FAIL:gedit_2:gedit_3:
 http://code.google.com/p/gedit-python-defs/
 
 It shows a mini source code browser in the current window, listing all definitions found in the
@@ -1006,31 +1037,26 @@ current code and a list of source code folders.
 
 It supports c code and python code (it also parses python docs and shows them). 
 
-** pythoncompletion
-Python Completion Plugin
-http://code.google.com/p/scite-gedit-plugins/source/browse/#svn%2Ftrunk%2Fpythoncompletion%253Fstate%253Dclosed
-
-** geditchecker                                       :gedit_2:pep8:pyflakes:
-http://code.google.com/p/geditchecker/
-
-This gedit plugin can check syntax python code with pyflakes and pep8.py a can check css with W3C
-utils.
-
-** rope
+*** rope
 http://code.google.com/p/gedit-rope
 
 A Gedit plugin to use rope project management, refactoring and code completion library. 
 
-** Redirect python traceback
+*** Redirect python traceback
 # <<gedit-python-traceback>>
 https://launchpad.net/gedit-python-traceback
+*** Python Indentation
+# <<python_indentation>>
+Smart indentation for python code. The code is indented when the previous line ends with ':' and
+un-indented if the previous line starts with 'return', 'pass', 'continue' or 'break'. This plugin
+will use your tab configuration for indentation. To respect PEP8 you should set tab width to 4 and
+choose to insert spaces instead of tabs.
+*** Python outline
+# <<pythonoutline>>
+Python code structure outline
+http://www.optionexplicit.be/
 
-** +pythoncodecompletion+ (too old)
-https://github.com/fenrrir/geditpycompletion/
-
-http://linil.wordpress.com/2008/05/31/using-gedit-to-auto-complete-python-code/
-
-** misc
+** templates
 *** https://github.com/bigbrozer/gedit-snippets                      :django:
 python & django snippets for gedit
 
@@ -1038,16 +1064,6 @@ python & django snippets for gedit
 Django Snippets for Gedit, converted from TextMate Snippets to Gedit.
 *** gedit-django-template-language
 http://code.google.com/p/gedit-django-template-language/
-** Python Indentation
-# <<python_indentation>>
-Smart indentation for python code. The code is indented when the previous line ends with ':' and
-un-indented if the previous line starts with 'return', 'pass', 'continue' or 'break'. This plugin
-will use your tab configuration for indentation. To respect PEP8 you should set tab width to 4 and
-choose to insert spaces instead of tabs.
-** Python outline
-# <<pythonoutline>>
-Python code structure outline
-http://www.optionexplicit.be/
 
 * ruby
 ** Rails File Loader                                                :gedit_2:
@@ -1153,7 +1169,7 @@ Gedit Developer Plugins provides additional editing, checking, and project manag
 This project provides plugins for word and python symbol completion, text formatting, syntax and
 style checking, find and replace in files, and Bazaar DVCS integration.
 
-** GDP find
+*** GDP find
 # <<gdpfind>>
 Find matching text in multiple files.
 
@@ -1164,28 +1180,26 @@ NOTE: =grep= not used.
   
 #+end_src
 * my choices
-** [[advancedfind]]
+** [[advancedfind]] (better than [[grep]], [[gdpfind]], [[findinfiles]], [[findindocuments]] )
 ** [[autotab]]
 ** [[classbrowser]]
 ** [[clickconfig]]
-** [[editshortcut]]
+** [[editshortcut]] #todo: no persistence
 ** [[folding]]
 ** [[multi_edit]]
 ** [[line_tools]]
-** [[reopen-tabs_fork]]
-** [[Reopen Tabs]]
-only gedit-2 version
-
-for gedit-3 -> [[Restore Tabs]]
-** [[rightpane]]
+** reopen-tabs
+for gedit-2, use this fork: [[reopen-tabs_fork]]
+for gedit-3, use [[Restore Tabs]]
+** [[rightpane]] #todo: no gedit-3 version
 ** [[tabs_enhanced]]
 only gedit-2 version
 
 for gedit-3, check [[tabsextend]]
 ** [[Smart Highlighting]]
 ** [[highlight_edited_lines]]
+** [[splitview]] #note: gedit-3 has built-in tabgroup
 
-** [[splitview]]
 * TODO
 ** scratchtab: http://www.omacronides.com/projets/gedit-scratchtab/
  or [[gedit-plugins-extra]]

@@ -1,0 +1,9 @@
+[Gedit Plugin]
+Loader=python
+Module=xmlhelper
+IAge=2
+Name=XML Helper
+Description=Adds two commands for writing XML documents -- end the currently open XML element, and create a copy of the last closed one.
+Authors=Matěj Cepl <mcepl@redhat.com>
+Copyright=Copyright @ 2007
+Website=http://matej.ceplovi.cz

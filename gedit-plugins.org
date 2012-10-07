@@ -951,7 +951,7 @@ http://code.google.com/p/gedit-ipythonconsole/
 https://github.com/nuxlli/gedit-ipythonconsole
 
   * [ ]no color on win32?
-** linter
+** checker
 *** checkpython                                       :gedit_3:pep8:pyflakes:
 https://github.com/rdunklau/Gedit-checkpython
 
@@ -973,16 +973,15 @@ http://code.google.com/p/geditchecker/
 This gedit plugin can check syntax python code with pyflakes and pep8.py a can check css with W3C
 utils.
 
-
 ** completion
-*** pythoncompletion
+*** pythoncompletion                                                   :GOOD:
 Python Completion Plugin
 http://code.google.com/p/scite-gedit-plugins/source/browse/#svn%2Ftrunk%2Fpythoncompletion%253Fstate%253Dclosed
 *** +pythoncodecompletion+ (too old)
 https://github.com/fenrrir/geditpycompletion/
 
 http://linil.wordpress.com/2008/05/31/using-gedit-to-auto-complete-python-code/
-*** Python Kit                                         :GOOD:gedit_2:gedit_3:
+*** Python Kit                                         :TODO:gedit_2:gedit_3:
 # <<pythonkit>>
 https://github.com/iromli/gedit-pythonkit
 
@@ -1029,7 +1028,7 @@ simplifies working with Django projects.
 intro:      http://www.micahcarrick.com/gedit-as-a-django-ide-for-linux.html
 screenshot: http://is.gd/jZdMaz
 
-*** PythonDefs                                         :FAIL:gedit_2:gedit_3:
+*** PythonDefs                                         :TODO:gedit_2:gedit_3:
 http://code.google.com/p/gedit-python-defs/
 
 It shows a mini source code browser in the current window, listing all definitions found in the
@@ -1037,6 +1036,7 @@ current code and a list of source code folders.
 
 It supports c code and python code (it also parses python docs and shows them). 
 
+  - [ ] failed on windows?
 *** rope
 http://code.google.com/p/gedit-rope
 
@@ -1064,6 +1064,12 @@ python & django snippets for gedit
 Django Snippets for Gedit, converted from TextMate Snippets to Gedit.
 *** gedit-django-template-language
 http://code.google.com/p/gedit-django-template-language/
+** TODO Word Completion for python                                     :MATE:
+Combination of Word Completion and Python Code Completion.
+
+https://live.gnome.org/Gedit/PluginsOld#line-709
+
+  - [ ] not accessible
 
 * ruby
 ** Rails File Loader                                                :gedit_2:
@@ -1142,15 +1148,7 @@ http://code.google.com/p/geditsvnplugin/
 
 ** [[tm_autocomplete]]
 ** [[intelligent_text_completion]]
-** TODO Word Completion for python                                     :MATE:
-Combination of Word Completion and Python Code Completion.
-
-https://live.gnome.org/Gedit/PluginsOld#line-709
-
-  - [ ] not accessible
-** [[Python Kit]]
-** [[pythoncompletion]]
-** [[gdp]] 
+** [[gdpsyntaxcompleter]]
 * developer
 ** [[classbrowser]]                                                 :gedit_2:
 ** [[classbrowser3g]]
@@ -1173,12 +1171,25 @@ style checking, find and replace in files, and Bazaar DVCS integration.
 # <<gdpfind>>
 Find matching text in multiple files.
 
+Directories and file types can be specified. Regular expressions are
+supported.
+
 NOTE: =grep= not used.
 
 #+begin_src python "win32 patch"
   # plugins/gdp/__init__.py #192
   
 #+end_src
+*** GDP Syntax Completer
+# <<gdpsyntaxcompleter>>
+Complete words and Python symbols at the cursor.
+
+  * Python completion using the file's imports and definitions. 
+  * Simple word completion based on the words in the file. 
+  * XML-based markup completion will suggest open tag, close tags, and
+    attributes based on the cursor's position.
+
+Use <Control>Slash (Ctrl+/) to activate the completer window.
 * my choices
 ** [[advancedfind]] (better than [[grep]], [[gdpfind]], [[findinfiles]], [[findindocuments]] )
 ** [[autotab]]
@@ -1201,13 +1212,18 @@ for gedit-3, check [[tabsextend]]
 ** [[splitview]] #note: gedit-3 has built-in tabgroup
 
 * TODO
-** scratchtab: http://www.omacronides.com/projets/gedit-scratchtab/
+** DONE scratchtab: http://www.omacronides.com/projets/gedit-scratchtab/
  or [[gedit-plugins-extra]]
-** gedit-plugins-extra.rpm 
+** DONE gedit-plugins-extra.rpm 
 http://rpmfind.net//linux/RPM/mandriva/devel/cooker/i586/media/contrib/release/gedit-plugins-extra-2.24.1-7.i586.html
-** splitview
+** DONE splitview
 http://webdav.tielie.com/gedit-plugins/splitview/
 ** multiview
 http://webdav.tielie.com/gedit-plugins/multiview/
 
+** [[commander]] how to use?
 ** http://adi.roiban.ro/2011/01/31/power-to-the-users-editable-menu-shortcut-keys/
+** giterdone (gitorious.org)
+** gedbp
+** makeandrun
+** builder

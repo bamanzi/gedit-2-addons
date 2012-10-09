@@ -2,8 +2,8 @@
 Loader=python
 Module=SplitView
 IAge=2
-Name=Split View 2
-Description=Create a split view.
+Name=Split View 3.0!
+Description=View 2 documents at once.
 Authors=Mike Doty <mike@psyguygames.com>
-Copyright=© Mike Doty 2008
-Website=http://www.gedit.org/
+Copyright=© Mike Doty 2010
+Website=http://www.psyguygames.com/

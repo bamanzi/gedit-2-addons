@@ -9,6 +9,8 @@ import gobject
 import os
 import time
 
+import urllib
+
 ui_string = """<ui>
   <menubar name="MenuBar">
     <menu name="ViewMenu" action="View">
@@ -24,8 +26,14 @@ class PluginHelper:
     def __init__(self, plugin, window):
         self.window = window
         self.plugin = plugin
-        
+
         self.ui_id = None
+        self.ui_popup_id = None
+
+        self.popup_action = None
+        self.temp_actions = []
+
+        self.document_list = []
 
         # Add a "toggle split view" item to the View menu
         self.insert_menu_item(window)
@@ -37,21 +45,33 @@ class PluginHelper:
         self.split_views = {}
         self.alt_views = {}
 
+        self.tabs_already_using_splitview = []
+
         # This keeps track of whether the user is viewing an ALT document.
         self.same_document = {}
 
         # I hardly even know how this works, but it gets our encoding.
         try: self.encoding = gedit.encoding_get_current()
         except: self.encoding = gedit.gedit_encoding_get_current()
-        
-    def deactivate(self):        
+
+        self.idle_id = gobject.timeout_add(100, self.monitor_documents)
+
+    def deactivate(self):
         self.remove_menu_item()
-        
+
+        gobject.source_remove(self.idle_id)
+
         self.window = None
         self.plugin = None
-        
+
     def update_ui(self):
         return
+
+    def monitor_documents(self):
+
+        self.refresh_popup_submenu()
+
+        return True
 
     def toggle_split_view(self, unused):
         # Get the current tab...
@@ -71,12 +91,61 @@ class PluginHelper:
         else:
             self.split_view(None)
 
+    def build_popup_menu(self):
+
+        # TEST
+        manager = self.window.get_ui_manager()
+
+        if (self.ui_popup_id):
+            manager.remove_ui(self.ui_popup_id)
+            self.ui_popup_id = None
+
+            self.action_group.remove_action(self.popup_action)
+
+        self.ui_popup_id = manager.new_merge_id()
+
+        action_name = "splitview_popup_submenu"
+        path = "/NotebookPopup/NotebookPupupOps_1"
+
+        manager.add_ui(merge_id = self.ui_popup_id,
+                       path = path,
+                       name = action_name,
+                       action = action_name,
+                       type = gtk.UI_MANAGER_MENU,
+                       top = False)
+
+        self.popup_action = gtk.Action(name = action_name, label = "Quick Splitview", tooltip = "Choose another document to view...", stock_id = None)
+        self.popup_action.set_visible(True)
+
+        self.action_group.add_action(self.popup_action)
+
+    def destroy_popup_menu(self):
+
+        manager = self.window.get_ui_manager()
+
+        if (self.ui_popup_id):
+            manager.remove_ui(self.ui_popup_id)
+            self.ui_popup_id = None
+
+            self.action_group.remove_action(self.popup_action)
+
+        for each in self.temp_actions:
+            self.action_group.remove_action(each)
+
     # This function creates the split view.
-    def split_view(self, whatever, direction="vertical"):
+    def split_view(self, whatever = None, direction = "vertical", changing = False):
 
         # Get the tab / document
         current_tab = self.window.get_active_tab()
         current_document = self.window.get_active_document()
+
+        if (not changing):
+
+            if (current_tab in self.tabs_already_using_splitview):
+                return
+
+            else:
+                self.tabs_already_using_splitview.append( current_tab )
 
         old_other_view = None
         if (current_tab in self.split_views):
@@ -234,22 +303,29 @@ class PluginHelper:
             if (current_tab in self.alt_views):
                 self.alt_views.pop(current_tab)
 
+            if (current_tab in self.tabs_already_using_splitview):
+                index = self.tabs_already_using_splitview.index(current_tab)
+
+                self.tabs_already_using_splitview.pop(index)
+
     # Basically recreate the split view.
     def flip_split_view(self, button):
         if (self.btn_flip.get_label() == "Vertical Splitview"):
             self.end_split_view(None, changing = True)
-            self.split_view(None, "horizontal")
+            self.split_view(None, "horizontal", changing = True)
 
             self.btn_flip.set_label("Horizontal Splitview")
 
         else:
             self.end_split_view(None, changing = True)
-            self.split_view(None, "vertical")
+            self.split_view(None, "vertical", changing = True)
 
             self.btn_flip.set_label("Vertical Splitview")
 
         current_tab = self.window.get_active_tab()
-        self.label_other_document.set_label(os.path.basename(self.alt_views[current_tab].get_uri().replace("%20", " ")))
+
+        if (current_tab in self.alt_views):
+            self.label_other_document.set_label(os.path.basename(self.alt_views[current_tab].get_uri().replace("%20", " ")))
 
     # Create a dialog that lets the user select a different document to view...
     def view_other_file(self, button):
@@ -257,6 +333,10 @@ class PluginHelper:
                                        gtk.FILE_CHOOSER_ACTION_OPEN,
                                        (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
                                         gtk.STOCK_OPEN, gtk.RESPONSE_OK))
+
+        current_document = self.window.get_active_document()
+        current_path = urllib.unquote( current_document.get_uri().replace("file://", "") )
+        dialog.set_current_folder( os.path.dirname(current_path) )
 
         filter_list = [
             {"label": "All Files", "patterns": ["*"], "mime-types": []},
@@ -285,7 +365,7 @@ class PluginHelper:
         dialog.destroy()
 
     # Load a separate file into the alternate view.
-    def load_other_file(self, source):
+    def load_other_file(self, source, raw_filename = True):
         current_tab = self.window.get_active_tab()
 
         self.same_document[current_tab] = False
@@ -293,12 +373,18 @@ class PluginHelper:
         self.split_views[current_tab].remove(self.split_views[current_tab].get_children()[1])
 
         new_document = gedit.Document()#.gedit_document_new()
-        new_document.load("file://" + source.replace(" ", "%20"), self.encoding, 1, True)
+
+        if (raw_filename):
+            new_document.load("file://" + source.replace(" ", "%20"), self.encoding, 1, True)
+
+        else:
+            new_document.load(source, self.encoding, 1, True)
+
         new_view = gedit.View(new_document)#.gedit_view_new(new_document)
 
         new_document.connect("mark-set", self.update_line_column_data)
 
-        new_document.save(0)
+        #new_document.save(0)
 
         self.alt_views[current_tab] = new_document
 
@@ -338,8 +424,10 @@ class PluginHelper:
 
         response = dialog.run()
 
-        if (response == gtk.RESPONSE_OK):
+        if (response == gtk.RESPONSE_YES):
             self.alt_views[current_tab].save(0)
+
+            self.show_confirm_save_dialog(None)
 
         elif (response == gtk.RESPONSE_CANCEL):
             dialog.destroy()
@@ -425,14 +513,14 @@ class PluginHelper:
 
     def insert_menu_item(self, window):
         manager = self.window.get_ui_manager()
-        
+
         self.action_group = gtk.ActionGroup("PluginActions")
-        
+
         # Create an action for the "Run in python" menu option
         # and set it to call the "run_document_in_python" function.
         self.split_view_action = gtk.Action(name="ExamplePy", label="Toggle Split View", tooltip="Create a split view of the current document", stock_id=gtk.STOCK_REFRESH)
         self.split_view_action.connect("activate", self.toggle_split_view)
-        
+
         # Add the action with Ctrl + F5 as its keyboard shortcut.
         self.action_group.add_action_with_accel(self.split_view_action, "<Ctrl><Shift>T")
 
@@ -441,22 +529,93 @@ class PluginHelper:
 
         # Add the item to the "Views" menu.
         self.ui_id = manager.add_ui_from_string(ui_string)
-        
+
     def remove_menu_item(self):
-        panel = self.window.get_side_panel()
-        
-        panel.remove_item(self.results_view)
+        self.destroy_popup_menu()
+
+        manager = self.window.get_ui_manager()
+
+        manager.remove_ui(self.ui_id)
+
+        self.ui_id = None
+
+        #panel = self.window.get_side_panel()
+        #panel.remove_item(self.results_view)
+
+    def refresh_popup_submenu(self):
+
+        if (not self.window):
+            return
+
+        doc_list = self.window.get_documents()
+
+        doc_list.sort()
+
+        if (not (self.document_list == doc_list)):
+
+            manager = self.window.get_ui_manager()
+
+            self.build_popup_menu()
+
+            # "temp" actions are the previous "click to launch splitview" actions...
+            for each in self.temp_actions:
+                self.action_group.remove_action(each)
+
+            self.temp_actions = []
+
+            for i in range(0, len(doc_list)):
+
+                #print "Want to add '%s'" % doc_list[i].get_short_name_for_display()
+
+                action_name = "splitview_submenu_option_%d" % i
+                path = "/NotebookPopup/NotebookPupupOps_1/splitview_popup_submenu"
+
+                manager.add_ui(merge_id = self.ui_popup_id,
+                               path = path,
+                               name = action_name,
+                               action = action_name,
+                               type = gtk.UI_MANAGER_MENUITEM,
+                               top = False)
+
+                action = gtk.Action(name = action_name, label = doc_list[i].get_short_name_for_display(), tooltip = "None!", stock_id = None)
+                action.connect("activate", lambda a, doc = doc_list[i]: self.quick_splitview(doc))
+                action.set_visible(True)
+
+                self.action_group.add_action(action)
+
+                self.temp_actions.append(action)
+
+        self.document_list = doc_list
+
+    def quick_splitview(self, doc):
+
+        current_tab = self.window.get_active_tab()
+
+        if (current_tab in self.alt_views):
+            if (self.alt_views[current_tab].is_untouched() == False):
+
+                # See if they are sure about closing this alternate document
+                if (not (self.show_save2_dialog(None)) ):
+
+                    return # Don't close the split view after all...
+
+        # This will fail "gracefully" if splitview is already active.
+        self.split_view()
+
+        # This code will work the same whether the previous line
+        # "worked" or not.
+        self.load_other_file(doc.get_uri(), raw_filename = False)
 
 class SplitViewPlugin(gedit.Plugin):
     def __init__(self):
         gedit.Plugin.__init__(self)
         self.instances = {}
-        
+
     def activate(self, window):
         self.instances[window] = PluginHelper(self, window)
-        
+
     def deactivate(self, window):
         self.instances[window].deactivate()
-        
+
     def update_ui(self, window):
         self.instances[window].update_ui()

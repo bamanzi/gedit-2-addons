@@ -1,4 +1,4 @@
-# Copyright (C) 2009-2012 - Curtis Hovey <sinzui.is at verizon.net>
+# Copyright (C) 2009-2011 - Curtis Hovey <sinzui.is at verizon.net>
 # This software is licensed under the GNU General Public License version 2
 # (see the file COPYING).
 """Format text and code"""
@@ -7,108 +7,26 @@ __all__ = [
     'Formatter',
     ]
 
-from gettext import gettext as _
 import os
 import re
-from tempfile import NamedTemporaryFile
-from textwrap import wrap
-import threading
 
-from gi.repository import (
-    Gio,
-    GObject,
-    Gtk,
-    )
+try:
+    import gconf as GConf
+    APP_KEY = "gedit-2"
+except:
+    import mateconf as GConf
+    APP_KEY = "pluma"
+import gtk as Gtk
+from textwrap import wrap
+from gettext import gettext as _
 
 from pocketlint.formatdoctest import DoctestReviewer
-from pocketlint.formatcheck import (
-    Language,
-    Reporter,
-    UniversalChecker,
-    )
+from pocketlint.formatcheck import Language, Reporter, UniversalChecker
 
-from gdp import (
-    config,
-    ControllerMixin,
-    setup_file_lines_view,
-    )
+from gdp import PluginMixin, setup_file_lines_view
 
 
-class FilteredReporter(Reporter):
-    """A class that can report only errors."""
-
-    @property
-    def error_only(self):
-        return config.getboolean('formatter', 'report_only_errors')
-
-    @error_only.setter
-    def error_only(self, val):
-        # Suppress the set behaviour because the config controls the rules.
-        pass
-
-    def _message_file_lines(self, line_no, message, icon=None,
-                            base_dir=None, file_name=None):
-        """Queue the messages in the file_lines_view."""
-        if self.piter is None:
-            mime_type = 'gnome-mime-text'
-            # Do not queue this call because the piter must be known now
-            # for all subsequent appends to work.
-            self.piter = self.treestore.append(
-                None, (file_name, mime_type, 0, None, base_dir))
-        self.idle_append_issue(
-            self.piter, file_name, icon, line_no, message, base_dir)
-
-    def append_issue(self, piter, file_path, icon, lineno, text, path):
-        self.treestore.append(piter, (file_path, icon, lineno, text, path))
-        return False
-
-    def idle_append_issue(self, piter, file_path, icon, lineno, text, path):
-        GObject.idle_add(
-            self.append_issue, piter, file_path, icon, lineno, text, path)
-
-
-class CheckerWorker(threading.Thread):
-
-    def __init__(self, documents, reporter, callback, quiet):
-        super(CheckerWorker, self).__init__()
-        self.documents = documents
-        self.reporter = reporter
-        self.callback = callback
-        self.quiet = quiet
-        self.model = self.reporter.file_lines_view.get_model()
-
-    def _ensure_file_path(self, checker):
-        if os.path.isfile(checker.file_path):
-            return None
-        temp_file = NamedTemporaryFile(suffix='gdp', delete=False)
-        temp_file.write(checker.text)
-        temp_file.flush()
-        checker.file_path = temp_file.name
-        return temp_file
-
-    def start(self):
-        super(CheckerWorker, self).start()
-        return False
-
-    def run(self):
-        for document in self.documents:
-            file_path = document.get_uri_for_display()
-            text = document.props.text
-            language = Language.get_language(file_path)
-            self.reporter.piter = None
-            checker = UniversalChecker(
-                file_path, text=text, language=language,
-                reporter=self.reporter)
-            temp_file = self._ensure_file_path(checker)
-            try:
-                checker.check()
-            finally:
-                if temp_file:
-                    temp_file.unlink(temp_file.name)
-        self.callback(self.quiet)
-
-
-class Formatter(ControllerMixin):
+class Formatter(PluginMixin):
     """Format Gedit Document and selection text."""
 
     def __init__(self, window):
@@ -136,13 +54,8 @@ class Formatter(ControllerMixin):
         self.file_lines_view = other_widgets.get_object('file_lines_view')
         setup_file_lines_view(self.file_lines_view, self, 'Problems')
         panel = window.get_side_panel()
-        icon = Gtk.Image.new_from_stock(Gtk.STOCK_INFO, Gtk.IconSize.MENU)
-        panel.add_item(
-            self.file_lines, 'gdpformat', 'Check syntax and style', icon)
-        self.reporter = FilteredReporter(
-            Reporter.FILE_LINES, treeview=self.file_lines_view)
-        self.checker_id = None
-        self.checker_worker = None
+        icon = Gtk.image_new_from_stock(Gtk.STOCK_INFO, Gtk.ICON_SIZE_MENU)
+        panel.add_item(self.file_lines, 'Check syntax and style', icon)
 
     def deactivate(self):
         """Clean up resources before deactivation."""
@@ -187,43 +100,35 @@ class Formatter(ControllerMixin):
         lines = [line.strip() for line in text.splitlines()]
         return ' '.join(lines)
 
-    def single_line(self, action):
+    def single_line(self, data):
         """Format the text as a single line."""
         bounds, text = self._get_bounded_text()
         text = self._single_line(text)
         self._put_bounded_text(bounds, text)
 
-    def newline_ending(self, action):
+    def newline_ending(self, data):
         """Fix the selection's line endings."""
         bounds, text = self._get_bounded_text()
         lines = [line.rstrip() for line in text.splitlines()]
         self._put_bounded_text(bounds, '\n'.join(lines))
 
-    def get_tab_size(self):
-        tab_size = 4
-        try:
-            settings_schema = 'org.gnome.gedit.preferences.editor'
-            settings = Gio.Settings.new(settings_schema)
-            tab_size = settings.get_uint('tabs-size')
-        except:
-            pass
-        return tab_size
-
-    def tabs_to_spaces(self, action):
+    def tabs_to_spaces(self, data):
         """Fix the selection's line endings."""
-        tab_size = self.get_tab_size()
         bounds, text = self._get_bounded_text()
+        gconf_client = GConf.client_get_default()
+        tab_size = gconf_client.get_int(
+            '/apps/%s/preferences/editor/tabs/tabs_size' % APP_KEY) or 4
         tab_spaces = ' ' * tab_size
         lines = [line.replace('\t', tab_spaces) for line in text.splitlines()]
         self._put_bounded_text(bounds, '\n'.join(lines))
 
-    def quote_lines(self, action):
+    def quote_lines(self, data):
         """Quote the selected text passage."""
         bounds, text = self._get_bounded_text()
         lines = ['> %s' % line for line in text.splitlines()]
         self._put_bounded_text(bounds, '\n'.join(lines))
 
-    def sort_imports(self, action):
+    def sort_imports(self, data):
         """Sort python imports."""
         bounds, text = self._get_bounded_text()
         padding = self._get_padding(text)
@@ -234,7 +139,7 @@ class Formatter(ControllerMixin):
         text = self._wrap_text(', '.join(imports), padding=padding)
         self._put_bounded_text(bounds, text)
 
-    def wrap_selection_list(self, action):
+    def wrap_selection_list(self, data):
         """Wrap long lines and preserve indentation."""
         # This should use the textwrap module.
         paras = []
@@ -289,22 +194,17 @@ class Formatter(ControllerMixin):
         line = self._single_line(text)
         lines = wrap(
             line, width=width, initial_indent=padding,
-            subsequent_indent=padding, break_on_hyphens=False)
+            subsequent_indent=padding)
         paragraph = '\n'.join(lines)
         return paragraph
 
-    def rewrap_text(self, action):
+    def rewrap_text(self, data):
         """Rewrap the paragraph."""
         bounds, text = self._get_bounded_text()
-        width = 78
-        file_path = self.active_document.get_uri_for_display()
-        language = Language.get_language(file_path)
-        if language in (Language.TEXT, None):
-            width = 72
-        text = self._wrap_text(text, width=width)
+        text = self._wrap_text(text)
         self._put_bounded_text(bounds, text)
 
-    def reformat_css(self, action):
+    def reformat_css(self, data):
         """Reformat the CSS."""
         bounds, text = self._get_bounded_text()
         # Break the text into rules using the trailing brace; the last item
@@ -331,7 +231,7 @@ class Formatter(ControllerMixin):
             css.append(trailing_text)
         self._put_bounded_text(bounds, '\n'.join(css))
 
-    def re_replace(self, action):
+    def re_replace(self, data):
         """Replace each line using an re pattern."""
         self._bounds, self._text = self._get_bounded_text()
         self.replace_dialog.show()
@@ -361,64 +261,51 @@ class Formatter(ControllerMixin):
         self._put_bounded_text(self._bounds, '\n'.join(lines))
         self.on_replace_quit()
 
-    def show(self):
+    def show(self, data):
         """Show the finder pane."""
         panel = self.window.get_side_panel()
         panel.activate_item(self.file_lines)
         panel.props.visible = True
 
-    def reformat_doctest(self, action):
+    def reformat_doctest(self, data):
         """Reformat the doctest."""
         bounds, text = self._get_bounded_text()
         file_name = self.active_document.get_uri_for_display()
-        reviewer = DoctestReviewer(file_name, text)
+        reviewer = DoctestReviewer(text, file_name)
         new_text = reviewer.format()
         self._put_bounded_text(bounds, new_text)
 
-    def check_style(self, action, documents=None, quiet=False):
+    def _check_style(self, document):
+        """Check the style and syntax of a document."""
+        file_path = document.get_uri_for_display()
+        start_iter = document.get_start_iter()
+        end_iter = document.get_end_iter()
+        text = document.get_text(start_iter, end_iter, True)
+        reporter = Reporter(
+            Reporter.FILE_LINES, treeview=self.file_lines_view)
+        language = Language.get_language(file_path)
+        checker = UniversalChecker(
+            file_path, text=text, language=language, reporter=reporter)
+        checker.check()
+
+    def check_style(self, data, documents=None, quiet=False):
         """Check the style and syntax of the active document."""
-        if self.checker_id is not None:
-            return
-        if self.checker_worker is not None and self.checker_worker.is_alive():
-            # This is not as reliable to Gtk's idle handle. Maybe this
-            # sould call join() to wait tot the process to terminate.
-            return
         self.file_lines_view.get_model().clear()
         if documents is None:
             documents = [self.active_document]
-        self.checker_worker = CheckerWorker(
-            documents, self.reporter, self.on_check_style_complete, quiet)
-        # Queue the find worker after the events emited at the top
-        # of this method.
-        self.checker_id = GObject.idle_add(self.checker_worker.start)
-
-    def on_check_style_complete(self, quiet):
-        # Gracefully end the operation in the main_loop.
-        GObject.idle_add(self.do_check_style_complete, quiet)
-
-    def do_check_style_complete(self, quiet):
-        self.checker_worker = None
-        self.checker_id = None
+        for document in documents:
+            self._check_style(document)
         model = self.file_lines_view.get_model()
         first = model.get_iter_first()
         if first is None:
-            # Noted that the mesage is in the file_path position.
             model.append(
                 None, ('No problems found', 'emblem-default', 0, None, None))
+        if first is None and quiet:
+            # Do not interupt the user to say there is nothing to see.
+            return
         self.file_lines_view.expand_all()
-        if first is not None or not quiet:
-            self.show()
-        return False
+        self.show(None)
 
-    def check_style_background(self, action, documents=None):
-        """Check the style in the background."""
-        self.check_style(action, quiet=True)
-
-    def check_all_style(self, action):
+    def check_all_style(self, data):
         """Check the style and syntax of all open documents."""
         self.check_style(None, documents=self.window.get_documents())
-
-    def on_show_syntax_errors_only_toggled(self, menu_item, data=None):
-        config.set(
-            'formatter', 'report_only_errors', str(menu_item.props.active))
-        config.dump()

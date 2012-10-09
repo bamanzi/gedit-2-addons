@@ -191,6 +191,11 @@ http://www.thingsthemselves.com/gedit/
 # <<current-line>>
 Ever wanted to change the current line background color? Here's your chance
 http://simplesideias.com.br/
+
+** Color Panes
+# <<colorpanes>>
+http://code.google.com/p/gedit-color-panes
+Make side and bottom panes follow the color scheme.
 * D
 ** drawspaces                                         :native:
 replacement in python: [[Whitespace]] (?)
@@ -224,6 +229,15 @@ Enables you to edit all menu shortcuts.
 website: http://nickgravgaard.com/elastictabstops
 
 Align text following tab characters with elastic tabstops.
+
+** Eddt
+Eddt File Browser
+
+A directory browsing plugin written in Python. Download: http://sourceforge.net/projects/eddt/files/
+
+** Encdecplugin
+Encode, decode and hash strings in gedit using, for example, base64, HTML entities, URL encoding,
+ASCII-hex, MD5, sha256, etc. Download: https://sourceforge.net/projects/encdecplugin/
 * F
 ** File Search
 # <<file-search>>
@@ -298,6 +312,18 @@ A plugin allows to search in all opened files (even unsaved) or files in a given
 http://code.google.com/p/gencodingconverter/
 
 providing text conversions between different encoding on the fly. 
+
+** Several useful tools for gedit
+# <<gedittools>>
+http://www.any-where.de
+
+XML folding, XML highlighting, search expression highlighting
+
+The plug-in "gedittools" comes along with
+- XML Highlighting on double click
+- Highlighting of selected in whole document word on double click
+- Counting occurances of selection and showing results in statusbar
+- Launching "meld" as DIFF tool based on selection of opened documents
 * H
 ** Highlight Text
 Highlights all occurances of selected text.
@@ -547,6 +573,34 @@ Gedit plugin: Allows to display a right side pane. A left-right pane manager is 
 # <<runcible>>
 Embedded Runcible (termnal)
 
+** Reflow                                                           :gedit_3:
+# <<reflow>>
+reflow paragraph similarly to emacs <Alt>-q
+https://github.com/guillaumechereau/gedit-reflow-plugin
+
+gedit-3 only.
+
+** Rewrap
+# <<rewrap>>
+
+http://code.google.com/p/gedit-rewrap/ 
+
+Re-wraps blocks of text based on the current right margin setting. Maintains indentation and comment
+markers based on the first line. Download: http://code.google.com/p/gedit-rewrap/. View the
+screencast
+
+# <<smart_highlight>>
+http://code.google.com/p/smart-highlighting-gedit
+
+Smart highlighting is a plugin for gedit that highlight all occurrences of selected text.
+
+Features:
+  * Highlight occurrences of current selected text
+  * Match occurrences using regular expression
+  * Highlighting colors and matching options are configurable
+  * Multi-language support
+  * Support both gedit2.x and 3.x
+
 * S
 ** Scratch Tab
 # <<scratchtab>>
@@ -692,6 +746,16 @@ Show the HTML version of the Textile text you're editing
 ** Trailsave
 # <<trailsave>>
 Remove trailing spaces before save a document.
+
+** TabTweaks
+# <<tabTweaks>>
+
+Gedit plugin allowing you to move tabs to the top, bottom, left, or right, or remove them altogether
+and rely on the side pane. Adds a middle click to close files without a save prompt on the side
+pane. Removes some unnecessary GUI such as the side pane's description and bottom pane's close
+button. Allows the bottom pane to be closed by middle clicking on it's tabs. Option to move the side
+pane to the right side. Download:
+http://code.google.com/p/gedit-plugins/downloads/detail?name=tabTweaks.tar.gz
 * U
 * V
 * W
@@ -1227,67 +1291,3 @@ http://webdav.tielie.com/gedit-plugins/multiview/
 ** gedbp
 ** makeandrun
 ** builder
-
-** Color Panes
-# <<colorpanes>>
-http://code.google.com/p/gedit-color-panes
-Make side and bottom panes follow the color scheme.
-
-** Eddt
-Eddt File Browser
-
-A directory browsing plugin written in Python. Download: http://sourceforge.net/projects/eddt/files/
-
-** Encdecplugin
-Encode, decode and hash strings in gedit using, for example, base64, HTML entities, URL encoding,
-ASCII-hex, MD5, sha256, etc. Download: https://sourceforge.net/projects/encdecplugin/
-
-** Several useful tools for gedit
-# <<gedittools>>
-http://www.any-where.de
-
-XML folding, XML highlighting, search expression highlighting
-
-The plug-in "gedittools" comes along with
-- XML Highlighting on double click
-- Highlighting of selected in whole document word on double click
-- Counting occurances of selection and showing results in statusbar
-- Launching "meld" as DIFF tool based on selection of opened documents
-
-** Reflow                                                           :gedit_3:
-# <<reflow>>
-reflow paragraph similarly to emacs <Alt>-q
-https://github.com/guillaumechereau/gedit-reflow-plugin
-
-gedit-3 only.
-
-** Rewrap
-# <<rewrap>>
-
-http://code.google.com/p/gedit-rewrap/ 
-
-Re-wraps blocks of text based on the current right margin setting. Maintains indentation and comment
-markers based on the first line. Download: http://code.google.com/p/gedit-rewrap/. View the
-screencast
-
-# <<smart_highlight>>
-http://code.google.com/p/smart-highlighting-gedit
-
-Smart highlighting is a plugin for gedit that highlight all occurrences of selected text.
-
-Features:
-  * Highlight occurrences of current selected text
-  * Match occurrences using regular expression
-  * Highlighting colors and matching options are configurable
-  * Multi-language support
-  * Support both gedit2.x and 3.x
-
-** TabTweaks
-# <<tabTweaks>>
-
-Gedit plugin allowing you to move tabs to the top, bottom, left, or right, or remove them altogether
-and rely on the side pane. Adds a middle click to close files without a save prompt on the side
-pane. Removes some unnecessary GUI such as the side pane's description and bottom pane's close
-button. Allows the bottom pane to be closed by middle clicking on it's tabs. Option to move the side
-pane to the right side. Download:
-http://code.google.com/p/gedit-plugins/downloads/detail?name=tabTweaks.tar.gz

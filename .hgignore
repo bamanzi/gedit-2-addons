@@ -3,3 +3,9 @@ syntax: glob
 *.pyc
 *.pyo
 *~
+todo*
+MakeAndRun*
+giterdone*
+gedbp*
+commander*
+

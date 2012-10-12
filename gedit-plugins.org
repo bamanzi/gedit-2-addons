@@ -1,5 +1,5 @@
 #+TAGS: TODO(t) DONE(d)
-#+TAGS: GOOD(g) BAD(b) DUP(u) FAIL(f)
+#+TAGS: VERYGOOD(v) GOOD(g) BAD(b) DUP(u) FAIL(f) WEAK(w)
 #+TAGS: gedit_2(2) gedit_3(3) mate(m)
 
 # <<#deprecated>>
@@ -69,12 +69,14 @@ Features:
 
 screenshot: https://lh5.googleusercontent.com/-gPOzfd8Lz9k/Tw2UXuiFvCI/AAAAAAAAAE8/3lbUPd9ctJI/s800/Screenshot.png
 
-** Auto Completion
+** ~Auto Completion~                                                   :WEAK:
 # <<auto_completion>>
 Auto completion like it is done in any 'better' console
 
 http://elias.hiex.at/gedit-plugins
-** +AutoComplete+
+
+NOTE: completion by TAB key. based on words *ONLY* in current buffer.
+** +AutoComplete+                                                       :BAD:
 # <<autocomplete>>
 http://github.com/nagaozen/gedit-plugin-autocomplete/
 
@@ -153,7 +155,7 @@ Tools for CSS:
 
 
 https://github.com/dsjoshi/gedit-jslint
-** Column Mode
+** ~Column Mode~ -> [[multi_edit]]                                         :WEAK:
 # <<columnmode>>
 website: https://live.gnome.org/Gedit/Plugins/ColumnMode
 
@@ -168,7 +170,7 @@ http://urubatan.info/
 Press Ctrl+Shift+F to format the source code
 ** colorpicker
 ** commander
-** Word Completion                                                :DUP:
+** ~Word Completion~                                                    :BAD:
 # <<completion>>
 website: http://users.tkk.fi/~otsaloma/gedit
 
@@ -176,13 +178,23 @@ Complete words with the tab key
 
 This plugin provides a 'stupid' word completion plugin, one that is aware of
 all words in all open documents, but knows nothing of any context or syntax.
-** Evolved Code Completion
-[[codecompletion]]
+
+NOTE: Not good as gedit built-in plugin Word Completion. Don't know
+      how to finish completion (according to code, it should be Return
+      key, but test fails
+
+	code: [[gedit-mate]] (without configuration dialog)
+	code: [[gmate]] (with configuration dialog)
+
+** ~Evolved Code Completion~                                           :WEAK:
+[[# <<codecompletion]]>>
 (not useful?)
 # <<code
 https://github.com/nagaozen/gedit-plugin-codecompletion/
 
 A code completion framework based on a json library.
+
+NOTE: weak. only asp words (not useful?)
 ** Control Your Tabs
 # <<controlyourtabs>>
 Switch between tabs using Ctrl-Tab / Ctrl-Shift-Tab and Ctrl-PageUp / Ctrl-PageDown
@@ -192,7 +204,7 @@ http://www.thingsthemselves.com/gedit/
 Ever wanted to change the current line background color? Here's your chance
 http://simplesideias.com.br/
 
-** Color Panes
+** Color Panes                                                         :GOOD:
 # <<colorpanes>>
 http://code.google.com/p/gedit-color-panes
 Make side and bottom panes follow the color scheme.
@@ -214,6 +226,10 @@ http://sayamindu.randomink.org/
 ** Encoding 
 # <<encodingpy>>
 Reopen the document in a different encoding
+** +Eddt+
+Eddt File Browser
+
+A directory browsing plugin written in Python. Download: http://sourceforge.net/projects/eddt/files/
 
 ** Edit Shortcut                                                    :gedit_2:
 # <<editshortcut>>
@@ -229,11 +245,6 @@ Enables you to edit all menu shortcuts.
 website: http://nickgravgaard.com/elastictabstops
 
 Align text following tab characters with elastic tabstops.
-
-** Eddt
-Eddt File Browser
-
-A directory browsing plugin written in Python. Download: http://sourceforge.net/projects/eddt/files/
 
 ** Encdecplugin
 Encode, decode and hash strings in gedit using, for example, base64, HTML entities, URL encoding,
@@ -301,6 +312,8 @@ Smart completion of common characters we use in pairs. ({["''"]})
 
 Easily open and switch between files.
 
+NOTE: needs libsexy2 for gtk and python-sexy, thus not work on windows.
+  - [ ] test on linux
 ** grep
 
 http://code.google.com/p/gedit-grep/
@@ -313,7 +326,7 @@ http://code.google.com/p/gencodingconverter/
 
 providing text conversions between different encoding on the fly. 
 
-** Several useful tools for gedit
+** Several useful tools for gedit                                      :GOOD:
 # <<gedittools>>
 http://www.any-where.de
 
@@ -324,8 +337,11 @@ The plug-in "gedittools" comes along with
 - Highlighting of selected in whole document word on double click
 - Counting occurances of selection and showing results in statusbar
 - Launching "meld" as DIFF tool based on selection of opened documents
+
+NOTE: good. but auto highlighting of selection is recommmended to be disabled.
+
 * H
-** Highlight Text
+** ~Highlight Text~ -> [[smart_highlight]]                                 :WEAK:
 Highlights all occurances of selected text.
 http://code.google.com/p/gedit-highlight-text/
 
@@ -344,7 +360,7 @@ Clean up your web pages with HTML TIDY
 ** Indent Converter
 # <<indent-converter>>
 Converts tabs to spaces and spaces to tabs.
-** Intelligent Text Completion                              :gedit_2:gedit_3:
+** Intelligent Text Completion                         :GOOD:gedit_2:gedit_3:
 http://code.google.com/p/gedit-intelligent-text-completion/
 
 This plugin intelligently completes your input of tags, lists, brackets, comments and quotes.
@@ -706,12 +722,14 @@ http://blog.siverti.com.br/gmate
 ** Terminal
 # <<terminal>>
 
-** TextMate Completion
+** TextMate Completion                                                 :WEAK:
 # <<textmate_completion>>
 Code autocompletion pressing ESC
 https://bitbucket.org/pablobm/gedit-textmate_completion
 
-** TextMate Style Autocompletion
+NOTE: WEAK.  not work on win32 (no completion)
+  - [ ] what about linux
+** TextMate Style Autocompletion                                       :GOOD:
 # <<tm_autocomplete>>
 TextMate style autocompletion
 
@@ -719,6 +737,7 @@ Better autocompletion. Tap Esc to cycle through the available completions.
 
 http://code.google.com/p/gedit-tm-autocomplete/
 
+NOTE: good. +configuration dialog
 ** Text Map
 # <<textmap>>
 Navigatable thumbnail of the entire file http://1dan.org/gedit-plugins/textmap/
@@ -1001,7 +1020,7 @@ http://rpmfind.net//linux/RPM/mandriva/devel/cooker/i586/media/contrib/release/g
 
 * python
 ** console
-*** Better Python Console                                   :gedit_2:gedit_3:
+*** + Better Python Console                                 :gedit_2:gedit_3:
 https://github.com/jonocodes/gedit-betterpythonconsole
 
 The Better Python Console Plugin aims to provide a simple IDLE-like Python 
@@ -1010,7 +1029,7 @@ as you need.
 
 gedit-2 & gedit-3
 
-*** ipythonconsole                                          :gedit_2:ipython:
+*** ++ ipythonconsole                                       :gedit_2:ipython:
 http://code.google.com/p/gedit-ipythonconsole/
 https://github.com/nuxlli/gedit-ipythonconsole
 
@@ -1021,31 +1040,32 @@ https://github.com/rdunklau/Gedit-checkpython
 
 Gedit Python checker: pep8 & pyflakes (for gedit-3)
 
-*** pycheck                                                    :gedit_2:pep8:
+*** ? pycheck                                                  :gedit_2:pep8:
 https://github.com/tmf16/gedit-pycheck
 
 Gedit Python pep8 pyflakes
 
+  - [ ] not work on windows (tempfile...)
 *** pylint                                                   :gedit_2:pylint:
 https://github.com/phsilva/gedit-pylint
 
 gedit-pylint is a small Python plugin to use pylint
 (http://www.logilab.org/pylint) inside GNOME's Gedit editor.
-*** geditchecker                                      :gedit_2:pep8:pyflakes:
+*** ? geditchecker                                    :gedit_2:pep8:pyflakes:
 http://code.google.com/p/geditchecker/
 
 This gedit plugin can check syntax python code with pyflakes and pep8.py a can check css with W3C
 utils.
 
 ** completion
-*** pythoncompletion                                                   :GOOD:
+*** ++ pythoncompletion                                                :GOOD:
 Python Completion Plugin
 http://code.google.com/p/scite-gedit-plugins/source/browse/#svn%2Ftrunk%2Fpythoncompletion%253Fstate%253Dclosed
 *** +pythoncodecompletion+ (too old)
 https://github.com/fenrrir/geditpycompletion/
 
 http://linil.wordpress.com/2008/05/31/using-gedit-to-auto-complete-python-code/
-*** Python Kit                                         :TODO:gedit_2:gedit_3:
+*** TODO Python Kit                                         :gedit_2:gedit_3:
 # <<pythonkit>>
 https://github.com/iromli/gedit-pythonkit
 
@@ -1057,7 +1077,13 @@ gedit-2 & gedit-3
 
 注意: gedit-2的版本在这个tag下: [url]https://github.com/iromli/gedit-pythonkit/tree/0.1[/url]
 
-*** [[gdpcomplete]]
+*** [[? gdpcomplete]]
+*** TODO Word Completion for python                                    :MATE:
+Combination of Word Completion and Python Code Completion.
+
+https://live.gnome.org/Gedit/PluginsOld#line-709
+
+  - [ ] not accessible
 
 ** misc
 *** ipython
@@ -1069,7 +1095,7 @@ code. Please note that executing long pieces of code may not work well.
 
 intro:    http://www.cogsci.nl/software/gedit-ipython-plugin
 
-*** django-project                                           :django:gedit_3:
+*** TODO django-project                                      :django:gedit_3:
 https://github.com/Quixotix/gedit-django-project
 
 Gedit Django Project adds GUI interfaces for django-admin.py and manage.py commands within Gedit and
@@ -1092,7 +1118,7 @@ simplifies working with Django projects.
 intro:      http://www.micahcarrick.com/gedit-as-a-django-ide-for-linux.html
 screenshot: http://is.gd/jZdMaz
 
-*** PythonDefs                                         :TODO:gedit_2:gedit_3:
+*** + PythonDefs                                       :TODO:gedit_2:gedit_3:
 http://code.google.com/p/gedit-python-defs/
 
 It shows a mini source code browser in the current window, listing all definitions found in the
@@ -1101,7 +1127,7 @@ current code and a list of source code folders.
 It supports c code and python code (it also parses python docs and shows them). 
 
   - [ ] failed on windows?
-*** rope
+*** +rope+                                                              :BAD:
 http://code.google.com/p/gedit-rope
 
 A Gedit plugin to use rope project management, refactoring and code completion library. 
@@ -1109,17 +1135,17 @@ A Gedit plugin to use rope project management, refactoring and code completion l
 *** Redirect python traceback
 # <<gedit-python-traceback>>
 https://launchpad.net/gedit-python-traceback
-*** Python Indentation
+*** + Python Indentation                                               :GOOD:
 # <<python_indentation>>
 Smart indentation for python code. The code is indented when the previous line ends with ':' and
 un-indented if the previous line starts with 'return', 'pass', 'continue' or 'break'. This plugin
 will use your tab configuration for indentation. To respect PEP8 you should set tab width to 4 and
 choose to insert spaces instead of tabs.
-*** Python outline
+*** - Python outline                                                   :WEAK:
 # <<pythonoutline>>
 Python code structure outline
 http://www.optionexplicit.be/
-
+*** reindent
 ** templates
 *** https://github.com/bigbrozer/gedit-snippets                      :django:
 python & django snippets for gedit
@@ -1128,12 +1154,6 @@ python & django snippets for gedit
 Django Snippets for Gedit, converted from TextMate Snippets to Gedit.
 *** gedit-django-template-language
 http://code.google.com/p/gedit-django-template-language/
-** TODO Word Completion for python                                     :MATE:
-Combination of Word Completion and Python Code Completion.
-
-https://live.gnome.org/Gedit/PluginsOld#line-709
-
-  - [ ] not accessible
 
 * ruby
 ** Rails File Loader                                                :gedit_2:

@@ -1,0 +1,9 @@
+[Gedit Plugin]
+Loader=python
+Module=fullscreenpy
+IAge=2
+Name=Fullscreen
+Description=Adds a menu item (under view) that toggles the view between fullscreen and current. Heavily based on the examplepy plugin at http://live.gnome.org/Gedit/PythonPluginHowTo
+Authors=Gwilym Still <g.t.still@warwick.ac.uk>
+Copyright=Copyright © 2006 Gwilym Still <g.t.still@warwick.ac.uk>
+Website=http://www.gedit.org

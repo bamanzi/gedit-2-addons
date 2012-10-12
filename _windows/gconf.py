@@ -68,7 +68,7 @@ class GConfPy():
         return _config_.has_section(path)
 
     def all_dirs(self, path):
-        all_secs _config_.sections()
+        all_secs = _config_.sections()
         return [ sec for sec in all_secs if sec.startswith(path) ]
 
 

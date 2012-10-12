@@ -65,13 +65,44 @@ class FullscreenPyWindowHelper:
         def update_ui(self):
                 self._action_group.set_sensitive(self._window.get_active_document() != None)
         
+        def get_action(self, groupname, actionname):
+            "Find action by ActionGroup name and Action name"
+            uim = self._window.get_ui_manager()
+            groups = uim.get_action_groups()
+            ga = filter(lambda group: group.get_name() == groupname, groups)
+            if len(ga)==1:
+                group = ga[0]
+                action = group.get_action(actionname)
+                return action
+        
         # Menu activate handlers
         def on_toggle_fullscreen_activate(self):
+            show = True
             # Test if already fullscreen, and toggle appropriately
             if (self._window.window.get_state() & gtk.gdk.WINDOW_STATE_FULLSCREEN):
                 self._window.unfullscreen()
+                show = True
             else:
                 self._window.fullscreen()
+                show = False
+            
+            #comment the parts you want to keep always visible
+            actions = [
+                '/GeditWindowPanesActions/ViewSidePane',
+                '/GeditWindowPanesActions/ViewBottomPane',
+                '/GeditWindowAlwaysSensitiveActions/ViewToolbar',
+                '/GeditWindowAlwaysSensitiveActions/ViewStatusbar',
+                '/PlumaWindowPanesActions/ViewSidePane',
+                '/PlumaWindowPanesActions/ViewBottomPane',
+                '/PlumaWindowAlwaysSensitiveActions/ViewToolbar',
+                '/PlumaWindowAlwaysSensitiveActions/ViewStatusbar',
+                '/RightPaneActionGroup1/ViewRightSidePane',
+                ]
+            for s in actions:
+                foo, sgroup, saction = s.split('/')
+                action = self.get_action(sgroup, saction)
+                if action and (action.get_active()!=show):
+                    action.activate()
 
 class FullscreenPyPlugin(gedit.Plugin):
         DATA_TAG = "FullscreenPyPluginInstance"

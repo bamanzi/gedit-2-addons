@@ -14,6 +14,9 @@ ui_str = """<ui>
       </placeholder>
     </menu>
   </menubar>
+  <toolbar name="ToolBar">
+    <placeholder name="Tool_Opt4"><toolitem name="FullscreenPy" action="FullscreenPy"/></placeholder>
+  </toolbar>
 </ui>
 """
 class FullscreenPyWindowHelper:
@@ -41,7 +44,7 @@ class FullscreenPyWindowHelper:
                 
                 # Create a new action group
                 self._action_group = gtk.ActionGroup("FullscreenPyPluginActions")
-                self._action_group.add_toggle_actions([("FullscreenPy", None, _("Toggle Fullscreen"), "F11", _("Toggle Fullscreen"), lambda a: self.on_toggle_fullscreen_activate())])
+                self._action_group.add_toggle_actions([("FullscreenPy", gtk.STOCK_FULLSCREEN, _("Toggle Fullscreen"), "<Control>F11", _("Toggle Fullscreen"), lambda a: self.on_toggle_fullscreen_activate())])
 
                 # Insert the action group
                 manager.insert_action_group(self._action_group, -1)
@@ -86,7 +89,7 @@ class FullscreenPyWindowHelper:
                 self._window.fullscreen()
                 show = False
             
-            #comment the parts you want to keep always visible
+            #comment the parts you want to keep untouched
             actions = [
                 '/GeditWindowPanesActions/ViewSidePane',
                 '/GeditWindowPanesActions/ViewBottomPane',
@@ -96,7 +99,9 @@ class FullscreenPyWindowHelper:
                 '/PlumaWindowPanesActions/ViewBottomPane',
                 '/PlumaWindowAlwaysSensitiveActions/ViewToolbar',
                 '/PlumaWindowAlwaysSensitiveActions/ViewStatusbar',
-                '/RightPaneActionGroup1/ViewRightSidePane',
+               # '/GeditHideTabbarPluginActions/ShowTabbar',   #showtabbar plugin
+               # '/PlumaHideTabbarPluginActions/ShowTabbar',   #showtabbar plugin
+                '/RightPaneActionGroup1/ViewRightSidePane',   #rightpane plugin
                 ]
             for s in actions:
                 foo, sgroup, saction = s.split('/')

@@ -74,6 +74,11 @@ ui_str = """<ui>
 			</placeholder>
 		</menu>
 	</menubar>
+	<toolbar name="ToolBar">
+		<placeholder name="Tool_Opt4"><toolitem name="advanced_find_active" action="advanced_find_active"/></placeholder>
+		<placeholder name="Tool_Opt4"><toolitem name="find_next" action="find_next"/></placeholder>
+		<placeholder name="Tool_Opt4"><toolitem name="select_find_next" action="select_find_next"/></placeholder>
+	</toolbar>
 </ui>
 """
 
@@ -166,10 +171,10 @@ class AdvancedFindWindowHelper:
 
 		# Create a new action group
 		self._action_group = gtk.ActionGroup("AdvancedFindReplaceActions")
-		self._action_group.add_actions( [("advanced_find_active", None, _("Advanced Find/Replace"), self.shortcuts['ACTIVATE'], _("Advanced Find/Replace"), self.advanced_find_active),
-										("find_next", None, _("Find Next"), self.shortcuts['FIND_NEXT'], _("Find Next"), self.find_next),
+		self._action_group.add_actions( [("advanced_find_active", gtk.STOCK_FIND, _("Advanced Find/Replace"), self.shortcuts['ACTIVATE'], _("Advanced Find/Replace"), self.advanced_find_active),
+										("find_next", gtk.STOCK_GO_FORWARD, _("Find Next"), self.shortcuts['FIND_NEXT'], _("Find Next"), self.find_next),
 										("find_previous", None, _("Find Previous"), self.shortcuts['FIND_PREVIOUS'], _("Find Previous"), self.find_previous),
-										("select_find_next", None, _("Select and Find Next"), self.shortcuts['SELECT_FIND_NEXT'], _("Select and Find Next"), self.select_find_next),
+										("select_find_next", gtk.STOCK_MEDIA_PLAY, _("Select and Find Next"), self.shortcuts['SELECT_FIND_NEXT'], _("Select and Find Next"), self.select_find_next),
 										("select_find_previous", None, _("Select and Find Previous"), self.shortcuts['SELECT_FIND_PREVIOUS'], _("Select and Find Previous"), self.select_find_previous)]) 
 
 		# Insert the action group

@@ -27,6 +27,16 @@ import gtk as Gtk
 
 from gdp import PluginMixin, setup_file_lines_view
 
+try:
+    import gedit
+    APP_KEY = 'gedit-2'
+    import gconf
+    import gnomevfs
+except:
+    import pluma as gedit
+    APP_KEY = 'pluma'
+    import mateconf as gconf
+    import matevfs as gnomevfs
 
 find_params = namedtuple(
     'FindParams', ['path', 'pattern', 'is_re', 'is_case', 'file_pattern'])
@@ -146,6 +156,8 @@ class Finder(PluginMixin):
 
     WORKING_DIRECTORY = '<Working Directory>'
     CURRENT_FILE = '<Current File>'
+    CURRENT_FILE_DIR = '<Dir of Current File>'
+    FILE_BROWSER_ROOT = '<FileBrowser Root Dir>'
     ANY_FILE = '<Any Text File>'
 
     def __init__(self, window):
@@ -170,9 +182,13 @@ class Finder(PluginMixin):
             'activate', self.on_find_in_files)
         self.pattern_comboentry.get_child().set_width_chars(24)
         self.setup_comboentry(self.pattern_comboentry)
+        
         self.path_comboentry = self.widgets.get_object('path_comboentry')
         self.setup_comboentry(self.path_comboentry, self.CURRENT_FILE)
+        self.update_comboentry(self.path_comboentry, self.CURRENT_FILE_DIR, False)
+        self.update_comboentry(self.path_comboentry, self.FILE_BROWSER_ROOT, False)
         self.update_comboentry(self.path_comboentry, os.getcwd())
+        
         self.file_comboentry = self.widgets.get_object('file_comboentry')
         self.setup_comboentry(self.file_comboentry, self.ANY_FILE)
         self.substitution_comboentry = self.widgets.get_object(
@@ -236,9 +252,14 @@ class Finder(PluginMixin):
         self.update_comboentry(self.path_comboentry, path_)
         if path_ in (self.WORKING_DIRECTORY, '', None):
             path_ = '.'
-        elif path_ == self.CURRENT_FILE:
+        elif (path_ == self.CURRENT_FILE) or (path_ == self.CURRENT_FILE_DIR):
             document = self.active_document
             path_ = os.path.dirname(document.get_uri_for_display())
+        elif path_ == self.FILE_BROWSER_ROOT:
+            key = u'/apps/%s/plugins/filebrowser/on_load/virtual_root' % APP_KEY
+            root_uri = gconf.client_get_default().get_string(key)
+            path_ = gnomevfs.get_local_path_from_uri(root_uri)
+        
         return path_
 
     @property

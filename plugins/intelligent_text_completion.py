@@ -17,7 +17,7 @@ try:
 except:
     import pluma as gedit
     import mateconf as gconf
-    APP_KEY - "pluma"
+    APP_KEY = "pluma"
 import gobject
 import gtk
 import pango

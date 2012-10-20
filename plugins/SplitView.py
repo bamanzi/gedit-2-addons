@@ -1,10 +1,12 @@
+import gtk
+import gobject
+
 try:
     import gedit
+    import gnomevfs
 except:
     import pluma as gedit
-import gtk
-
-import gobject
+    import matevfs as gnomevfs
 
 import os
 import time
@@ -335,7 +337,8 @@ class PluginHelper:
                                         gtk.STOCK_OPEN, gtk.RESPONSE_OK))
 
         current_document = self.window.get_active_document()
-        current_path = urllib.unquote( current_document.get_uri().replace("file://", "") )
+        #current_path = urllib.unquote( current_document.get_uri().replace("file://", "") )
+        current_path = gnomevfs.get_local_path_from_uri()
         dialog.set_current_folder( os.path.dirname(current_path) )
 
         filter_list = [
@@ -375,7 +378,8 @@ class PluginHelper:
         new_document = gedit.Document()#.gedit_document_new()
 
         if (raw_filename):
-            new_document.load("file://" + source.replace(" ", "%20"), self.encoding, 1, True)
+            #new_document.load("file://" + source.replace(" ", "%20"), self.encoding, 1, True)
+            new_document.load(gnomevfs.get_uri_from_local_path(source), self.encoding, 1, True)
 
         else:
             new_document.load(source, self.encoding, 1, True)

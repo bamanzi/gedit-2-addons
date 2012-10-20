@@ -19,8 +19,10 @@ import gobject as GObject
 import gtk as Gtk
 try:
     import gedit
+    import gnomevfs
 except:
     import pluma as gedit
+    import matevfs as gnomevfs
 
 
 # Initialise the mimetypes for document type inspection.
@@ -193,7 +195,8 @@ def on_file_lines_row_activated(treeview, path, view_column, plugin):
     if base_dir is None or path is None:
         # There is not enough information to open a document.
         return
-    uri = 'file://%s' % os.path.abspath(os.path.join(base_dir, path))
+    #uri = 'file://%s' % os.path.abspath(os.path.join(base_dir, path))
+    uri = gnomevfs.get_uri_from_local_path(os.path.abspath(os.path.join(base_dir, path)))
     line_no = treestore.get_value(piter, 2) - 1
     if line_no < 0:
         line_no = 0

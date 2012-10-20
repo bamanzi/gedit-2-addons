@@ -22,9 +22,11 @@ pygtk.require("2.0")
 import gtk
 try:
     import gedit
+    import gnomevfs
     is_mate = False
 except:
     import pluma as gedit
+    import matevfs as gnomevfs
     is_mate = True
 import time
 import os
@@ -244,7 +246,9 @@ class ReopenTabsPlugin(gedit.Plugin):
 				if open_docs.count(uri) > 0: continue
 
 				# Check if document exists
-				if not os.path.exists(uri.replace('file://', '', 1)): continue
+				#if not os.path.exists(uri.replace('file://', '', 1)): continue
+				if not os.path.exists(gnomevfs.get_local_path_from_uri(uri)): continue
+
 
 				# Create new tab
 				log('ACTION: restore tab "%s"' % uri)

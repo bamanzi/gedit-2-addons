@@ -27,8 +27,10 @@ import gtk
 import gtk.glade
 try:
 	import gedit
+	import gnomevfs
 except:
 	import pluma as gedit
+	import matevfs as gnomevfs
 import os.path
 import os
 import fnmatch
@@ -511,7 +513,8 @@ class AdvancedFindWindowHelper:
 			if os.path.isfile(file_path):
 				temp_doc = gedit.Document()
 				#file_uri = "file://" + urllib.pathname2url(file_path.encode('utf-8'))
-				file_uri = ('file://' + file_path).encode('utf-8')
+				#file_uri = ('file://' + file_path).encode('utf-8')
+				file_uri = gnomevfs.get_uri_from_local_path(file_path)
 				try:
 					temp_doc.load(file_uri, gedit.encoding_get_from_charset('utf-8'), 0, False)
 				except:

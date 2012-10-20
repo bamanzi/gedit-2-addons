@@ -24,6 +24,11 @@ import options
 from parserinterface import ClassParserInterface
 import imagelibrary
 
+try:
+    import gnomevfs
+except:
+    import matevfs as gnomevfs
+    
 #===============================================================================
 
 def functionTokenFromString(string):
@@ -309,7 +314,8 @@ class PythonParser( ClassParserInterface ):
                 print tok.original
             
                 # trunkate to local filename
-                filename = filename[7:]
+                #filename = filename[7:]
+                filename = gnomevfs.get_local_path_from_uri(filename)
                 column = tok.original.find(tok.name) # find beginning of function definition
                 print filename, line, column
                 

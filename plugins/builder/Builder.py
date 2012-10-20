@@ -19,8 +19,10 @@ import gtk
 import gtksourceview2
 try:
     import gedit
+    import gnomevfs
 except:
     import pluma as gedit
+    import matevfs as gnomevfs
 
 import string
 import sys
@@ -294,7 +296,8 @@ class Builder:
             (file_name, line_no, col_no) = where
             self._l.info("Document no currently loaded %s:%d:%d" % (file_name, line_no, col_no))
         
-            uri = "file://" + file_name
+            #uri = "file://" + file_name
+            uri = gnomevfs.get_uri_from_local_path(file_name)
             if gedit.utils.uri_exists(uri):
                 # First check that we are not in the middle of opening this document
                 if self._get_tab_for_uri(uri):

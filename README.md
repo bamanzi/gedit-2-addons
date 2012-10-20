@@ -2,7 +2,8 @@
 
 Here are some nice plugins and themes I collected for Gedit-2.  
 
-The goals of this repo
+The goals of this repo:
+
 * collection plugins, templates & themes for [Gedit-2](https://projects.gnome.org/gedit/) & Pluma (fork for
 * make sure them work on Pluma, [the MATE desktop](http://mate-desktop.org/)) fork
 * make most of them work on [Gedit-2 for Windows](https://live.gnome.org/Gedit/Windows).

@@ -90,7 +90,8 @@ In order to play nice with snippets plugin, trigger is set to Enter.
 # <<bookmarks>>
 -> [[advanced_bookmarks]] 
 
-** bracketcompletion
+** Bracket Completion
+# <<bracketcompletion>>
 ** Builder
 # <<builder>>
 http://sourceforge.net/projects/geditbuilderplg/
@@ -361,6 +362,7 @@ Clean up your web pages with HTML TIDY
 # <<indent-converter>>
 Converts tabs to spaces and spaces to tabs.
 ** Intelligent Text Completion                         :GOOD:gedit_2:gedit_3:
+# <<intelligent_text_completion>>
 http://code.google.com/p/gedit-intelligent-text-completion/
 
 This plugin intelligently completes your input of tags, lists, brackets, comments and quotes.
@@ -766,7 +768,7 @@ Show the HTML version of the Textile text you're editing
 # <<trailsave>>
 Remove trailing spaces before save a document.
 
-** TabTweaks
+** ~TabTweaks~
 # <<tabTweaks>>
 
 Gedit plugin allowing you to move tabs to the top, bottom, left, or right, or remove them altogether
@@ -778,7 +780,7 @@ http://code.google.com/p/gedit-plugins/downloads/detail?name=tabTweaks.tar.gz
 * U
 * V
 * W
-** Word Completion                                                  :native:
+** Word Completion                                                   :native:
 # <<wordcompletion>>
 Word completion using the completion framework.
 
@@ -822,20 +824,21 @@ Adds the ability to change the text size. http://github.com/algorich/gedit-zoom
 
 * official gedit-plugins
 # <<gedit-plugins>>
-** [[bookmarks]]
+** [[bookmarks]] -> [[advanced_bookmarks]]                                   :native:
 ** [[bracketcompletion]]
 ** [[charmap]]
 ** [[codecomment]]
 ** [[colorpicker]]
 ** [[commander]]
-** [[drawspaces]]
+** ++ [[drawspaces]]                                                     :native:
 ** [[joinlines]]
-** [[multiedit]]
-** [[sessionsaver]]
+** [[multiedit]]   -> [[multi_edit]]
+** [[sessionsaver]]  
 ** [[showtabbar]]
 ** [[smartspaces]]
-** [[terminal]]
-** [[wordcompletion]]
+** [[taglist]]                                                           :native:
+** [[terminal]]   -> [[mterminal]]
+** ++ [[wordcompletion]]                                                 :native:
 * gmate pack
 # <<gmate>>
 ** gedit-2                                                          :gedit_2:
@@ -1220,18 +1223,19 @@ https://github.com/GunioRobot/git-gedit
 http://code.google.com/p/geditsvnplugin/
 
 * completion
-** [[Bracket Completion]] from [[gedit-plugins]]                             :native:
-** [[Word Completion]] from [[gedit-plugins]]                                :native:
+** / [[Bracket Completion]] from [[gedit-plugins]]                           :native:
+** + [[Word Completion]] from [[gedit-plugins]]                              :native:
 # <<wordcompletion>>
-** [[completion]]
-** [[Auto Completion]]
-** [[autocomplete]]
-** [[codecompletion]]
-** [[gemini]]
-** [[pair-char-auto-complete]]
-
-** [[tm_autocomplete]]
-** [[intelligent_text_completion]]
+** x [[completion]]
+** / [[auto_completion]]
+** x [[autocomplete]]
+** x [[codecompletion]]
+** / [[gemini]]
+** / [[pair-char-auto-complete]]
+  
+** x [[textmate_completion]]
+** + [[tm_autocomplete]]
+** ++ [[intelligent_text_completion]]
 ** [[gdpsyntaxcompleter]]
 * developer
 ** [[classbrowser]]                                                 :gedit_2:
@@ -1275,39 +1279,91 @@ Complete words and Python symbols at the cursor.
 
 Use <Control>Slash (Ctrl+/) to activate the completer window.
 * my choices
-** [[advancedfind]] (better than [[grep]], [[gdpfind]], [[findinfiles]], [[findindocuments]] )
-** [[autotab]]
-** [[classbrowser]]
-** [[clickconfig]]
-** [[editshortcut]] #todo: no persistence
-** [[folding]]
-** [[multi_edit]]
-** [[line_tools]]
-** reopen-tabs
+** very good
+*** [[advancedfind]] (better than [[grep]], [[gdpfind]], [[findinfiles]], [[findindocuments]] )
+*** [[autotab]]
+*** [[classbrowser]]
+*** [[clickconfig]]
+*** [[multi_edit]]
+*** [[line_tools]]
+*** [[reopen-tabs]] or [[restoretabs]]
 for gedit-2, use this fork: [[reopen-tabs_fork]]
 for gedit-3, use [[Restore Tabs]]
-** [[rightpane]] #todo: no gedit-3 version
-** [[tabs_enhanced]]
+*** [[rightpane]] #todo: no gedit-3 version
+*** [[tabs_enhanced]] or [[tabsextend]]
 only gedit-2 version
 
 for gedit-3, check [[tabsextend]]
-** [[Smart Highlighting]]
-** [[highlight_edited_lines]]
-** [[splitview]] #note: gedit-3 has built-in tabgroup
+*** [[Smart Highlighting]] +  [[highlight-text]]
+*** [[highlight_edited_lines]]
+*** [[intelligent_text_completion]] = [[bracketcompletion]] + [[gemini]] + filladapt + ?
+*** [[drawspaces]]
+*** [[wordcompletion]]
 
+** good
+*** [[editshortcut]] #todo: no persistence
+*** [[folding]]
+
+*** [[splitview]] #note: gedit-3 has built-in tabgroup
+
+*** [[gedittools]]
+*** [[tm_autocomplete]] or [[auto_completion]] (ESC or TAB key)
+*** [[scratchtab]]
 * misc TODO
-** DONE scratchtab: http://www.omacronides.com/projets/gedit-scratchtab/
- or [[gedit-plugins-extra]]
-** DONE gedit-plugins-extra.rpm 
+** win32 port
+Note: it loads plugins from =%APPDATA%/gedit/plugins=, not from =~/.gnome2/gedit/plugins=
+But gconf data goes to =~/.gconf/=
+
+*** offcial plugins not available for win32 port
+    - externaltools
+    - charmap ([[gedit-plugins]])
+    - synctex ([[gedit-plugins]])
+    - terminal ([[gedit-plugins]])
+    - textsize (no longer in [[gedit-plugins]])
+
+*** DONE gconf issue
+   + [X] json
+   + [X] gconftool-2  http://ftp.gnome.org/pub/gnome/binaries/win32/GConf/2.22/
+        
+*** DONE libglade-2.0-0.dll  http://ftp.gnome.org/pub/gnome/binaries/win32/libglade/2.6/
+*** DONE missing python modules (python2.6)
+   + [X] logging
+   + [X] pep8
+
+*** TODO file:///  issue  (local path <-> uri) on win32
+  - [X] [[advancedfind]]
+  - [ ] [[betterpythonconsole]]
+  - [X] [[gdpfind]] (gdp/__init__.py)
+  - [ ] [[pycheck]]/pycheck.py
+  - [ ] [[PythonChecker]].py
+  - [ ] [[pythonkit]]/completion.py
+  - [X] [[reopen-tabs]]
+  - [X] [[SplitView]]
+  - [X] builder/Builder.py
+  - [X] classbrowser/parser_python.py
+   
+** mate branch
+*** DONE [[gedit-plugins]] not ported yet
+https://github.com/cygwinports/mate-text-editor-plugins
+
+** misc todo
+*** gedit/geditutils/geditcommander.py in gdp (for references: what interfaces in gedit/gedit.utils/gedit.commands)
+
+** misc plugins to evaluate
+*** DONE scratchtab: http://www.omacronides.com/projets/gedit-scratchtab/
+  or [[gedit-plugins-extra]]
+*** DONE gedit-plugins-extra.rpm 
 http://rpmfind.net//linux/RPM/mandriva/devel/cooker/i586/media/contrib/release/gedit-plugins-extra-2.24.1-7.i586.html
-** DONE splitview
+*** DONE splitview
 http://webdav.tielie.com/gedit-plugins/splitview/
-** multiview
+*** multiview
 http://webdav.tielie.com/gedit-plugins/multiview/
 
-** [[commander]] how to use?
-** http://adi.roiban.ro/2011/01/31/power-to-the-users-editable-menu-shortcut-keys/
-** giterdone (gitorious.org)
-** gedbp
-** makeandrun
-** builder
+*** [[commander]] how to use?
+*** http://adi.roiban.ro/2011/01/31/power-to-the-users-editable-menu-shortcut-keys/
+*** giterdone (gitorious.org)
+*** gedbp
+*** makeandrun
+*** builder
+*** gedit-todo
+https://sourceforge.net/projects/gedit-todo/files/latest/download?source=files

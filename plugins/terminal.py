@@ -1,32 +1,39 @@
 # -*- coding: utf8 -*-
 
-# terminal.py - Embeded VTE terminal for pluma
-# This file is part of pluma
+# terminal.py - Embeded VTE terminal for gedit
+# This file is part of gedit
 #
 # Copyright (C) 2005-2006 - Paolo Borelli
 #
-# pluma is free software; you can redistribute it and/or modify
+# gedit is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
-# pluma is distributed in the hope that it will be useful,
+# gedit is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with pluma; if not, write to the Free Software
+# along with gedit; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor,
 # Boston, MA  02110-1301  USA
 
-import pluma
-import pluma.utils
+try:
+    import gedit
+    import gconf
+    import gedit.utils as gedit_utils
+
+except:
+    import pluma as gedit
+    import mateconf as gconf
+    import pluma.utils as gedit_utils
+ 
 import pango
 import gtk
 import gobject
 import vte
-import mateconf
 import gettext
 import os
 import gio
@@ -38,7 +45,7 @@ try:
 except:
     _ = lambda s: s
 
-class PlumaTerminal(gtk.HBox):
+class GeditTerminal(gtk.HBox):
     """VTE terminal which follows mate-terminal default profile options"""
 
     __gsignals__ = {
@@ -94,7 +101,7 @@ class PlumaTerminal(gtk.HBox):
         self._vte.connect("popup-menu", self.on_vte_popup_menu)
         self._vte.connect("child-exited", lambda term: term.fork_command())
 
-        self._accel_base = '<pluma>/plugins/terminal'
+        self._accel_base = '<gedit>/plugins/terminal'
         self._accels = {
             'copy-clipboard': [gtk.keysyms.C, gtk.gdk.CONTROL_MASK | gtk.gdk.SHIFT_MASK, self.copy_clipboard],
             'paste-clipboard': [gtk.keysyms.V, gtk.gdk.CONTROL_MASK | gtk.gdk.SHIFT_MASK, self.paste_clipboard]
@@ -254,7 +261,7 @@ class PlumaTerminal(gtk.HBox):
             menu.popup(None, None, None, event.button, event.time)
         else:
             menu.popup(None, None,
-                       lambda m: pluma.utils.menu_position_under_widget(m, self),
+                       lambda m: gedit_utils.menu_position_under_widget(m, self),
                        0, gtk.get_current_event_time())
             menu.select_first(False)
 
@@ -275,7 +282,7 @@ class TerminalWindowHelper(object):
     def __init__(self, window):
         self._window = window
 
-        self._panel = PlumaTerminal()
+        self._panel = GeditTerminal()
         self._panel.connect("populate-popup", self.on_panel_populate_popup)
         self._panel.show()
 
@@ -297,7 +304,7 @@ class TerminalWindowHelper(object):
         if doc is None:
             return None
         location = doc.get_location()
-        if location is not None and pluma.utils.uri_has_file_scheme(location.get_uri()):
+        if location is not None and gedit_utils.uri_has_file_scheme(location.get_uri()):
             directory = location.get_parent()
             return directory.get_path()
         return None
@@ -310,11 +317,11 @@ class TerminalWindowHelper(object):
         item.set_sensitive(path is not None)
         menu.prepend(item)
 
-class TerminalPlugin(pluma.Plugin):
+class TerminalPlugin(gedit.Plugin):
     WINDOW_DATA_KEY = "TerminalPluginWindowData"
 
     def __init__(self):
-        pluma.Plugin.__init__(self)
+        gedit.Plugin.__init__(self)
 
     def activate(self, window):
         helper = TerminalWindowHelper(window)

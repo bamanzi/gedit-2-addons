@@ -1,0 +1,9 @@
+[Gedit Plugin]
+Loader=python
+Module=PythonChecker
+IAge=2
+Name=PythonChecker
+Description=Check with pep8.py and pyflakes
+Authors=Antonio Perez-Aranda Alcaide <ant30tx@gmail.com>
+Copyright=© Antonio Perez-Aranda Alcaide
+Website=http://www.ant30.es/

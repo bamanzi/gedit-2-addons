@@ -1043,18 +1043,22 @@ https://github.com/rdunklau/Gedit-checkpython
 
 Gedit Python checker: pep8 & pyflakes (for gedit-3)
 
-*** ? pycheck                                                  :gedit_2:pep8:
+*** [ ] pycheck                                                :gedit_2:pep8:
+# <<pycheck>>
 https://github.com/tmf16/gedit-pycheck
 
 Gedit Python pep8 pyflakes
 
   - [ ] not work on windows (tempfile...)
-*** pylint                                                   :gedit_2:pylint:
+  - [ ] error: AttributeError: 'Module' object has no attribute 'getChildNodes'
+
+*** [ ] pylint                                               :gedit_2:pylint:
 https://github.com/phsilva/gedit-pylint
 
 gedit-pylint is a small Python plugin to use pylint
 (http://www.logilab.org/pylint) inside GNOME's Gedit editor.
-*** ? geditchecker                                    :gedit_2:pep8:pyflakes:
+*** + PythonChecker                                   :gedit_2:pep8:pyflakes:
+# <<PythonChecker>>
 http://code.google.com/p/geditchecker/
 
 This gedit plugin can check syntax python code with pyflakes and pep8.py a can check css with W3C
@@ -1088,8 +1092,8 @@ https://live.gnome.org/Gedit/PluginsOld#line-709
 
   - [ ] not accessible
 
-** misc
-*** ipython
+** run
+*** ipython                                                         :gedit_3:
 https://github.com/smathot/gedit-plugin-ipython
 
 The Gedit IPython plugin allows you to select text in Gedit and run it straight away in an IPython
@@ -1098,6 +1102,11 @@ code. Please note that executing long pieces of code may not work well.
 
 intro:    http://www.cogsci.nl/software/gedit-ipython-plugin
 
+*** Redirect python traceback
+# <<gedit-python-traceback>>
+https://launchpad.net/gedit-python-traceback
+
+** misc
 *** TODO django-project                                      :django:gedit_3:
 https://github.com/Quixotix/gedit-django-project
 
@@ -1134,10 +1143,6 @@ It supports c code and python code (it also parses python docs and shows them).
 http://code.google.com/p/gedit-rope
 
 A Gedit plugin to use rope project management, refactoring and code completion library. 
-
-*** Redirect python traceback
-# <<gedit-python-traceback>>
-https://launchpad.net/gedit-python-traceback
 *** + Python Indentation                                               :GOOD:
 # <<python_indentation>>
 Smart indentation for python code. The code is indented when the previous line ends with ':' and
@@ -1149,6 +1154,18 @@ choose to insert spaces instead of tabs.
 Python code structure outline
 http://www.optionexplicit.be/
 *** reindent
+*** ++ pythontools
+http://www.stambouliote.de/projects/gedit_plugins_old.html
+
+A collection of tools that aim to provide a rudimentary development
+environment for python in gedit.
+
+The current features are:
+
+  * A class browser
+  * Find function definitions and references (with BicycleRepairMan)
+  * Add and remove comments
+
 ** templates
 *** https://github.com/bigbrozer/gedit-snippets                      :django:
 python & django snippets for gedit

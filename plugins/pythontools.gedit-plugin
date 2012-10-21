@@ -1,0 +1,9 @@
+[Gedit Plugin]
+Loader=python
+Module=pythontools
+IAge=2
+Name=Python Tools
+Description=A collection of useful python tools
+Authors=Frederic Back
+Copyright=Copyright © 2006 Frederic Back
+Website=http://www.stambouliote.de/projects/gedit_plugins.html

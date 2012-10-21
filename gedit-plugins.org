@@ -1230,6 +1230,8 @@ code: https://github.com/shiloa/power-gedit/blob/master/plugins
 ** [[tabs_enhanced]]                                                      :GOOD:
 ** [[TabSwitch]]
 ** [[Right Pane]]
+** [[tabtweaks]]
+** [[fullscreenpy]]
 * scm
 ** git-gedit
 Run Git Comamnds
@@ -1239,6 +1241,7 @@ https://github.com/GunioRobot/git-gedit
 ** geditsvnplugin
 http://code.google.com/p/geditsvnplugin/
 
+** ++ rabbitvcs
 * completion
 ** / [[Bracket Completion]] from [[gedit-plugins]]                           :native:
 ** + [[Word Completion]] from [[gedit-plugins]]                              :native:
@@ -1373,7 +1376,7 @@ https://github.com/cygwinports/mate-text-editor-plugins
 http://rpmfind.net//linux/RPM/mandriva/devel/cooker/i586/media/contrib/release/gedit-plugins-extra-2.24.1-7.i586.html
 *** DONE splitview
 http://webdav.tielie.com/gedit-plugins/splitview/
-*** multiview
+*** +multiview+
 http://webdav.tielie.com/gedit-plugins/multiview/
 
 *** [[commander]] how to use?

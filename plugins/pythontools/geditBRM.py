@@ -37,7 +37,14 @@ try:
     import gedit
 except:
     import pluas as gedit
-import bike
+
+try:
+    import bike
+except:
+    import inspect
+    __file__ = inspect.getfile(sys._getframe(1))
+    sys.path.append(os.path.dirname(__file__))
+    import bike
 
 
 class BikeLogger:

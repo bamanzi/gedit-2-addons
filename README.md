@@ -4,16 +4,20 @@ Here are some nice plugins and themes I collected for Gedit-2.
 
 The goals of this repo:
 
-* collection plugins, templates & themes for [Gedit-2](https://projects.gnome.org/gedit/) & Pluma (fork for
+* collection plugins, templates & themes for [Gedit-2](https://projects.gnome.org/gedit/)
 * make sure them work on Pluma, [the MATE desktop](http://mate-desktop.org/)) fork
-* make most of them work on [Gedit-2 for Windows](https://live.gnome.org/Gedit/Windows).
+* make most of them work on [Gedit-2 for Windows](https://live.gnome.org/Gedit/Windows)
+* make gedit a lightweight Python editor
 
 
 ## Installtion ##
-* for gedit-2: put this repo into ~/.gnome2/gedit/
-* for pluma:   put this repo into ~/.config/pluma/
+
+* for gedit-2: put this repo into `~/.gnome2/gedit/`
+* for pluma:   put this repo into `~/.config/pluma/`
 * for gedit-2 for windows: put this repo into %APPDATA%/gedit/
-  (in most cases, APPDATA should be C:\Documents and Settings\<username>\Application Data\
+  (on Windows XP, %APPDATA% should be `C:\Documents and Settings\<username>\Application Data\`,
+   on Windows Vista & 7, %APPDATA% should be `C:\Users\<username>\AppData\Roaming\`.)
+  and move contents in _windows to gedit install dir
   
 ## Some Useful Links ##
 

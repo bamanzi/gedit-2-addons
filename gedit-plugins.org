@@ -188,7 +188,7 @@ NOTE: Not good as gedit built-in plugin Word Completion. Don't know
 	code: [[gmate]] (with configuration dialog)
 
 ** ~Evolved Code Completion~                                           :WEAK:
-[[# <<codecompletion]]>>
+# <<codecompletion>>
 (not useful?)
 # <<code
 https://github.com/nagaozen/gedit-plugin-codecompletion/
@@ -278,7 +278,9 @@ Collapse selected text.
 https://github.com/influx6/gedit-folding
 
   * [ ] gedit-3 version?
-
+  * [ ] this fork add some for feature and gedit-3 support
+        https://github.com/alanhamlett/gedit-folding
+        (last gedit-2 version: https://github.com/alanhamlett/gedit-folding/tree/b10f55f8e692d6ce517b780f3771e1c3e2f9339a )
 ** Ftp Browser
 # <<ftp-browser>>
 http://code.google.com/p/gedit-ftp-browser/
@@ -437,6 +439,10 @@ Increase or decrease space between lines
 ** Macropy                                                          :gedit_3:
 This plugin allows to record and execute macros with Gedit 3
 https://github.com/intangir/gedit-macropy
+** Macro                                                             :native:
+# <<macro>>
+http://code.google.com/p/gedit-macro-plugin
+Records and executes a macro.
 ** Make and Run
 # <<MakeAndRun>>
 http://code.google.com/p/gedit-plugin-make-and-run/
@@ -522,12 +528,16 @@ Pair complete for quotes and braces, that also wrap selected text.
 Paste a selection of code or a source file to pastie.org directly from editor http://github.com/ivyl/gedit-pastie
 
 ** Project Manager
+
 http://sourceforge.net/projects/gedit-fileset/
 
 Project Manager - groups files into "projects"
 
 screeshot: http://sourceforge.net/projects/gedit-fileset/screenshots/94132/182/137
 
+** Projects Manager                                                 :gedit_3:
+# <<projects>>
+https://launchpad.net/gedit-projects  
 * Q
 ** Quick Highlight Mode
 # <<quickhighligthmode>>
@@ -607,17 +617,6 @@ Re-wraps blocks of text based on the current right margin setting. Maintains ind
 markers based on the first line. Download: http://code.google.com/p/gedit-rewrap/. View the
 screencast
 
-# <<smart_highlight>>
-http://code.google.com/p/smart-highlighting-gedit
-
-Smart highlighting is a plugin for gedit that highlight all occurrences of selected text.
-
-Features:
-  * Highlight occurrences of current selected text
-  * Match occurrences using regular expression
-  * Highlighting colors and matching options are configurable
-  * Multi-language support
-  * Support both gedit2.x and 3.x
 
 * S
 ** Scratch Tab
@@ -635,7 +634,15 @@ Smart Indentation regex based.
 # <<smart_highlight>>
 http://code.google.com/p/smart-highlighting-gedit
 
-support gedit-2 & gedit-3 
+Smart highlighting is a plugin for gedit that highlight all occurrences of selected text.
+
+Features:
+  * Highlight occurrences of current selected text
+  * Match occurrences using regular expression
+  * Highlighting colors and matching options are configurable
+  * Multi-language support
+  * Support both gedit2.x and 3.x
+
 *** similar plugin: highlight-text
 but gedit-2 only
 http://code.google.com/p/gedit-highlight-text 
@@ -1063,6 +1070,10 @@ https://github.com/phsilva/gedit-pylint
 
 gedit-pylint is a small Python plugin to use pylint
 (http://www.logilab.org/pylint) inside GNOME's Gedit editor.
+*** [ ] Pylint 2                                                    :gedit_3:
+# <<pylint-2>>
+https://launchpad.net/gedit-pylint-2
+Pylint static analysis support
 *** + PythonChecker                                   :gedit_2:pep8:pyflakes:
 # <<PythonChecker>>
 http://code.google.com/p/geditchecker/
@@ -1112,6 +1123,19 @@ intro:    http://www.cogsci.nl/software/gedit-ipython-plugin
 # <<gedit-python-traceback>>
 https://launchpad.net/gedit-python-traceback
 
+*** ? RunInPython
+https://live.gnome.org/Gedit/PluginsOld#line-520
+
+Run the active document through the Python interpreter
+
+NOTE: fork() used, thus not work in Windows. patch needed.
+*** Python Profiler                                         :gedit_2:gedit_3:
+# <<pyprofiler>>
+https://launchpad.net/gedit-pyprofiler
+
+Profiling Python programs from within gedit. The statistics is displayed in the bottom panel. It is
+also possible to profile the gedit plugins. Project page:
+https://launchpad.net/gedit-pyprofiler. The project is part of Gedit BC Developer Plugins.
 ** misc
 *** TODO django-project                                      :django:gedit_3:
 https://github.com/Quixotix/gedit-django-project
@@ -1159,7 +1183,11 @@ choose to insert spaces instead of tabs.
 # <<pythonoutline>>
 Python code structure outline
 http://www.optionexplicit.be/
-*** reindent
+*** + reindent
+https://live.gnome.org/Gedit/Plugins/Reindent
+
+A Simple plugin to reindent the code following PEP008 Guideline, it take the source from reident.py
+at python examples
 *** ++ pythontools
 http://www.stambouliote.de/projects/gedit_plugins_old.html
 
@@ -1172,6 +1200,18 @@ The current features are:
   * Find function definitions and references (with BicycleRepairMan)
   * Add and remove comments
 
+*** GDP format
+# <<gdpformat>>
+Format paragraphs, lists, and imports. Reformat test using regular expressions. Check the syntax and
+style of Python, XML, and plain text. Check and reformat Python doctests.
+
+** Gedit BC Developer Plugins                                       :gedit_3:
+https://launchpad.net/~gedit-bc-dev-plugins
+*** [[projects]]
+*** [[pyprofiler]]
+*** [[pylint-2]]
+*** [[gedit-python-traceback]]
+*** [[python-traceback]]
 ** templates
 *** https://github.com/bigbrozer/gedit-snippets                      :django:
 python & django snippets for gedit
@@ -1393,3 +1433,9 @@ http://webdav.tielie.com/gedit-plugins/multiview/
 *** builder
 *** gedit-todo
 https://sourceforge.net/projects/gedit-todo/files/latest/download?source=files
+* misc info
+** some gedit-3 plugin collections
+ - http://code.google.com/p/gedit-improving-plugins/
+ - https://github.com/athanase/GeditStuff
+ - https://launchpad.net/gdp
+ - some of gmate pack: http://github.com/gmate/gmate/tree/master/plugins/gedit3

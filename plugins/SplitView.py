@@ -338,7 +338,7 @@ class PluginHelper:
 
         current_document = self.window.get_active_document()
         #current_path = urllib.unquote( current_document.get_uri().replace("file://", "") )
-        current_path = gnomevfs.get_local_path_from_uri()
+        current_path = gnomevfs.get_local_path_from_uri(current_document.get_uri())
         dialog.set_current_folder( os.path.dirname(current_path) )
 
         filter_list = [

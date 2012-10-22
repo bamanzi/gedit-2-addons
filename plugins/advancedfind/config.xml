@@ -24,4 +24,8 @@
 	<ResultGUI name="CLEAR_BUTTON" value="True"/>
 	<FindHistory name="gconf"/>
 	<FindHistory name="object"/>
+	<FindHistory name="_results"/>
+	<FindHistory name="gconf."/>
+	<FindHistory name="_rootdir"/>
+	<FindHistory name="file://"/>
 </manifest>

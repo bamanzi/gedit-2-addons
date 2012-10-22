@@ -639,7 +639,13 @@ support gedit-2 & gedit-3
 *** similar plugin: highlight-text
 but gedit-2 only
 http://code.google.com/p/gedit-highlight-text 
-** snapopen
+** Snap Open
+# <<snapopen>>
+Opens files by regex
+https://github.com/MadsBuus/gedit-snapopen-plugin
+
+NOTE: This plugin uses 'find' and 'grep' tools
+
 ** sourcecodebrowser                                                :gedit_3:
 https://github.com/Quixotix/gedit-source-code-browser
 

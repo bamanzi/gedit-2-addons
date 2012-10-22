@@ -24,7 +24,7 @@
 # 
 #
 
-__version__ = '1.0.4'
+__version__ = '1.0.5'
 __author__ = 'Kevin McGuinness'
 
 try:
@@ -108,7 +108,7 @@ class AutoCompleter(object):
       i = iter1.copy()
       while not i.starts_sentence() and i.backward_char():
         ch = i.get_char()
-        if ch.isalpha() or ch == '_':
+        if ch.isalnum() or ch == '_':
           continue
         else:
           i.forward_char()

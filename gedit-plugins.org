@@ -1351,7 +1351,7 @@ Use <Control>Slash (Ctrl+/) to activate the completer window.
 *** [[classbrowser]]
 *** [[clickconfig]]
 *** [[multi_edit]]
-*** [[line_tools]]
+*** [[line_tools]]  gedit-3?
 *** [[reopen-tabs]] or [[restoretabs]]
 for gedit-2, use this fork: [[reopen-tabs_fork]]
 for gedit-3, use [[Restore Tabs]]

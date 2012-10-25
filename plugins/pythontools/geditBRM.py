@@ -36,7 +36,7 @@ import gtk
 try:
     import gedit
 except:
-    import pluas as gedit
+    import pluma as gedit
 
 try:
     import bike
@@ -64,7 +64,7 @@ class geditBRM:
 
         self.tmpBufferPath = '/tmp/gedit_bicyclerepairman_buffer.py'
         self.window = window
-        self.encoding = gedit.gedit_encoding_get_current()
+        self.encoding = gedit.encoding_get_current()
 
         self.logger = BikeLogger()
         self.ctx.setProgressLogger(self.logger)

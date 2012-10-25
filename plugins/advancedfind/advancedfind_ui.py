@@ -43,9 +43,11 @@ import re
 #import config_manager
 try:
 	import gconf
+	import gnomevfs
 	is_mate = False
 except:
 	import mateconf as gconf
+	import matevfs as gnomevfs
 	is_mate = True
 
 
@@ -474,12 +476,13 @@ class AdvancedFindUI(object):
 			base = u'/apps/pluma/plugins/filebrowser/on_load'
 		client = gconf.client_get_default()
 		client.add_dir(base, gconf.CLIENT_PRELOAD_NONE)
-		path = os.path.join(base, u'virtual_root')
+		path = base + u'/virtual_root'
 		val = client.get(path)
 		if val != None:
 			path_string = val.get_string()
-			idx = path_string.find('://') + 3
-			return val.get_string()[idx:]
+			#idx = path_string.find('://') + 3
+			#return val.get_string()[idx:]
+			return gnomevfs.get_local_path_from_uri(path_string)
 		return None
 	
 

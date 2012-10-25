@@ -217,7 +217,7 @@ class SnapOpenPluginInstance:
 	  base = u'/apps/%s/plugins/eddt' % APP_KEY
 	  client = gconf.client_get_default()
 	  client.add_dir(base, gconf.CLIENT_PRELOAD_NONE)
-	  path = os.path.join(base, u'repository')
+	  path = base + u'/repository'
 	  val = client.get(path)
 	  if val is not None:
 	  	return val.get_string()
@@ -227,14 +227,14 @@ class SnapOpenPluginInstance:
 	  base = u'/apps/%s/plugins/filebrowser/on_load' % APP_KEY
 	  client = gconf.client_get_default()
 	  client.add_dir(base, gconf.CLIENT_PRELOAD_NONE)
-	  path = os.path.join(base, u'virtual_root')
+	  path = base + u'/virtual_root'
 	  val = client.get(path)
 	  if val is not None:
 	  	#also read hidden files setting
 		  base = u'/apps/%s/plugins/filebrowser' % APP_KEY
 		  client = gconf.client_get_default()
 		  client.add_dir(base, gconf.CLIENT_PRELOAD_NONE)
-		  path = os.path.join(base, u'filter_mode')
+		  path = base + u'/filter_mode'
 		  try:
 			  fbfilter = client.get(path).get_string()
 		  except AttributeError:

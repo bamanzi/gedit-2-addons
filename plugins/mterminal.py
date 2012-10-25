@@ -30,11 +30,13 @@ try:
     import gedit.utils as gedit_utils
     import gconf
     import gnomevfs
+    is_mate = False
 except:
     import pluma as gedit
     import pluma.utils as gedit_utils
     import mateconf as gconf
     import matevfs as gnomevfs
+    is_mate = True
 import gettext
 import os
 from gpdefs import *
@@ -56,7 +58,10 @@ class GeditTerminal(gtk.HBox):
         )
     }
 
-    GCONF_PROFILE_DIR = "/apps/gnome-terminal/profiles/Default"
+    if not is_mate:
+        GCONF_PROFILE_DIR = "/apps/gnome-terminal/profiles/Default"
+    else:
+        GCONF_PROFILE_DIR = "/apps/mate-terminal/profiles/Default"
     
     defaults = {
         'allow_bold'            : True,
@@ -105,7 +110,8 @@ class GeditTerminal(gtk.HBox):
     def reconfigure_vte(self):
         # Fonts
         if gconf_get_bool(self.GCONF_PROFILE_DIR + "/use_system_font"):
-            font_name = gconf_get_str("/desktop/gnome/interface/monospace_font",
+            font_name = gconf_get_str("/desktop/%s/interface/monospace_font" %
+                                      ("gnome" if not is_mate else "mate"),
                                       self.defaults['font_name'])
         else:
             font_name = gconf_get_str(self.GCONF_PROFILE_DIR + "/font",

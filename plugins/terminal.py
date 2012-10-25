@@ -24,11 +24,12 @@ try:
     import gedit
     import gconf
     import gedit.utils as gedit_utils
-
+    is_mate = False
 except:
     import pluma as gedit
-    import mateconf as gconf
+    import gconf as gconf
     import pluma.utils as gedit_utils
+    is_mate = True
  
 import pango
 import gtk
@@ -36,7 +37,7 @@ import gobject
 import vte
 import gettext
 import os
-import gio
+#import gio
 from gpdefs import *
 
 try:
@@ -46,7 +47,7 @@ except:
     _ = lambda s: s
 
 class GeditTerminal(gtk.HBox):
-    """VTE terminal which follows mate-terminal default profile options"""
+    """VTE terminal which follows gnome-terminal default profile options"""
 
     __gsignals__ = {
         "populate-popup": (
@@ -55,8 +56,10 @@ class GeditTerminal(gtk.HBox):
             (gobject.TYPE_OBJECT,)
         )
     }
-
-    MATECONF_PROFILE_DIR = "/apps/mate-terminal/profiles/Default"
+    if not is_mate:
+        GCONF_PROFILE_DIR = "/apps/gnome-terminal/profiles/Default"
+    else:
+        GCONF_PROFILE_DIR = "/apps/mate-terminal/profiles/Default"
 
     defaults = {
         'allow_bold'            : True,
@@ -77,8 +80,8 @@ class GeditTerminal(gtk.HBox):
     def __init__(self):
         gtk.HBox.__init__(self, False, 4)
 
-        mateconf_client.add_dir(self.MATECONF_PROFILE_DIR,
-                             mateconf.CLIENT_PRELOAD_RECURSIVE)
+        gconf_client.add_dir(self.GCONF_PROFILE_DIR,
+                             gconf.CLIENT_PRELOAD_RECURSIVE)
 
         self._vte = vte.Terminal()
         self.reconfigure_vte()
@@ -91,8 +94,8 @@ class GeditTerminal(gtk.HBox):
         self._scrollbar.show()
         self.pack_start(self._scrollbar, False, False, 0)
 
-        mateconf_client.notify_add(self.MATECONF_PROFILE_DIR,
-                                self.on_mateconf_notification)
+        gconf_client.notify_add(self.GCONF_PROFILE_DIR,
+                                self.on_gconf_notification)
 
         # we need to reconf colors if the style changes
         self._vte.connect("style-set", lambda term, oldstyle: self.reconfigure_vte())
@@ -121,11 +124,12 @@ class GeditTerminal(gtk.HBox):
 
     def reconfigure_vte(self):
         # Fonts
-        if mateconf_get_bool(self.MATECONF_PROFILE_DIR + "/use_system_font"):
-            font_name = mateconf_get_str("/desktop/mate/interface/monospace_font_name",
+        if gconf_get_bool(self.GCONF_PROFILE_DIR + "/use_system_font"):
+            font_name = gconf_get_str("/desktop/%s/interface/monospace_font_name"
+                                      % ("gnome" if not is_mate else "mate"),
                                       self.defaults['font_name'])
         else:
-            font_name = mateconf_get_str(self.MATECONF_PROFILE_DIR + "/font",
+            font_name = gconf_get_str(self.GCONF_PROFILE_DIR + "/font",
                                       self.defaults['font_name'])
 
         try:
@@ -140,14 +144,14 @@ class GeditTerminal(gtk.HBox):
         bg = style.base[gtk.STATE_NORMAL]
         palette = []
 
-        if not mateconf_get_bool(self.MATECONF_PROFILE_DIR + "/use_theme_colors"):
-            fg_color = mateconf_get_str(self.MATECONF_PROFILE_DIR + "/foreground_color", None)
+        if not gconf_get_bool(self.GCONF_PROFILE_DIR + "/use_theme_colors"):
+            fg_color = gconf_get_str(self.GCONF_PROFILE_DIR + "/foreground_color", None)
             if (fg_color):
                 fg = gtk.gdk.color_parse (fg_color)
-            bg_color = mateconf_get_str(self.MATECONF_PROFILE_DIR + "/background_color", None)
+            bg_color = gconf_get_str(self.GCONF_PROFILE_DIR + "/background_color", None)
             if (bg_color):
                 bg = gtk.gdk.color_parse (bg_color)
-        str_colors = mateconf_get_str(self.MATECONF_PROFILE_DIR + "/palette", None)
+        str_colors = gconf_get_str(self.GCONF_PROFILE_DIR + "/palette", None)
         if (str_colors):
             for str_color in str_colors.split(':'):
                 try:
@@ -160,7 +164,7 @@ class GeditTerminal(gtk.HBox):
         self._vte.set_colors(fg, bg, palette)
 
         # cursor blink
-        blink_mode = mateconf_get_str(self.MATECONF_PROFILE_DIR + "/cursor_blink_mode")
+        blink_mode = gconf_get_str(self.GCONF_PROFILE_DIR + "/cursor_blink_mode")
         if blink_mode.lower() == "system":
             blink = vte.CURSOR_BLINK_SYSTEM
         elif blink_mode.lower() == "on":
@@ -172,7 +176,7 @@ class GeditTerminal(gtk.HBox):
         self._vte.set_cursor_blink_mode(blink)
 
         # cursor shape
-        cursor_shape = mateconf_get_str(self.MATECONF_PROFILE_DIR + "/cursor_shape")
+        cursor_shape = gconf_get_str(self.GCONF_PROFILE_DIR + "/cursor_shape")
         if cursor_shape.lower() == "block":
             shape = vte.CURSOR_SHAPE_BLOCK
         elif cursor_shape.lower() == "ibeam":
@@ -183,28 +187,28 @@ class GeditTerminal(gtk.HBox):
             shape = self.defaults['cursor_shape']
         self._vte.set_cursor_shape(shape)
 
-        self._vte.set_audible_bell(not mateconf_get_bool(self.MATECONF_PROFILE_DIR + "/silent_bell",
+        self._vte.set_audible_bell(not gconf_get_bool(self.GCONF_PROFILE_DIR + "/silent_bell",
                                                       not self.defaults['audible_bell']))
 
-        self._vte.set_scrollback_lines(mateconf_get_int(self.MATECONF_PROFILE_DIR + "/scrollback_lines",
+        self._vte.set_scrollback_lines(gconf_get_int(self.GCONF_PROFILE_DIR + "/scrollback_lines",
                                                      self.defaults['scrollback_lines']))
 
-        self._vte.set_allow_bold(mateconf_get_bool(self.MATECONF_PROFILE_DIR + "/allow_bold",
+        self._vte.set_allow_bold(gconf_get_bool(self.GCONF_PROFILE_DIR + "/allow_bold",
                                                 self.defaults['allow_bold']))
 
-        self._vte.set_scroll_on_keystroke(mateconf_get_bool(self.MATECONF_PROFILE_DIR + "/scroll_on_keystroke",
+        self._vte.set_scroll_on_keystroke(gconf_get_bool(self.GCONF_PROFILE_DIR + "/scroll_on_keystroke",
                                                          self.defaults['scroll_on_keystroke']))
 
-        self._vte.set_scroll_on_output(mateconf_get_bool(self.MATECONF_PROFILE_DIR + "/scroll_on_output",
+        self._vte.set_scroll_on_output(gconf_get_bool(self.GCONF_PROFILE_DIR + "/scroll_on_output",
                                                       self.defaults['scroll_on_output']))
 
-        self._vte.set_word_chars(mateconf_get_str(self.MATECONF_PROFILE_DIR + "/word_chars",
+        self._vte.set_word_chars(gconf_get_str(self.GCONF_PROFILE_DIR + "/word_chars",
                                                self.defaults['word_chars']))
 
         self._vte.set_emulation(self.defaults['emulation'])
         self._vte.set_visible_bell(self.defaults['visible_bell'])
 
-    def on_mateconf_notification(self, client, cnxn_id, entry, what):
+    def on_gconf_notification(self, client, cnxn_id, entry, what):
         self.reconfigure_vte()
 
     def on_vte_key_press(self, term, event):
@@ -334,27 +338,27 @@ class TerminalPlugin(gedit.Plugin):
     def update_ui(self, window):
         window.get_data(self.WINDOW_DATA_KEY).update_ui()
 
-mateconf_client = mateconf.client_get_default()
-def mateconf_get_bool(key, default = False):
-    val = mateconf_client.get(key)
+gconf_client = gconf.client_get_default()
+def gconf_get_bool(key, default = False):
+    val = gconf_client.get(key)
 
-    if val is not None and val.type == mateconf.VALUE_BOOL:
+    if val is not None and val.type == gconf.VALUE_BOOL:
         return val.get_bool()
     else:
         return default
 
-def mateconf_get_str(key, default = ""):
-    val = mateconf_client.get(key)
+def gconf_get_str(key, default = ""):
+    val = gconf_client.get(key)
 
-    if val is not None and val.type == mateconf.VALUE_STRING:
+    if val is not None and val.type == gconf.VALUE_STRING:
         return val.get_string()
     else:
         return default
 
-def mateconf_get_int(key, default = 0):
-    val = mateconf_client.get(key)
+def gconf_get_int(key, default = 0):
+    val = gconf_client.get(key)
 
-    if val is not None and val.type == mateconf.VALUE_INT:
+    if val is not None and val.type == gconf.VALUE_INT:
         return val.get_int()
     else:
         return default

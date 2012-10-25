@@ -18,7 +18,10 @@
 import gtk
 import tempfile
 import os
-import gnomevfs
+try:
+	import gnomevfs
+except:
+	import matevfs as gnomevfs
 
 from parserinterface import *
 import imagelibrary

@@ -27,7 +27,7 @@ try:
     is_mate = False
 except:
     import pluma as gedit
-    import gconf as gconf
+    import mateconf as gconf
     import pluma.utils as gedit_utils
     is_mate = True
  

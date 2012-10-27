@@ -1,0 +1,10 @@
+[Pluma Plugin]
+Loader=python
+Module=pythonkit
+IAge=2
+Name=Python Kit
+Description=A toolkit to ease Python development
+Authors=Isman Firmansyah <izman.romli@gmail.com>
+Copyright=Copyright (c) 2011, Isman Firmansyah
+Website=https://github.com/iromli/gedit-pythonkit
+

@@ -19,9 +19,9 @@ class PythonCheckerFile(gtk.VBox):
         self.geditwindow.connect("tab_removed", self.__close_tab)
 
 
-        self.commands = {'pep8': 'pep8 %s --repeat --ignore=E501',
-                         'pyflakes': 'pyflakes %s',
-                         'csschecker': 'csschecker.py %s'}
+        self.commands = {'pep8'      : 'pep8 "%s" --repeat --ignore=E501',
+                         'pyflakes'  : 'pyflakes "%s"',
+                         'csschecker': 'csschecker.py "%s"'}
 
         self.extensions = {'.py': ['pep8', 'pyflakes'],
                            '.css': ['csschecker']}
@@ -145,11 +145,14 @@ class PythonCheckerFile(gtk.VBox):
                             col_number = -1
                             row_number = -1
                             filename = splitted_line[0]
-                            if splitted_line[1].strip().isdigit():
-                                row_number = splitted_line[1].strip()
-                            if splitted_line[2].strip().isdigit():
-                                col_number = splitted_line[2].strip()
-                            show_text = ':'.join(splitted_line[1:])
+                            startcol = 0
+                            if os.name == 'nt':
+                                startcol = 1  # c:\...:
+                            if splitted_line[startcol+1].strip().isdigit():
+                                row_number = splitted_line[startcol+1].strip()
+                            if splitted_line[startcol+2].strip().isdigit():
+                                col_number = splitted_line[startcol+2].strip()
+                            show_text = ':'.join(splitted_line[startcol+1:])
                             self.check_lines.append((row_number, col_number, show_text))
                         else:
                             self.check_lines.append((-1, -1, line))

@@ -343,7 +343,7 @@ class ClassBrowser( gtk.VBox ):
         else: doc = tok.pythonfile.doc
 
         # scroll to the correct position
-        tab = gedit.gedit_tab_get_from_document(doc)
+        tab = gedit.tab_get_from_document(doc)
         self.geditwindow.set_active_tab(tab)
         doc.begin_user_action()
         it = doc.get_iter_at_line_offset(tok.start,0)

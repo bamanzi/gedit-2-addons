@@ -247,7 +247,7 @@ class geditBRM:
 
         # open an existing tab or create a new one
         if found is not None:
-            tab = gedit.gedit_tab_get_from_document(found)
+            tab = gedit.tab_get_from_document(found)
             self.window.set_active_tab(tab)
             doc = tab.get_document()
             doc.begin_user_action()

@@ -18,8 +18,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
 import gtk
-import gedit
-import gconf
+try:
+  import gedit
+  import gconf
+except:
+  import pluma as gedit
+  import mateconf as gconf
 
 from encodingshelper import EncodingsHelper
 

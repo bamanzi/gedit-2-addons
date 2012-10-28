@@ -1,9 +1,15 @@
-import gedit
-import gconf
+try:
+  import gedit
+  import gconf
+  APP_KEY = "gedit-2"
+except
+  import pluma as gedit
+  import mateconf as gconf
+  APP_KEY = "pluma"
 
 class EncodingsHelper:
 
-  shown_in_menu = "/apps/gedit-2/preferences/encodings/shown_in_menu"
+  shown_in_menu = "/apps/%s/preferences/encodings/shown_in_menu" % APP_KEY
 
   def gedit_prefs_manager_get_shown_in_menu_encodings(self):
     list = gconf.client_get_default().get_list(self.shown_in_menu, gconf.VALUE_STRING)

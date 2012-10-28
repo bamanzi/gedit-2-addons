@@ -18,7 +18,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
 import gtk
-import gedit
+try:
+  import gedit
+except:
+  import pluma as gedit
 
 from dochelper import DocHelper
 from encodingshelper import EncodingsHelper

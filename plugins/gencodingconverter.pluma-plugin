@@ -1,0 +1,9 @@
+[Pluma Plugin]
+Loader=python
+Module=gencodingconverter
+IAge=2
+Name=GEdit Encoding Converter
+Description=Converts open files to other encoding
+Authors=Alexey Kuznetsov <ak@axet.ru>
+Copyright=Copyright © 2009 Alexey Kuznetsov <ak@axet.ru>
+Website=http://code.google.com/p/gencodingconverter/

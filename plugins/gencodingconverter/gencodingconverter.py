@@ -22,7 +22,10 @@ thx to http://live.gnome.org/Gedit/PythonPluginHowTo
 version 1.1.0
 '''
 
-import gedit
+try:
+  import gedit
+except:
+  import pluma as gedit
 import gtk
 import os
 import sys

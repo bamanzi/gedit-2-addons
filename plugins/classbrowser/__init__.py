@@ -113,9 +113,9 @@ class ClassBrowserPlugin(gedit.Plugin):
         windowdata["action_group"].add_actions(
          [
             # name, stock id, label, accelerator, tooltip
-          ('JumpNextTag', gtk.STOCK_GO_DOWN,_('Jump to next tag'),"<control>e", _("Jump to next tag"), self.next_tag),
+          ('JumpNextTag', gtk.STOCK_GO_DOWN,_('Jump to next tag'),"<control>Down", _("Jump to next tag"), self.next_tag),
              
-          ('JumpPreviousTag', gtk.STOCK_GO_UP, _('Jump to previous tag'), "<control><shift>e",_("Jump to previous tag"), self.previous_tag)
+          ('JumpPreviousTag', gtk.STOCK_GO_UP, _('Jump to previous tag'), "<control>Up",_("Jump to previous tag"), self.previous_tag)
          ], 
           
           window)

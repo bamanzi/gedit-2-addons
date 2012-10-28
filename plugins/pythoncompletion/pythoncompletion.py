@@ -36,7 +36,7 @@ class CompletionProvider(gobject.GObject, gsv.CompletionProvider):
         if lang:
             return lang.get_id() == 'python'
         else:
-            return get_mime_type() in ('text/x-python')
+            return buffer.get_mime_type() in ('text/x-python')
 
     def _get_incomplete_string(self, context, charsallowed='_'):
         insert = context.get_iter()

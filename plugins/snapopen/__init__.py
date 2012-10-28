@@ -127,7 +127,7 @@ class SnapOpenPluginInstance:
 			# To search by name
 			if os.name == 'nt':
 				cmd = 'grep -m %d -e "%s" "%s"' % (max_result, pattern, self._tmpfile)
-			else
+			else:
 				cmd = "grep -m %d -e '%s' %s 2> /dev/null" % (max_result, pattern, self._tmpfile)
 			self._snapopen_window.set_title("Searching ... ")
 		else:
@@ -181,7 +181,7 @@ class SnapOpenPluginInstance:
 			cwd = os.getcwd()
 			try:
 				os.chdir(rootpath)
-				os.popen('gfind . -type f %s > "%s"' % (imagefilter + dirfilter, self._tmpfile)
+				os.popen('gfind . -type f %s > "%s"' % (imagefilter + dirfilter, self._tmpfile))
 			finally:
 				os.chdir(cwd)
 		else:

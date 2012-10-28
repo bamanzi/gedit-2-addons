@@ -22,4 +22,5 @@
 	<ResultGUI name="COLLAPSE_ALL_BUTTON" value="False"/>
 	<ResultGUI name="CLEAR_HIGHLIGHT_BUTTON" value="True"/>
 	<ResultGUI name="CLEAR_BUTTON" value="True"/>
+	<FindHistory name="gedit.gedit_"/>
 </manifest>

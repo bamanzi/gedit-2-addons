@@ -11,11 +11,12 @@ ui_str = """<ui>
     <menu name="ViewMenu" action="View">
       <placeholder name="ViewsOps_2">
         <menuitem name="FullscreenPy" action="FullscreenPy"/>
+        <menuitem name="MaximizeEditor" action="MaximizeEditor"/>
       </placeholder>
     </menu>
   </menubar>
   <toolbar name="ToolBar">
-    <placeholder name="Tool_Opt4"><toolitem name="FullscreenPy" action="FullscreenPy"/></placeholder>
+    <placeholder name="Tool_Opt4"><toolitem name="MaximizeEditor" action="MaximizeEditor"/></placeholder>
   </toolbar>
 </ui>
 """
@@ -44,7 +45,18 @@ class FullscreenPyWindowHelper:
                 
                 # Create a new action group
                 self._action_group = gtk.ActionGroup("FullscreenPyPluginActions")
-                self._action_group.add_toggle_actions([("FullscreenPy", gtk.STOCK_FULLSCREEN, _("Toggle Fullscreen"), "<Control>F11", _("Toggle Fullscreen"), lambda a: self.on_toggle_fullscreen_activate())])
+                self._action_group.add_toggle_actions([("FullscreenPy", 
+                                                        None, 
+                                                        _("Toggle Fullscreen"), 
+                                                        "<Shift>F11", 
+                                                        _("Toggle Fullscreen"), 
+                                                        lambda a: self.on_toggle_fullscreen_activate())])
+                self._action_group.add_toggle_actions([("MaximizeEditor", 
+                                                        gtk.STOCK_FULLSCREEN, 
+                                                        _("Maximize Editor"), 
+                                                        "<Control>F11", 
+                                                        _("Maximize Editor (hide side pane, bottom pane)"), 
+                                                        lambda a: self.on_toggle_maximize_editor())])
 
                 # Insert the action group
                 manager.insert_action_group(self._action_group, -1)
@@ -88,7 +100,16 @@ class FullscreenPyWindowHelper:
             else:
                 self._window.fullscreen()
                 show = False
-            
+            self._show_hide_ui_parts(show)
+        
+        def on_toggle_maximize_editor(self):
+            action = self.get_action('GeditWindowAlwaysSensitiveActions', 'ViewToolbar')
+            if not action:
+                action = self.get_action('PlumaWindowAlwaysSensitiveActions', 'ViewToolbar')
+            assert action != None
+            self._show_hide_ui_parts(not action.get_active())
+                
+        def _show_hide_ui_parts(self, show):
             #comment the parts you want to keep untouched
             actions = [
                 '/GeditWindowPanesActions/ViewSidePane',

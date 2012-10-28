@@ -125,7 +125,10 @@ class SnapOpenPluginInstance:
 			filefilter = ""
 		if len(pattern) > 0:
 			# To search by name
-			cmd = "grep -m %d -e '%s' %s 2> /dev/null" % (max_result, pattern, self._tmpfile)
+			if os.name == 'nt':
+				cmd = 'grep -m %d -e "%s" "%s"' % (max_result, pattern, self._tmpfile)
+			else
+				cmd = "grep -m %d -e '%s' %s 2> /dev/null" % (max_result, pattern, self._tmpfile)
 			self._snapopen_window.set_title("Searching ... ")
 		else:
 			self._snapopen_window.set_title("Enter pattern ... ")
@@ -174,7 +177,15 @@ class SnapOpenPluginInstance:
 		imagefilter = " ! -iname '*.jpg' ! -iname '*.jpeg' ! -iname '*.gif' ! -iname '*.png' ! -iname '*.psd' ! -iname '*.tif' ! -iname '*.pyc' "
 		dirfilter = " ! -path '*.svn*' ! -path '*.git*' "
 		rootpath  = gnomevfs.get_local_path_from_uri(self._rootdir)
-		os.popen("cd %s; find . -type f %s > %s 2> /dev/null &" % (rootpath, imagefilter + dirfilter, self._tmpfile))
+		if os.name == 'nt':
+			cwd = os.getcwd()
+			try:
+				os.chdir(rootpath)
+				os.popen('gfind . -type f %s > "%s"' % (imagefilter + dirfilter, self._tmpfile)
+			finally:
+				os.chdir(cwd)
+		else:
+			os.popen("cd %s; find . -type f %s > %s 2> /dev/null &" % (rootpath, imagefilter + dirfilter, self._tmpfile))
 
 		self._snapopen_window.show()
 		self._glade_entry_name.select_region(0,-1)

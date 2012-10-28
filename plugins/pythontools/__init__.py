@@ -408,7 +408,7 @@ class PythonToolsPlugin(gedit.Plugin):
 
     def deactivate(self, window):
         pane = window.get_side_panel()
-        pane.remove_item(self.parser.widget)
+        pane.remove_item(self.parser)
 
         windowdata = window.get_data("PythonToolsPluginWindowDataKey")
         manager = window.get_ui_manager()

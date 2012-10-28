@@ -19,7 +19,7 @@ class PythonCheckerFile(gtk.VBox):
         self.geditwindow.connect("tab_removed", self.__close_tab)
 
 
-        self.commands = {'pep8'      : 'pep8 "%s" --repeat --ignore=E501',
+        self.commands = {'pep8'      : 'pep8 "%s" --repeat --ignore=E501,W191',
                          'pyflakes'  : 'pyflakes "%s"',
                          'csschecker': 'csschecker.py "%s"'}
 

@@ -46,7 +46,8 @@ class AdvancedFindReplacePlugin(gedit.Plugin):
 		del self._instances[window]
 
 	def update_ui(self, window):
-		self._instances[window].update_ui()
+		if window in self._instances:
+			self._instances[window].update_ui()
 
 	def is_configurable(self):
 		return True

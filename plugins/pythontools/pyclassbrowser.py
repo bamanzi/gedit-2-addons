@@ -549,5 +549,9 @@ class ClassBrowser( gtk.VBox ):
     def __checkPythonDoc(self,doc):
         """ Return true if gedit document is a python program """
         if doc is None: return False
-        if doc.get_mime_type() != "text/x-python": return False
+        lang = doc.get_language()
+        if lang:
+            if lang.get_id() != 'python': return False
+        else:
+            if doc.get_mime_type() != "text/x-python": return False
         return True

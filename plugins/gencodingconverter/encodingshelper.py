@@ -2,7 +2,7 @@ try:
   import gedit
   import gconf
   APP_KEY = "gedit-2"
-except
+except:
   import pluma as gedit
   import mateconf as gconf
   APP_KEY = "pluma"

@@ -37,7 +37,16 @@ class SnapOpenPluginInstance:
 		self._encoding = gedit.encoding_get_current()
 		#self._rootdir = "file://" + os.getcwd()
 		self._rootdir = gnomevfs.get_uri_from_local_path(os.getcwd())
-		self._tmpfile = os.path.join(tempfile.gettempdir(), 'snapopen.%s.%s' % (os.getuid(),os.getpid()))
+		
+		#self._tmpfile = os.path.join(tempfile.gettempdir(), 'snapopen.%s.%s' % (os.getuid(),os.getpid()))
+		user = ""
+		try:
+			import getpass
+			user = getpass.getuser()
+		except:
+			pass
+		self._tmpfile = os.path.join(tempfile.gettempdir(), 'snapopen.%s.%s' % (user,os.getpid()))
+		
 		self._show_hidden = False
 		self._liststore = None;
 		self._init_glade()

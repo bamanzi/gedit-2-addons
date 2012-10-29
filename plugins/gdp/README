@@ -1,0 +1,86 @@
+General Information
+===================
+
+This is version 2.28.0 of gedit-developer-plugins (GDP). GDP are a
+set of plugins for gedit that provide additional editing features
+for software development. GDP provides:
+
+    * Multi-file find and replace
+      Directories and file types can be specified. Regular expressions are
+      supported.
+    * Syntax completion
+      Python completion using the file's imports and definitions. Simple
+      word completion based on the words in the file. XML-based markup
+      completion will suggest open tag, close tags, and attributes based on
+      the cursor's position.
+      Use <Control>Slash (Ctrl+/) to activate the completer window.
+    * Formatting
+      Format paragraphs, lists, and imports. Reformat test using regular
+      expressions. Check the syntax and style of Python, XML, and plain
+      text. Check and reformat Python doctests.
+    * Project management via Bazaar DVCS
+      integrates bzr-gtk to show status, tags, annotations, visualize,
+      commit, merge, and push. Open files changes in the branch.
+
+See screenshots at http://curtis.hovey.name/gallery/Sinzui/gdp-2-28-0
+
+
+Installation from deb
+---------------------
+
+Debian packages are available at:
+
+    https://launchpad.net/~sinzui/+archive/ppa
+
+Adding this archive to your sources will get you the latest updated
+as they are released.
+
+
+Installation from tarball
+-------------------------
+
+GDP requires pocket-lint, a python library for checking style and reformatting
+sources. It can be gotten from https://launchpad.net/pocket-lint
+
+To install the plugins for personal use (in your home directory),
+run the following commands from a terminal:
+
+    ./configure
+    make
+    make install
+
+Or you may choose to install the plugins in another location.
+
+    ./configure --without-home --prefix=</path/to/location>
+    make
+    make install
+
+To install the plugins in the same location as the standard
+gedit plugins, set the prefix path to the same as gedit (usually
+/usr).
+
+See HACKING for instructions to build the plugins from a branch.
+
+
+Working versions
+----------------
+
+The version number is synced to the gedit version. Plugins may work
+with older versions of gedit. Run the following command from a
+terminal to run the test suite.
+
+    make test
+
+If the test suite passes, the plugins will probably work. In the past,
+API changes to GtkSourceView2 and gtk.Builder were underlying cause of
+incompatibilities
+
+
+Reporting bugs and contributing
+-------------------------------
+
+You can learn details about the GDP project, ask questions, and report bugs at
+
+    https://launchpad.net/gdp
+
+Include the gedit version from Menu > Help > about if possible.

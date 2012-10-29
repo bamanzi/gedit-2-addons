@@ -1,0 +1,107 @@
+gdp-0.4.1 (2.30.0): Pydoc proprosals in completions
+===================================================
+
+This release added pydoc to the completion details. The complete pydoc for
+modules, classes, and members is presented the the details window when
+completing python code.
+
+
+gdp-0.4.0 (2.30.0): Update to GTKSourceView Completions
+=======================================================
+
+This release replaces the snippet-based completer with a GTKSourceView-based
+CompletionProvider.
+
+    * The python completer has rudimentary documentation in the info window
+      that you can see using the Details button. This feature will be
+      improved in future releases.
+    * Find searches application and xml files like javascript. Find was
+      skipping some file types that gedit can edit that do not have the
+      text/* mime-type.
+    * A bug that caused an exception when the syntax completer closed a
+      tag is now fixed.
+
+
+gdp-0.3.1 (2.28.0): Markup completion
+=====================================
+
+This release adds XML-based markup completion.
+
+    * Detection is based on the language/highlighting of the document.
+      The supported languages are: XML, XSLT, HTML, Mallard, Docbook, and
+      Zope page templates.
+    * When opening a tag, the completer suggests other open or empty tags
+      that are already in the document.
+    * When closing a tag, the complete suggests the tags that are still open
+      before the cursor. This is helpful, though not perfect. The root element
+      for example, will always be listed since it is closed at the end of the
+      document.
+    * When the adding an attribute, the completer suggests the attributes that
+      were used in other tags.
+    * You still need to know the markup's grammatical rules since elements
+      and attributes are suggested from context rather than schema.
+    * The implementation could be extended to suggest elements and attributes
+      for specific grammars.
+
+Important changes.
+
+    * The completion key accelerator has changed from <Control><Shift>Space to
+      <Control>Slash (Ctrl+/) to avoid conflicts with HTML snippet commands.
+
+
+
+gdp-0.2 (2.28.0): UI and stability improvements
+===============================================
+
+This release improves the user experience of the four plugins:
+
+    * The Multi-file find and replace panel and style and syntax panel were
+      repositioned to the side. The side panels are more likely to be open and
+      it is easier to read line numbers in the panel and see the line numbers
+      in the documented at the same time.
+    * Syntax completion is now available from the Tools menu. If the syntax
+      completer detects a syntax error, it will signal the Format plugin
+      to show the Syntax and style panel.
+    * Search results can be saved to file. The panel saves your previous
+      entries so that they can be repeated.
+    * The Bazaar plugin supports all the bzr-gtk GUI functions, notably you
+      can create new branches and perform checkouts.
+    * Multiple files can be checked for syntax and style issues.
+
+There are some implementation/build issues that were resolved:
+
+    * The XML checker uses the standard python library, no additional
+      installations are needed.
+    * Snippets and external tools were removed -- they were not useful for
+      general distribution and they could overwrite person snippets and
+      tools :(
+
+For developers there is an autogen.sh to build the project from source.
+
+See screenshots at http://curtis.hovey.name/gallery/Sinzui/gdp-2-28-0
+Get the tarball at https://launchpad.net/gdp
+
+
+gdp-0.1 (2.26.1): The first release
+===================================
+
+Gedit-developer-plugins (GDP) are a set of plugins for gedit that provide
+additional editing features for software development. GDP provides:
+
+    * Multi-file find and replace
+      Directories and file types can be specified. Regular expressions are
+      supported.
+    * Syntax completion
+      Python completion using the file's imports and definitions. Simple
+      word completion based on the words in the file.
+      Use <Shift><Control>Space to activate the snippet completer window.
+    * Formatting
+      Format paragraphs, lists, and imports. Reformat test using regular
+      expressions. Check the syntax and style of Python, XML, and plain
+      text. Check and reformat Python doctests.
+    * Project management via Bazaar DVCS
+      integrates bzr-gtk to show status, tags, annotations, visualize,
+      commit, merge, and push. Open files changes in the branch.
+
+See screenshots at http://curtis.hovey.name/gallery/Sinzui/gdp-2-26-1
+Get the tarball at https://launchpad.net/gdp/trunk/0.1

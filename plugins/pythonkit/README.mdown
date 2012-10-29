@@ -1,0 +1,41 @@
+# Gedit PythonKit Plugin
+
+A toolkit to ease Python development for Gedit 2.
+
+## Batteries Included
+
+* `Python` (including `django` and `virtualenv`-based) code completion
+
+## Code Completion
+
+Tap `Ctrl+Space` keys and a popup will appear along with snippets. Scroll down/up or type the desired word to see all available code completion.
+
+### Notes
+
+If you need simple Django and virtualenv-based code completion, make sure you have created `.pythonkit` file under current filebrowser root.
+
+Example:
+
+    /home/john/blog_proj        => filebrowser root
+    | .pythonkit                => pythonkit config file
+    | blog                      => django project
+    | venv                      => virtualenv
+
+And here's the content of `.pythonkit`:
+
+    [pythonkit]
+    djangoproject_dir = blog
+    virtualenv_dir = venv
+
+## Submitting a Pull Request
+
+1. Fork the project.
+2. Create a topic branch.
+3. Implement your feature or bug fix.
+4. Commit and push your changes.
+5. Submit a pull request against `develop` branch.
+
+
+## Copyright
+
+PythonKit is released under MIT license. See `LICENSE.txt` for details.

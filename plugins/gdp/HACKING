@@ -1,0 +1,56 @@
+Contributing the the Gedit Developer Plugins project
+====================================================
+
+You can learn about the goals of the project at
+
+    https://launchpad.net/gdp
+
+The project uses Bazaar for version control and is hosted on Launchpad. You
+can get a copying of current code from the console using:
+
+    bzr branch lp:gdp
+
+
+Code style
+----------
+
+Python is expected to conform with PEP8 (Use gedit Menu > Tools > Check syntax
+and style). Gedit object can only be imported by the plugin classes. The
+classes in gdp/ must get the gedit objects from the plugin or using signals.
+This rule ensures that the main code is easy to test and reuse.
+
+
+Test harness
+------------
+
+There is a test suite that uses Python doctests. New code is expected to be
+tested. You can run the test suite from the console using:
+
+    make test
+
+You can run a subset of tests by
+
+    ./test.py '<regular-expression>'
+
+The test harness creates dummy and fake gedit objects from the gedit C defs.
+dummy objects are automatically created. New Fakes can be added by editing
+
+    ./gedit/gedit.overrides
+
+then running
+
+    ./utils/gen-gedit.py
+
+to rebuild the dummy and fakes. The fakes provide enough functionality to
+verify the plugin code uses the common gedit object correctly.
+
+
+Building and packaging
+----------------------
+
+The code uses autotools. You can build the code from the console using:
+
+    ./autogen.sh
+    make
+
+The `make distcheck` command must always work for changes to be accepted.

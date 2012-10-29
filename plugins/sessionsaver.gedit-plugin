@@ -1,0 +1,10 @@
+[Gedit Plugin]
+Loader=python
+Module=sessionsaver
+IAge=2
+Name=Session Saver
+Description=Save and restore your working sessions
+Authors=Steve Frécinaux
+Copyright=Copyright © 2006 Steve Frécinaux
+Website=http://www.mate-desktop.org
+Version=2.30

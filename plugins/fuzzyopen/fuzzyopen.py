@@ -4,9 +4,11 @@ import gio
 try:
 	import gedit
 	import gconf
+	import gnomevfs
 except:
 	import pluma as gedit
 	import mateconf as gconf
+	import matevfs as gnomevfs
 import pygtk
 pygtk.require('2.0')
 import os, os.path, gobject
@@ -35,7 +37,7 @@ class FuzzyOpenPluginInstance:
     self._plugin = plugin
     self._encoding = gedit.encoding_get_current()
     self._rootpath = os.getcwd()
-    self._rootdir = "file://" + self._rootpath
+    self._rootdir = gnomevfs.get_uri_from_local_path(self._rootpath)
     self._show_hidden = False
     self._suggestion = None
     self._git = False
@@ -150,7 +152,8 @@ class FuzzyOpenPluginInstance:
         self._fuzzyopen_window.set_title(app_string + " (Working dir): " + self._rootdir)
     # Get rid of file://
     debug("Rootdir = " + self._rootdir)
-    self._rootpath = url2pathname(self._rootdir)[7:]
+    #self._rootpath = url2pathname(self._rootdir)[7:]
+    self._rootpath = gnomevfs.get_local_path_from_uri(self._rootdir)
     debug("Rootpath = "+ self._rootpath)
     self._git = self.check_git(self._rootpath)
     debug("Use Git = " + str(self._git))
@@ -186,6 +189,9 @@ class FuzzyOpenPluginInstance:
 
   #opens (or switches to) the given file
   def _open_file( self, filename ):
-    uri = self._rootdir + "/" + pathname2url(filename)
-    gedit.commands.load_uri(self._window, uri, self._encoding)
+    #uri = self._rootdir + "/" + pathname2url(filename)
+    import urllib
+    uri = self._rootdir + "/" + urllib.quote(filename)
+    #gedit.commands.load_uri(self._window, uri, self._encoding) #BUG: this fails on windows
+    gedit.app_get_default().get_active_window().create_tab_from_uri(uri, None, 0, False, True)
 

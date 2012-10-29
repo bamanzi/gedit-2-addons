@@ -148,6 +148,7 @@ class PythonCheckerFile(gtk.VBox):
                             startcol = 0
                             if os.name == 'nt':
                                 startcol = 1  # c:\...:
+                                filename = splitted_line[0] + ":" + splitted_line[1]
                             if splitted_line[startcol+1].strip().isdigit():
                                 row_number = splitted_line[startcol+1].strip()
                             if splitted_line[startcol+2].strip().isdigit():

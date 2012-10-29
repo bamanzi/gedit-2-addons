@@ -15,7 +15,12 @@ class FuzzySuggestion:
     self._filepath = filepath
     self._show_hidden = show_hidden
     self._git = git and util.config('use_git')
-    self._excluded = util.config('ignore_ext').split(',')
+    #self._excluded = util.config('ignore_ext').split(',')
+    ignore_ext = util.config('ignore_ext')
+    if len(ignore_ext.strip())==0:
+        self._excluded = []
+    else:
+        self._excluded = ignore_ext.split(',')
     self._ignore_case = util.config('ignore_case')
     self._ignore_space = util.config('ignore_space')
     if self._git:

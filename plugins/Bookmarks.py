@@ -1,4 +1,7 @@
-import gedit
+try:
+    import gedit
+except:
+    import pluma as gedit
 import gtk
 
 import sys
@@ -381,9 +384,12 @@ class PluginHelper:
                 
                 # Continue through all top-level TreeIters...
                 root_iter = model.iter_next(root_iter)
-                
-        path = os.path.expanduser( '~' ) + "/.gnome2/gedit/plugins/"
-        
+        try:
+            import gedit
+            path = os.path.expanduser( '~' ) + "/.gnome2/gedit/plugins/"
+        except:
+            path = os.path.expanduser( '~' ) + "/.config/pluma/plugins/"
+            
         # Save the bookmarks.
         file = open(os.path.join(path, 'bookmarks.txt'), "w")
         file.write(output_string)
@@ -612,7 +618,12 @@ class PluginHelper:
     # path, and the desired folder (if any) and append the information to the
     # bookmarks.txt file.  It also adds a new item to the menu for the new bookmark.
     def add_bookmark(self, source):
-        path = os.path.expanduser( '~' ) + "/.gnome2/gedit/plugins/"
+        try:
+            import gedit
+            path = os.path.expanduser( '~' ) + "/.gnome2/gedit/plugins/"
+        except:
+            path = os.path.expanduser( '~' ) + "/.config/pluma/plugins/"
+        
         file = open(os.path.join(path, 'bookmarks.txt'), "a")
         
         # Get the bookmark's name
@@ -860,7 +871,11 @@ class PluginHelper:
     # load_bookmarks reads the bookmarks.txt file and stores all of the Bookmarks
     # in a list sorted by parent folder (if any)
     def load_bookmarks(self):
-        path = os.path.expanduser( '~' ) + "/.gnome2/gedit/plugins/"
+        try:
+            import gedit
+            path = os.path.expanduser( '~' ) + "/.gnome2/gedit/plugins/"
+        except:
+            path = os.path.expanduser( '~' ) + "/.config/pluma/plugins/"
         
         if (not (os.path.exists(os.path.join(path, 'bookmarks.txt')))):
             self.bookmarks = []

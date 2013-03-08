@@ -11,7 +11,10 @@ __all__ = [
 
 from gettext import gettext as _
 
-import gedit
+try:
+    import gedit
+except:
+    import pluma as gedit
 
 from gdp import GDPWindow
 from gdp.syntaxcompleter import SyntaxController

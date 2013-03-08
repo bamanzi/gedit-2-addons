@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>démarrage</title>
+  </head>
+  <body>
+    <h3>gedit-webkit-panel-plugin</h3> 
+    <small>Version: 0.2<br>
+           gedit: 2<br>
+           dependance: python-webkit<br><br>
+           
+    </small>
+    <div>
+    Ajouter Webkit dans un panel de gedit pour afficher facilement la page html en cours d'édition. Un mini serveur python peut être lancé pour afficher vos pages dynamiques.
+<br><br>
+Html5, Css3 supportés. <br>
+L'outil natif webkit de débuguage (comme firebug) est également de la partie.
+<br><br>
+Vous pouvez aussi vous en servir comme un simple navigateur, modifiez la page de démarrage pour y ajouter vos liens favoris.
+<br><br>
+Ctrl+Alt+r pour charger le document gedit (raccourci modifiable dans ini.cfg). Clic droit dans la vue web pour accéder à toutes les options.
+<br><br>
+Le serveur sera lancé dans le dossier du fichier chargé. Répertoires CGI: /cgi-bin, /htbin, /perl ou /python
+<br><br>
+Un système de plugin est en place, cela permet d'ajouter des parser pre-affichage ou tout autre chose. Par défaut, un traducteur de syntaxe du wiki code-google est présent.
+<br><br>
+    <hr>
+    </div>
+    <br>
+    <h4>Exemple formulaire python :</h4>
+    <small><b>Attention:</b> les scripts python doivent se trouver dans les 
+                                                           dossiers CGI </small>
+    <ul>
+        <li> <a href="python/input_query.py">cgi-bin/input_query.py</a></li>
+    </ul>
+    <pre>
+    /home/user/web/mon_site
+                      |
+                      +------- /index.html ← fichier à lancer
+                      |
+                      +------- /cgi-bin
+                                  |
+                                  +------- /script.py
+    </pre>
+    
+    <br> 
+    <h4>Exemple formulaire php :</h4>
+    <small><b>Attention:</b> Uniquement la méthode GET<br>
+    La cohabitation de script python et php peut bloquer le serveur (sécurité).
+               Ctrl+Alt+R ou menuitem 'Home' pour le relancer.</small>
+    <ul>
+        <li><a href="formulaire.html">formulaire.html</a></li>
+        <li><a href="index.php">index.php</a></li>
+    </ul>
+  </body>
+</html>

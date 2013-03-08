@@ -1,0 +1,9 @@
+[Pluma Plugin]
+Loader=python
+Module=webkitpanel
+IAge=2
+Name=WebKit Panel. 
+Description=Add webkit in a panel. A python server can be launched.
+Authors=AnsuzPeorth <ansuzpeorth@gmail.com>
+Copyright=Copyright © 2011 <ansuzpeorth@gmail.com>
+Website=http://code.google.com/p/gedit-webkit-panel-plugin/

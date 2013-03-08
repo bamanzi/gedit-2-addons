@@ -1,0 +1,9 @@
+[Gedit Plugin]
+Loader=python
+Module=Bookmarks
+IAge=2
+Name=Bookmarks
+Description=Bookmark your favorite files.
+Authors=Mike Doty <mike@psyguygames.com>
+Copyright=© Mike Doty 2007
+Website=http://www.gedit.org/

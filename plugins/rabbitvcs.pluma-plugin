@@ -1,9 +1,9 @@
 [Pluma Plugin]
 Loader=python
-Module=rabbitvcs-plugin
+Module=rabbitvcs-plugin-legacy
 IAge=2
-Name=RabbitVCS
-Description=RabbitVCS plugin for Gedit
+Name=RabbitVCS 0.13
+Description=RabbitVCS plugin for Gedit (0.13)
 Authors=Adam Plumb <adamplumb@gmail.com>
 Copyright=Copyright © 2009 Adam Plumb
 Website=http://www.rabbitvcs.org

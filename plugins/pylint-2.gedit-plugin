@@ -1,0 +1,9 @@
+[Gedit Plugin]
+Loader=python
+Module=pylint-2
+IAge=2
+Name=Pylint 2
+Description=Pylint static analysis support
+Authors=B. Clausius <barcc@gmx.de>;P. Henrique Silva <ph.silva@gmail.com>;Francisco J. Jordano Jimenez <arcturus@ardeenelinfierno.com>
+Copyright=Copyright (c) 2008-2011 B. Clausius <barcc@gmx.de>;Copyright (c) 2007-2008 P. Henrique Silva <ph.silva@gmail.com
+Website=https://launchpad.net/gedit-pylint-2

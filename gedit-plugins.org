@@ -1070,10 +1070,13 @@ https://github.com/phsilva/gedit-pylint
 
 gedit-pylint is a small Python plugin to use pylint
 (http://www.logilab.org/pylint) inside GNOME's Gedit editor.
-*** [ ] Pylint 2                                                    :gedit_3:
+*** + Pylint 2                                              :gedit_2:gedit_3:
 # <<pylint-2>>
 https://launchpad.net/gedit-pylint-2
 Pylint static analysis support
+
+   + allowing check without save
+
 *** + PythonChecker                                   :gedit_2:pep8:pyflakes:
 # <<PythonChecker>>
 http://code.google.com/p/geditchecker/
@@ -1085,21 +1088,24 @@ utils.
 *** ++ pythoncompletion                                                :GOOD:
 Python Completion Plugin
 http://code.google.com/p/scite-gedit-plugins/source/browse/#svn%2Ftrunk%2Fpythoncompletion%253Fstate%253Dclosed
-*** +pythoncodecompletion+ (too old)
+*** +pythoncodecompletion+ 
 https://github.com/fenrrir/geditpycompletion/
 
 http://linil.wordpress.com/2008/05/31/using-gedit-to-auto-complete-python-code/
-*** TODO Python Kit                                         :gedit_2:gedit_3:
+
+RESULT: too old (4 years ago), not compatible with gedit's completion ui
+
+*** + Python Kit                                            :gedit_2:gedit_3:
 # <<pythonkit>>
 https://github.com/iromli/gedit-pythonkit
 
 A toolkit to ease Python development for Gedit.
+  1. Python (including django and virtualenv-based) code completion
+  2. Tap Ctrl+Space keys and a popup will appear *along with
+     snippets*. Scroll down/up or type the desired word to see all
+     available code completion.
 
-Python (including django and virtualenv-based) code completion
-
-gedit-2 & gedit-3
-
-注意: gedit-2的版本在这个tag下: [url]https://github.com/iromli/gedit-pythonkit/tree/0.1[/url]
+注意: gedit-2的版本在这个tag下: https://github.com/iromli/gedit-pythonkit/tree/0.1
 
 *** [[? gdpcomplete]]
 *** TODO Word Completion for python                                    :MATE:
@@ -1123,7 +1129,7 @@ intro:    http://www.cogsci.nl/software/gedit-ipython-plugin
 # <<gedit-python-traceback>>
 https://launchpad.net/gedit-python-traceback
 
-*** ? RunInPython
+*** TODO RunInPython
 https://live.gnome.org/Gedit/PluginsOld#line-520
 
 Run the active document through the Python interpreter
@@ -1205,7 +1211,7 @@ The current features are:
 Format paragraphs, lists, and imports. Reformat test using regular expressions. Check the syntax and
 style of Python, XML, and plain text. Check and reformat Python doctests.
 
-** Gedit BC Developer Plugins                                       :gedit_3:
+** Gedit BC Developer Plugins                               :gedit_2:gedit_3:
 https://launchpad.net/~gedit-bc-dev-plugins
 *** [[projects]]
 *** [[pyprofiler]]

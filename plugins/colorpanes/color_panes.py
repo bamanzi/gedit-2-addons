@@ -651,6 +651,7 @@ class ColorPanesWindowHelper(object):
         LOGGER.log()
         scheme_manager = gtksourceview2.style_scheme_manager_get_default()
         gedit_styles_path = os.path.expanduser('~/.gnome2/gedit/styles')
+        gedit_styles_path = os.path.expanduser('~/.config/pluma/styles')
         scheme_manager.append_search_path(gedit_styles_path)
         return scheme_manager
     

@@ -30,5 +30,10 @@ The goals of this repo:
 * [aubergene/gedit-mate](https://github.com/aubergene/gedit-mate) Gedit set of plugins, color shemes, snippets.
 * [ltoth/gedit-conf](https://github.com/ltoth/gedit-conf/) Gedit configuration files and plugins
   
+## Other Requirements ##
 
+* python-gnome2 or python-mate required by most plugins
+* python-webkit & python-markdown required by plugin **Markdown Preview**
+* rabbitvcs-core required by plugin **RabbitVCS**
+* python-mysqldb required by plugin **gSqlClient**
 

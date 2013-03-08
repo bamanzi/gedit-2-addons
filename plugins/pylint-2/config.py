@@ -18,12 +18,20 @@
 import os
 
 import gtk
-import gconf
+try:
+	import gedit
+	import gconf
+except:
+	import mateconf as gconf
 
 
 class Config (object):
     _ui_file = os.path.join(os.path.dirname(__file__) ,'config.ui')
-    _gconfDir = "/apps/gedit-2/plugins/gedit_pylint"
+    try:
+        import gedit
+        _gconfDir = "/apps/gedit-2/plugins/gedit_pylint"
+    except:
+        _gconfDir = "/apps/pluma/plugins/gedit_pylint"
 
     def __init__(self, plugin):
         super(Config, self).__init__()

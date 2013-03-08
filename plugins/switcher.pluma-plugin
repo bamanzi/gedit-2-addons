@@ -1,0 +1,9 @@
+[Pluma Plugin]
+Loader=python
+Module=switcher
+IAge=2
+Name=Switcher
+Description=Switch between document or panels
+Authors=Mikael Hermansson <mikael.hermansson@linuxmail.org
+Copyright=Copyright © 2008 Mikael Hermansson
+Website=http://svn.tielie.com

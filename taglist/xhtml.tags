@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gedit:TagList xmlns:gedit="http://gedit.sourceforge.net/some-location">
+  
+  <gedit:TagGroup name="XHTML Elements">
+    <gedit:Tag name="DOCTYPE XHTML 1.0 Strict">
+      <gedit:Begin>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; 
+    &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</gedit:Begin>
+    </gedit:Tag>
+
+    <gedit:Tag name="DOCTYPE XHTML 1.0 Transitional">
+      <gedit:Begin>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+    &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</gedit:Begin>
+    </gedit:Tag>
+
+    <gedit:Tag name="DOCTYPE XHTML 1.0 Frameset">
+      <gedit:Begin>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Frameset//EN&quot;
+    &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd&quot;&gt;</gedit:Begin>
+    </gedit:Tag>    
+    <gedit:Tag name="a">
+      <gedit:Begin>&lt;a&gt;</gedit:Begin>
+      <gedit:End>&lt;/a&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="abbr">
+      <gedit:Begin>&lt;abbr&gt;</gedit:Begin>
+      <gedit:End>&lt;/abbr&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="acronym">
+      <gedit:Begin>&lt;acronym&gt;</gedit:Begin>
+      <gedit:End>&lt;/acronym&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="address">
+      <gedit:Begin>&lt;address&gt;</gedit:Begin>
+      <gedit:End>&lt;/address&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="applet">
+      <gedit:Begin>&lt;applet&gt;</gedit:Begin>
+      <gedit:End>&lt;/applet&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="area">
+      <gedit:Begin>&lt;area</gedit:Begin>
+      <gedit:End> /&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="b">
+      <gedit:Begin>&lt;b&gt;</gedit:Begin>
+      <gedit:End>&lt;/b&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="base">
+      <gedit:Begin>&lt;base</gedit:Begin>
+      <gedit:End> /&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="basefont">
+      <gedit:Begin>&lt;basefont&gt;</gedit:Begin>
+      <gedit:End>&lt;/basefont&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="bdo">
+      <gedit:Begin>&lt;bdo&gt;</gedit:Begin>
+      <gedit:End>&lt;/bdo&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="big">
+      <gedit:Begin>&lt;big&gt;</gedit:Begin>
+      <gedit:End>&lt;/big&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="blockquote">
+      <gedit:Begin>&lt;blockquote&gt;</gedit:Begin>
+      <gedit:End>&lt;/blockquote&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="body">
+      <gedit:Begin>&lt;body&gt;</gedit:Begin>
+      <gedit:End>&lt;/body&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="br">
+      <gedit:Begin>&lt;br</gedit:Begin>
+      <gedit:End> /&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="button">
+      <gedit:Begin>&lt;button&gt;</gedit:Begin>
+      <gedit:End>&lt;/button&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="caption">
+      <gedit:Begin>&lt;caption&gt;</gedit:Begin>
+      <gedit:End>&lt;/caption&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="center">
+      <gedit:Begin>&lt;center&gt;</gedit:Begin>
+      <gedit:End>&lt;/center&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="cite">
+      <gedit:Begin>&lt;cite&gt;</gedit:Begin>
+      <gedit:End>&lt;/cite&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="code">
+      <gedit:Begin>&lt;code&gt;</gedit:Begin>
+      <gedit:End>&lt;/code&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="col">
+      <gedit:Begin>&lt;col&gt;</gedit:Begin>
+      <gedit:End>&lt;/col&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="colgroup">
+      <gedit:Begin>&lt;colgroup&gt;</gedit:Begin>
+      <gedit:End>&lt;/colgroup&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="dd">
+      <gedit:Begin>&lt;dd&gt;</gedit:Begin>
+      <gedit:End>&lt;/dd&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="del">
+      <gedit:Begin>&lt;del&gt;</gedit:Begin>
+      <gedit:End>&lt;/del&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="dfn">
+      <gedit:Begin>&lt;dfn&gt;</gedit:Begin>
+      <gedit:End>&lt;/dfn&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="dir">
+      <gedit:Begin>&lt;dir&gt;</gedit:Begin>
+      <gedit:End>&lt;/dir&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="div">
+      <gedit:Begin>&lt;div&gt;</gedit:Begin>
+      <gedit:End>&lt;/div&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="dl">
+      <gedit:Begin>&lt;dl&gt;</gedit:Begin>
+      <gedit:End>&lt;/dl&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="dt">
+      <gedit:Begin>&lt;dt&gt;</gedit:Begin>
+      <gedit:End>&lt;/dt&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="em">
+      <gedit:Begin>&lt;em&gt;</gedit:Begin>
+      <gedit:End>&lt;/em&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="fieldset">
+      <gedit:Begin>&lt;fieldset&gt;</gedit:Begin>
+      <gedit:End>&lt;/fieldset&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="font">
+      <gedit:Begin>&lt;font&gt;</gedit:Begin>
+      <gedit:End>&lt;/font&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="form">
+      <gedit:Begin>&lt;form&gt;</gedit:Begin>
+      <gedit:End>&lt;/form&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="frame">
+      <gedit:Begin>&lt;frame&gt;</gedit:Begin>
+      <gedit:End>&lt;/frame&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="frameset">
+      <gedit:Begin>&lt;frameset&gt;</gedit:Begin>
+      <gedit:End>&lt;/frameset&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="h1">
+      <gedit:Begin>&lt;h1&gt;</gedit:Begin>
+      <gedit:End>&lt;/h1&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="h2">
+      <gedit:Begin>&lt;h2&gt;</gedit:Begin>
+      <gedit:End>&lt;/h2&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="h3">
+      <gedit:Begin>&lt;h31&gt;</gedit:Begin>
+      <gedit:End>&lt;/h3&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="h4">
+      <gedit:Begin>&lt;h4&gt;</gedit:Begin>
+      <gedit:End>&lt;/h4&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="h5">
+      <gedit:Begin>&lt;h5&gt;</gedit:Begin>
+      <gedit:End>&lt;/h5&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="h6">
+      <gedit:Begin>&lt;h6&gt;</gedit:Begin>
+      <gedit:End>&lt;/h6&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="head">
+      <gedit:Begin>&lt;head&gt;</gedit:Begin>
+      <gedit:End>&lt;/head&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="hr">
+      <gedit:Begin>&lt;hr</gedit:Begin>
+      <gedit:End> /&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="html">
+      <gedit:Begin>&lt;html&gt;</gedit:Begin>
+      <gedit:End>&lt;/html&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="i">
+      <gedit:Begin>&lt;i&gt;</gedit:Begin>
+      <gedit:End>&lt;/i&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="iframe">
+      <gedit:Begin>&lt;iframe&gt;</gedit:Begin>
+      <gedit:End>&lt;/iframe&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="img">
+      <gedit:Begin>&lt;img</gedit:Begin>
+      <gedit:End> /&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="input">
+      <gedit:Begin>&lt;input&gt;</gedit:Begin>
+      <gedit:End>&lt;/input&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="ins">
+      <gedit:Begin>&lt;ins&gt;</gedit:Begin>
+      <gedit:End>&lt;/ins&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="kbd">
+      <gedit:Begin>&lt;kbd&gt;</gedit:Begin>
+      <gedit:End>&lt;/kbd&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="label">
+      <gedit:Begin>&lt;label&gt;</gedit:Begin>
+      <gedit:End>&lt;/label&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="legend">
+      <gedit:Begin>&lt;legend&gt;</gedit:Begin>
+      <gedit:End>&lt;/legend&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="li">
+      <gedit:Begin>&lt;li&gt;</gedit:Begin>
+      <gedit:End>&lt;/li&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="link">
+      <gedit:Begin>&lt;link&gt;</gedit:Begin>
+      <gedit:End>&lt;/link&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="map">
+      <gedit:Begin>&lt;map&gt;</gedit:Begin>
+      <gedit:End>&lt;/map&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="menu">
+      <gedit:Begin>&lt;menu&gt;</gedit:Begin>
+      <gedit:End>&lt;/menu&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="meta">
+      <gedit:Begin>&lt;meta&gt;</gedit:Begin>
+      <gedit:End>&lt;/meta&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="noframes">
+      <gedit:Begin>&lt;noframes&gt;</gedit:Begin>
+      <gedit:End>&lt;/noframes&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="noscript">
+      <gedit:Begin>&lt;noscript&gt;</gedit:Begin>
+      <gedit:End>&lt;/noscript&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="object">
+      <gedit:Begin>&lt;object&gt;</gedit:Begin>
+      <gedit:End>&lt;/object&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="ol">
+      <gedit:Begin>&lt;ol&gt;</gedit:Begin>
+      <gedit:End>&lt;/ol&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="optgroup">
+      <gedit:Begin>&lt;optgroup&gt;</gedit:Begin>
+      <gedit:End>&lt;/optgroup&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="option">
+      <gedit:Begin>&lt;option&gt;</gedit:Begin>
+      <gedit:End>&lt;/option&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="p">
+      <gedit:Begin>&lt;p&gt;</gedit:Begin>
+      <gedit:End>&lt;/p&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="param">
+      <gedit:Begin>&lt;param&gt;</gedit:Begin>
+      <gedit:End>&lt;/param&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="pre">
+      <gedit:Begin>&lt;pre&gt;</gedit:Begin>
+      <gedit:End>&lt;/pre&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="q">
+      <gedit:Begin>&lt;q&gt;</gedit:Begin>
+      <gedit:End>&lt;/q&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="s">
+      <gedit:Begin>&lt;s&gt;</gedit:Begin>
+      <gedit:End>&lt;/s&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="samp">
+      <gedit:Begin>&lt;samp&gt;</gedit:Begin>
+      <gedit:End>&lt;/samp&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="script">
+      <gedit:Begin>&lt;script&gt;</gedit:Begin>
+      <gedit:End>&lt;/script&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="select">
+      <gedit:Begin>&lt;select&gt;</gedit:Begin>
+      <gedit:End>&lt;/select&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="small">
+      <gedit:Begin>&lt;small&gt;</gedit:Begin>
+      <gedit:End>&lt;/small&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="span">
+      <gedit:Begin>&lt;span&gt;</gedit:Begin>
+      <gedit:End>&lt;/span&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="strike">
+      <gedit:Begin>&lt;strike&gt;</gedit:Begin>
+      <gedit:End>&lt;/strike&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="strong">
+      <gedit:Begin>&lt;strong&gt;</gedit:Begin>
+      <gedit:End>&lt;/strong&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="style">
+      <gedit:Begin>&lt;style&gt;</gedit:Begin>
+      <gedit:End>&lt;/style&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="sub">
+      <gedit:Begin>&lt;sub&gt;</gedit:Begin>
+      <gedit:End>&lt;/sub&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="sup">
+      <gedit:Begin>&lt;sup&gt;</gedit:Begin>
+      <gedit:End>&lt;/sup&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="table">
+      <gedit:Begin>&lt;table&gt;</gedit:Begin>
+      <gedit:End>&lt;/table&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="tbody">
+      <gedit:Begin>&lt;tbody&gt;</gedit:Begin>
+      <gedit:End>&lt;/tbody&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="td">
+      <gedit:Begin>&lt;td&gt;</gedit:Begin>
+      <gedit:End>&lt;/td&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="textarea">
+      <gedit:Begin>&lt;textarea&gt;</gedit:Begin>
+      <gedit:End>&lt;/textarea&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="tfoot">
+      <gedit:Begin>&lt;tfoot&gt;</gedit:Begin>
+      <gedit:End>&lt;/tfoot&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="th">
+      <gedit:Begin>&lt;th&gt;</gedit:Begin>
+      <gedit:End>&lt;/th&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="thead">
+      <gedit:Begin>&lt;thead&gt;</gedit:Begin>
+      <gedit:End>&lt;/thead&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="title">
+      <gedit:Begin>&lt;title&gt;</gedit:Begin>
+      <gedit:End>&lt;/title&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="tr">
+      <gedit:Begin>&lt;tr&gt;</gedit:Begin>
+      <gedit:End>&lt;/tr&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="tt">
+      <gedit:Begin>&lt;tt&gt;</gedit:Begin>
+      <gedit:End>&lt;/tt&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="u">
+      <gedit:Begin>&lt;u&gt;</gedit:Begin>
+      <gedit:End>&lt;/u&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="ul">
+      <gedit:Begin>&lt;ul&gt;</gedit:Begin>
+      <gedit:End>&lt;/ul&gt;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="var">
+      <gedit:Begin>&lt;var&gt;</gedit:Begin>
+      <gedit:End>&lt;/var&gt;</gedit:End>
+    </gedit:Tag>
+
+  </gedit:TagGroup>
+  <gedit:TagGroup name="XHTML Attributes">
+  
+      <gedit:Tag name="abbr">
+      <gedit:Begin>abbr="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="accept-charset">
+      <gedit:Begin>accept-charset="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="accept">
+      <gedit:Begin>accept="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="accesskey">
+      <gedit:Begin>accesskey="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="action">
+      <gedit:Begin>action="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="align">
+      <gedit:Begin>align="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="alt">
+      <gedit:Begin>alt="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="archive">
+      <gedit:Begin>archive="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="axis">
+      <gedit:Begin>axis="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border">
+      <gedit:Begin>border="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="cellpadding">
+      <gedit:Begin>cellpadding="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="cellspacing">
+      <gedit:Begin>cellspacing="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="char">
+      <gedit:Begin>char="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="charoff">
+      <gedit:Begin>charoff="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="charset">
+      <gedit:Begin>charset="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="checked">
+      <gedit:Begin>checked="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="cite">
+      <gedit:Begin>cite="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="class">
+      <gedit:Begin>class="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="classid">
+      <gedit:Begin>classid="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="codebase">
+      <gedit:Begin>codebase="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="codetype">
+      <gedit:Begin>codetype="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="cols">
+      <gedit:Begin>cols="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="colspan">
+      <gedit:Begin>colspan="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="content">
+      <gedit:Begin>content="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="coords">
+      <gedit:Begin>coords="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="data">
+      <gedit:Begin>data="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="datetime">
+      <gedit:Begin>datetime="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="declare">
+      <gedit:Begin>declare="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="defer">
+      <gedit:Begin>defer="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="dir">
+      <gedit:Begin>dir="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="disabled">
+      <gedit:Begin>disabled="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="enctype">
+      <gedit:Begin>enctype="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="for">
+      <gedit:Begin>for="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="frame">
+      <gedit:Begin>frame="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="frameborder">
+      <gedit:Begin>frameborder="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="headers">
+      <gedit:Begin>headers="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="height">
+      <gedit:Begin>height="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="href">
+      <gedit:Begin>href="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="hreflang">
+      <gedit:Begin>hreflang="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="http-equiv">
+      <gedit:Begin>http-equiv="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="id">
+      <gedit:Begin>id="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="ismap">
+      <gedit:Begin>ismap="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="label">
+      <gedit:Begin>label="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="lang">
+      <gedit:Begin>lang="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="longdesc">
+      <gedit:Begin>longdesc="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="marginheight">
+      <gedit:Begin>marginheight="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="marginwidth">
+      <gedit:Begin>marginwidth="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="maxlength">
+      <gedit:Begin>maxlength="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="media">
+      <gedit:Begin>media="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="method">
+      <gedit:Begin>method="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="multiple">
+      <gedit:Begin>multiple="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="name">
+      <gedit:Begin>name="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="nohref">
+      <gedit:Begin>nohref="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="noresize">
+      <gedit:Begin>noresize="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onblur">
+      <gedit:Begin>onblur="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onchange">
+      <gedit:Begin>onchange="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onclick">
+      <gedit:Begin>onclick="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="ondblclick">
+      <gedit:Begin>ondblclick="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onfocus">
+      <gedit:Begin>onfocus="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onkeydown">
+      <gedit:Begin>onkeydown="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onkeypress">
+      <gedit:Begin>onkeypress="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onkeyup">
+      <gedit:Begin>onkeyup="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onload">
+      <gedit:Begin>onload="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onmousedown">
+      <gedit:Begin>onmousedown="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onmousemove">
+      <gedit:Begin>onmousemove="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onmouseout">
+      <gedit:Begin>onmouseout="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onmouseover">
+      <gedit:Begin>onmouseover="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onmouseup">
+      <gedit:Begin>onmouseup="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onreset">
+      <gedit:Begin>onreset="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onselect">
+      <gedit:Begin>onselect="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onsubmit">
+      <gedit:Begin>onsubmit="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="onunload">
+      <gedit:Begin>onunload="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="profile">
+      <gedit:Begin>profile="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="readonly">
+      <gedit:Begin>readonly="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="rel">
+      <gedit:Begin>rel="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="rev">
+      <gedit:Begin>rev="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="rows">
+      <gedit:Begin>rows="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="rowspan">
+      <gedit:Begin>rowspan="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="rules">
+      <gedit:Begin>rules="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="scheme">
+      <gedit:Begin>scheme="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="scope">
+      <gedit:Begin>scope="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="scrolling">
+      <gedit:Begin>scrolling="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="selected">
+      <gedit:Begin>selected="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="shape">
+      <gedit:Begin>shape="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="size">
+      <gedit:Begin>size="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="span">
+      <gedit:Begin>span="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="src">
+      <gedit:Begin>src="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="standby">
+      <gedit:Begin>standby="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="style">
+      <gedit:Begin>style="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="summary">
+      <gedit:Begin>summary="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="tabindex">
+      <gedit:Begin>tabindex="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="target">
+      <gedit:Begin>target="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="title">
+      <gedit:Begin>title="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="type">
+      <gedit:Begin>type="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="type">
+      <gedit:Begin>type="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="type">
+      <gedit:Begin>type="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="type">
+      <gedit:Begin>type="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="type">
+      <gedit:Begin>type="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="type">
+      <gedit:Begin>type="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="usemap">
+      <gedit:Begin>usemap="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="valign">
+      <gedit:Begin>valign="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="value">
+      <gedit:Begin>value="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="valuetype">
+      <gedit:Begin>valuetype="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="width">
+      <gedit:Begin>width="</gedit:Begin>
+      <gedit:End>&quot;</gedit:End>
+    </gedit:Tag>
+    
+  </gedit:TagGroup>
+    
+</gedit:TagList>  

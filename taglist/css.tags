@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gedit:TagList xmlns:gedit="http://gedit.sourceforge.net/some-location">
+  
+  <gedit:TagGroup name="CSS Properties">
+    <gedit:Tag name="azimuth">
+      <gedit:Begin>azimuth: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="background-attachment">
+      <gedit:Begin>background-attachment: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="background-color">
+      <gedit:Begin>background-color: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="background-image">
+      <gedit:Begin>background-image: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="background-position">
+      <gedit:Begin>background-position: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="background-repeat">
+      <gedit:Begin>background-repeat: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="background">
+      <gedit:Begin>background: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-collapse">
+      <gedit:Begin>border-collapse: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-color">
+      <gedit:Begin>border-color: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-spacing">
+      <gedit:Begin>border-spacing: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-style">
+      <gedit:Begin>border-style: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-top">
+      <gedit:Begin>border-top: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-right">
+      <gedit:Begin>border-right: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-bottom">
+      <gedit:Begin>border-bottom: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-left">
+      <gedit:Begin>border-left: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-top-color">
+      <gedit:Begin>border-top-color: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-right-color">
+      <gedit:Begin>border-right-color: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-bottom-color">
+      <gedit:Begin>border-bottom-color: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-left-color">
+      <gedit:Begin>border-left-color: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-top-style">
+      <gedit:Begin>border-top-style: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-right-style">
+      <gedit:Begin>border-right-style: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-bottom-style">
+      <gedit:Begin>border-bottom-style: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-left-style">
+      <gedit:Begin>border-left-style: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-top-width">
+      <gedit:Begin>border-top-width: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-right-width">
+      <gedit:Begin>border-right-width: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-bottom-width">
+      <gedit:Begin>border-bottom-width: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-left-width">
+      <gedit:Begin>border-left-width: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border-width">
+      <gedit:Begin>border-width: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="border">
+      <gedit:Begin>border: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="bottom">
+      <gedit:Begin>bottom: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="caption-side">
+      <gedit:Begin>caption-side: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="clear">
+      <gedit:Begin>clear: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="clip">
+      <gedit:Begin>clip: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="color">
+      <gedit:Begin>color: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="content">
+      <gedit:Begin>content: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="counter-increment">
+      <gedit:Begin>counter-increment: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="counter-reset">
+      <gedit:Begin>counter-reset: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="cue-after">
+      <gedit:Begin>cue-after: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="cue-before">
+      <gedit:Begin>cue-before: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="cue">
+      <gedit:Begin>cue: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="cursor">
+      <gedit:Begin>cursor: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="direction">
+      <gedit:Begin>direction: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="display">
+      <gedit:Begin>display: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="elevation">
+      <gedit:Begin>elevation: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="empty-cells">
+      <gedit:Begin>empty-cells: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="float">
+      <gedit:Begin>float: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="font-family">
+      <gedit:Begin>font-family: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="font-size">
+      <gedit:Begin>font-size: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="font-style">
+      <gedit:Begin>font-style: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="font-variant">
+      <gedit:Begin>font-variant: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="font-weight">
+      <gedit:Begin>font-weight: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="font">
+      <gedit:Begin>font: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="height">
+      <gedit:Begin>height: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="left">
+      <gedit:Begin>left: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="letter-spacing">
+      <gedit:Begin>letter-spacing: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="line-height">
+      <gedit:Begin>line-height: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="list-style-image">
+      <gedit:Begin>list-style-image: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="list-style-position">
+      <gedit:Begin>list-style-position: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="list-style-type">
+      <gedit:Begin>list-style-type: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="list-style">
+      <gedit:Begin>list-style: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="margin-right">
+      <gedit:Begin>margin-right: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="margin-left">
+      <gedit:Begin>margin-left: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="margin-top">
+      <gedit:Begin>margin-top: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="margin-bottom">
+      <gedit:Begin>margin-bottom: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="margin">
+      <gedit:Begin>margin: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="max-height">
+      <gedit:Begin>max-height: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="max-width">
+      <gedit:Begin>max-width: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="min-height">
+      <gedit:Begin>min-height: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="min-width">
+      <gedit:Begin>min-width: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="orphans">
+      <gedit:Begin>orphans: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="outline-color">
+      <gedit:Begin>outline-color: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="outline-style">
+      <gedit:Begin>outline-style: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="outline-width">
+      <gedit:Begin>outline-width: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="outline">
+      <gedit:Begin>outline: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="overflow">
+      <gedit:Begin>overflow: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="padding-top">
+      <gedit:Begin>padding-top: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="padding-right">
+      <gedit:Begin>padding-right: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="padding-bottom">
+      <gedit:Begin>padding-bottom: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="padding-left">
+      <gedit:Begin>padding-left: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="padding">
+      <gedit:Begin>padding: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="page-break-after">
+      <gedit:Begin>page-break-after: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="page-break-before">
+      <gedit:Begin>page-break-before: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="page-break-inside">
+      <gedit:Begin>page-break-inside: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="pause-after">
+      <gedit:Begin>pause-after: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="pause-before">
+      <gedit:Begin>pause-before: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="pause">
+      <gedit:Begin>pause: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="pitch-range">
+      <gedit:Begin>pitch-range: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="pitch">
+      <gedit:Begin>pitch: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="play-during">
+      <gedit:Begin>play-during: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="position">
+      <gedit:Begin>position: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="quotes">
+      <gedit:Begin>quotes: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="richness">
+      <gedit:Begin>richness: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="right">
+      <gedit:Begin>right: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="speak-header">
+      <gedit:Begin>speak-header: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="speak-numeral">
+      <gedit:Begin>speak-numeral: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="speak-punctuation">
+      <gedit:Begin>speak-punctuation: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="speak">
+      <gedit:Begin>speak: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="speech-rate">
+      <gedit:Begin>speech-rate: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="stress">
+      <gedit:Begin>stress: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="table-layout">
+      <gedit:Begin>table-layout: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="text-align">
+      <gedit:Begin>text-align: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="text-decoration">
+      <gedit:Begin>text-decoration: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="text-indent">
+      <gedit:Begin>text-indent: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="text-transform">
+      <gedit:Begin>text-transform: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="top">
+      <gedit:Begin>top: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="unicode-bidi">
+      <gedit:Begin>unicode-bidi: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="vertical-align">
+      <gedit:Begin>vertical-align: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="visibility">
+      <gedit:Begin>visibility: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="voice-family">
+      <gedit:Begin>voice-family: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="volume">
+      <gedit:Begin>volume: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="white-space">
+      <gedit:Begin>white-space: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="widows">
+      <gedit:Begin>widows: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="width">
+      <gedit:Begin>width: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="word-spacing">
+      <gedit:Begin>word-spacing: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+    <gedit:Tag name="z-index">
+      <gedit:Begin>z-index: </gedit:Begin>
+      <gedit:End>;</gedit:End>
+    </gedit:Tag>
+  </gedit:TagGroup>
+  
+</gedit:TagList>

@@ -1,4 +1,8 @@
-import gedit
+
+try:
+    import gedit
+except:
+    import pluma as gedit
 import gtk
 
 import sys

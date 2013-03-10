@@ -20,7 +20,7 @@ from threading import Timer
 
 ui_string = """<ui>
   <menubar name="MenuBar">
-    <menu name="ToolsMenu" action="Tools">
+    <menu name="PythonMenu" action="Python">
       <placeholder name="ToolsOps_2">
         <menuitem name="ToolRunInPython" action="ToolRunInPython"/>
         <menuitem name="ToolRunInPython_Reset" action="ToolRunInPython_Reset"/>
@@ -100,7 +100,7 @@ class PluginHelper:
     def insert_menu_item(self, window):
         manager = self.window.get_ui_manager()
         
-        self.action_group = gtk.ActionGroup("PluginActions")
+        self.action_group = gtk.ActionGroup("PythonPluginActions")
         
         # Create an action for the "Run in python" menu option
         # and set it to call the "run_document_in_python" function.

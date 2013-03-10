@@ -372,7 +372,7 @@ class PythonToolsPlugin(gedit.Plugin):
         # store per window data in the window object----------------------------
         windowdata = dict()
         window.set_data("PythonToolsPluginWindowDataKey", windowdata)
-        windowdata["action_group"] = gtk.ActionGroup("GeditPythonToolsPluginActions")
+        windowdata["action_group"] = gtk.ActionGroup("PythonPluginActions")
         windowdata["action_group"].add_actions(actions, window)
         manager = window.get_ui_manager()
         manager.insert_action_group(windowdata["action_group"], -1)
@@ -382,7 +382,7 @@ class PythonToolsPlugin(gedit.Plugin):
         submenu = """
             <ui>
               <menubar name='MenuBar'>
-                <menu name='ToolsMenu' action='Tools'>
+                <menu name='PythonMenu' action='Python'>
                   <placeholder name='ToolsOps_1'>
                     <menu name='PythonTools' action='PythonTools'>"""
 

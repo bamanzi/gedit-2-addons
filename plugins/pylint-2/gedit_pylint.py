@@ -286,7 +286,7 @@ class PylintInstance (object):
     def _insert_menu (self):
         manager = self._window.get_ui_manager()
 
-        self._action_group = gtk.ActionGroup("GeditPylintPluginActions")
+        self._action_group = gtk.ActionGroup("PythonPluginActions")
         self._action_group.set_translation_domain('pylint')
         self._action_group.add_actions([('Pylint', None,
                                          _('Pylint'),
@@ -298,7 +298,7 @@ class PylintInstance (object):
 
         ui_str = """<ui>
                     <menubar name="MenuBar">
-                     <menu name="ToolsMenu" action="Tools">
+                     <menu name="PythonMenu" action="Python">
                       <placeholder name="ToolsOps_2">
                         <menuitem name="Pylint" action="Pylint"/>
                        </placeholder>

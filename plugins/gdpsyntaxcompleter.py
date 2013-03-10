@@ -23,12 +23,12 @@ from gdp.syntaxcompleter import SyntaxController
 class SyntaxCompleterPlugin(gedit.Plugin):
     """Automatically complete words from the list of words in the document."""
 
-    action_group_name = 'GDPSyntaxActions'
-    menu_path = '/MenuBar/ToolsMenu/ToolsOps_2/CompleteWord'
+    action_group_name = 'PythonPluginActions'
+    menu_path = '/MenuBar/PythonMenu/ToolsOps_2/CompleteWord'
     menu_xml = """
         <ui>
           <menubar name="MenuBar">
-            <menu name='ToolsMenu' action='Tools'>
+            <menu name='PythonMenu' action='Python'>
               <placeholder name="ToolsOps_2">
                 <separator />
                 <menuitem action="CompleteWord"/>
@@ -45,7 +45,7 @@ class SyntaxCompleterPlugin(gedit.Plugin):
         (name, stock_id, label, accelerator, tooltip, callback)
         """
         return  [
-            ('CompleteWord', None, _("Complete _word"),
+            ('CompleteWord', None, _("Complete _word (GDP)"),
                 '<Alt>slash',
                 _("Complete the word at the cursor."),
                 syntaxer.show_syntax_view),

@@ -215,6 +215,16 @@ class RightPanePluginInstance:
 		manager.insert_action_group(self.action_group, -1)
 		self.ui_id = manager.new_merge_id()
 		manager.add_ui_from_string(ui_str)
+		
+		group2 = gtk.ActionGroup("PythonPluginActions")
+		action2 = gtk.Action(name="Python",
+                                          label="Python",
+                                          tooltip="All Python Plugins",
+                                          stock_id=None)
+		group2.add_action(action2)
+		 
+		manager.insert_action_group(group2, -1)  
+		
 		manager.ensure_update()
 
 	# Position the items in the view menu

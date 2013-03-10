@@ -191,13 +191,13 @@ class ReindentPython(gedit.Plugin):
             manager.insert_action_group(windowdata["reindent_action_group"], -1)
             windowdata["ui_id"] = manager.new_merge_id ()
             
-            action = gtk.ActionGroup("GeditReindentPluginActions")
+            action = gtk.ActionGroup("PythonPluginActions")
             manager = window.get_ui_manager()
             manager.insert_action_group(action, -1)
             submenu = """
                 <ui>
                   <menubar name='MenuBar'>
-                    <menu name='ToolsMenu' action='Tools'>
+                    <menu name='PythonMenu' action='Python'>
                       <placeholder name='ToolsOps_2'>
                         <menuitem action='Reindent'/>
                     <separator/>

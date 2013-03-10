@@ -21,7 +21,7 @@ from gui import *
 ui = """
 <ui>
     <menubar name="MenuBar">
-    <menu name="ToolsMenu" action="Tools">
+    <menu name="PythonMenu" action="Python">
       <placeholder name="ToolsOps_5">
         <menuitem action="ShowPythonDefs" />
       </placeholder>
@@ -40,7 +40,7 @@ class PythonDefs:
 
         action = ( "ShowPythonDefs", gtk.STOCK_JUSTIFY_FILL, "Show Python Defs", "", \
             "Shows all source code def's", self.on_run )            
-        self.action_group = gtk.ActionGroup( "PythonDefs_ActionGroup" )
+        self.action_group = gtk.ActionGroup( "PythonPluginActions" )
         self.action_group.add_actions( [action] )
 
         manager = window.get_ui_manager()

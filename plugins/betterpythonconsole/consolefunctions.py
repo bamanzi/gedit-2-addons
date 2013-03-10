@@ -30,7 +30,7 @@ import subprocess
 # Insert a new item in the Tools menu
 UI_STR = """<ui>
   <menubar name="MenuBar">
-    <menu name="ToolsMenu" action="Tools">
+    <menu name="PythonMenu" action="Python">
       <placeholder name="ToolsOps_2">
         <menuitem name="BetterConsole" action="BetterConsole"/>
       </placeholder>
@@ -61,7 +61,7 @@ class BetterConsoleHelper:
         manager = self._window.get_ui_manager()
 
         # Create a new action group
-        self._action_group = gtk.ActionGroup("BetterConsolePluginActions")
+        self._action_group = gtk.ActionGroup("PythonPluginActions")
         self._action_group.add_actions([("BetterConsole", None, _("Run Module"),
                                          'F5', _("Run file in Python Console"),
                                          self.on_clear_document_activate)])

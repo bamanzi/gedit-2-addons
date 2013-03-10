@@ -1,0 +1,11 @@
+[Pluma Plugin]
+Loader=python
+Module=builder
+IAge=2
+Name=Builder
+Version=0.5
+Depends=
+Description=Build and Compile code
+Authors=Mike Reed
+Copyright=© 2009 Mike Reed <gedit@amadron.com>
+

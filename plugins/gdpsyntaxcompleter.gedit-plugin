@@ -2,8 +2,8 @@
 Loader=python
 Module=gdpsyntaxcompleter
 IAge=2
-_Name=GDP Syntax Completer
-_Description=Complete words and Python symbols at the cursor.
+Name=GDP Syntax Completer
+Description=Complete words and Python symbols at the cursor.
 Authors=Curtis Hovey <sinzui.is@verizon.net>
 Copyright=Copyright © 2007-2009 Curtis Hovey
 Website=http://curtis.hovey.name/sinzui

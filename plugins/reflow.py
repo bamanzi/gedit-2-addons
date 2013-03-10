@@ -18,8 +18,14 @@
 #  You should have received a copy of the GNU General Public License along with
 #  this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import gedit
-import gconf
+try:
+    import gedit
+    import gconf
+    is_mate = False
+except:
+    import pluma as gedit
+    import mateconf as gconf
+    is_mate = True
 import gtk
 import re
 import textwrap
@@ -203,7 +209,7 @@ class ReflowWindowHelper:
 
 def get_gedit_margin():
     gconf_client = gconf.client_get_default()
-    margin = gconf_client.get_int('/apps/gedit-2/preferences/editor/'
-                                  'right_margin/right_margin_position')
+    margin = gconf_client.get_int('/apps/%s/preferences/editor/'
+                                  'right_margin/right_margin_position' % (is_mate and "pluma" or "gedit-2"))
     return margin
 

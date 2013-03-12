@@ -1,0 +1,27 @@
+pocket-lint-0.3: The first release
+==================================
+
+Fixed rules to ensure Zope zcml and pt are recongnised as XML.
+
+
+pocket-lint-0.1: The first release
+==================================
+
+Pocket-lint a composite linter and style checker. It has several notable
+features:
+
+    * Provides a consistent report of issues raised by the subordinate
+      checkers.
+    * Alternate Reports can be written to change the report, or integrate
+      the report into another application.
+    * Supports checking of multiple source types:
+      * Python syntax and style
+      * Python doctest style
+      * XML/HTML style and entities
+      * CSS style
+      * JavaScript syntax and style
+      * Plain text
+    * Supports reporting:
+      * Python doctests
+      * CSS
+      * XML/HTML

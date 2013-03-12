@@ -1,0 +1,62 @@
+General Information
+===================
+
+Pocket-lint a composite linter and style checker. It has several notable
+features:
+
+    * Provides a consistent report of issues raised by the subordinate
+      checkers.
+    * Alternate Reports can be written to change the report, or integrate
+      the report into another application.
+    * Supports checking of multiple source types:
+      * Python syntax and style
+      * Python doctest style
+      * XML/HTML style and entities
+      * CSS style
+      * JavaScript syntax and style
+      * JSON data structure syntax
+      * reStructured Text style
+      * Plain text
+    * Supports reporting:
+      * Python doctests
+      * CSS
+      * XML/HTML
+
+
+Installation from deb
+---------------------
+
+Debian packages are available at:
+
+    https://launchpad.net/~sinzui/+archive/ppa
+
+Adding this archive to your sources will get you the latest updated
+as they are released.
+
+
+Installation from tarball
+-------------------------
+
+run
+    make install
+
+For more control over your options see
+    python ./setup.py --help
+
+
+Reporting bugs and contributing
+-------------------------------
+
+You can learn details about the pocket-lint project, ask questions, and
+report bugs at
+
+    https://launchpad.net/pocket-lint
+
+
+Contrib
+-------
+
+pocket-lint includes the work of other projects when it simplifies
+dependencies.
+    * pep8.py (Expat license)
+    * fulljslint (MIT-style license)

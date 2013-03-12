@@ -19,12 +19,17 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
 import gtk
-import gedit
+try:
+    import gedit
+    import gconf
+except:
+    import pluma as gedit
+    import mateconf as gconf
 import vte
 import os
 import os.path
 import gtk.glade
-import gconf
+
 from gettext import gettext as _
 from terminal import TerminaldWidget
 

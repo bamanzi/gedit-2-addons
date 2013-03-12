@@ -14,7 +14,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-import gedit
+try:
+    import gedit
+except:
+    import pluma as gedit
 import gtk
 import gtk.gdk
 import os
@@ -107,10 +110,20 @@ class RailsHotkeysWindowHelper:
         self.status_label.set_text(label)
 
     def create_tab(self, uri):
-        # have to find out the file's encoding
-        # so calling gedit command is probably better
-        # self.window.create_tab_from_uri(uri, None, 1, False, False)
-        os.system('gedit %s' % uri)
+        try:
+            win = gedit.app_get_default().get_active_window()
+            try:
+                import gnomevfs
+            except:
+                import matevfs as gnomevfs
+            uri = gnomevfs.get_uri_from_local_path(uri)
+            win.create_tab_from_uri(uri, None, 1, False, False)
+        except:
+            try:
+                import gedit
+                os.system('gedit %s' % uri)
+            except:
+                os.system('pluma "%s"' % uri)
 
     def get_rails_root(self, uri):
         rails_root = self.get_data('RailsModeRoot')

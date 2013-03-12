@@ -16,7 +16,12 @@
 
 """Automatically detects if file resides in a ruby on rails application and set the properly language."""
 
-import gedit, os
+try:
+    import gedit
+except:
+    import pluma as gedit
+
+import os
 
 class RubyOnRailsLoader(gedit.Plugin):
 

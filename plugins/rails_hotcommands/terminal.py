@@ -21,12 +21,20 @@
 # Thanks for: Nando Vieira - http://simplesideias.com.br/ (get_rails_root method)
 
 import gtk
-import gedit
+try:
+    import gedit
+    import gconf
+    import gnomevfs
+    APP_KEY = "gedit-2"
+except:
+    import pluma as gedit
+    import mateconf as gconf
+    import matevfs as gnomevfs
+    APP_KEY = "pluma"
 import os
 import os.path
 from vte import Terminal
-import gconf
-import gnomevfs
+
 
 class TerminaldWidget():
     def __init__(self, window):
@@ -120,7 +128,7 @@ class TerminaldWidget():
 
     # FileBrowser Integration
     def get_filebrowser_root(self):
-       base = u'/apps/gedit-2/plugins/filebrowser/on_load'
+       base = u'/apps/%s/plugins/filebrowser/on_load' % APP_KEY
        client = gconf.client_get_default()
        client.add_dir(base, gconf.CLIENT_PRELOAD_NONE)
        path = os.path.join(base, u'virtual_root')

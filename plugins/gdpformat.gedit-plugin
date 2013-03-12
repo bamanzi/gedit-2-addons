@@ -1,0 +1,9 @@
+[Gedit Plugin]
+Loader=python
+Module=gdpformat
+IAge=2
+Name=GDP format
+Description=Format text and code.
+Authors=Curtis Hovey <sinzui.is@verizon.net>
+Copyright=Copyright © 2009 Curtis Hovey
+Website=http://curtis.hovey.name/sinzui

@@ -461,15 +461,14 @@ a python source code, it can also run it inside a special
 python-specific "running" window, displaying the stdout/stderr from
 your python-program.
 
+** Macropy                                                 :gedit_2:gedit_3:
+Record and execute macros. https://github.com/eguaio/gedit-macropy
 ** (Multiple) Embedded Terminal
 # <<mterminal>>
 Terminal with multiple windows
 A modified terminal plugin for GEdit. It support multiple tabs. Orginally written by Paolo Borelli.
 
 https://github.com/GunioRobot/gedit-mterminal
-
-** Macropy                                                 :gedit_2:gedit_3:
-Record and execute macros. https://github.com/eguaio/gedit-macropy
 ** multiedit
 # <<multiedit>>
 better choce:   -> [[multi_edit]]
@@ -489,6 +488,24 @@ document that act as virtual text cursors. It is designed to aid repetitive prog
 
 [[#replacement]] for [[columnmode]], [[multiedit]]  
 
+** Markdown Preview
+
+http://jpfleury.indefero.net/p/gedit-markdown/source/tree/master/
+
+** Markup Preview                                                   :gedit_3:
+# <<markup_preview>>
+https://github.com/niftylettuce/gedit-markup_preview
+Preview your favorite markup right from your Gedit text editor.
+
+Supported Markup
+
+  * markdown (.markdown, .md, .mdown, .mkd, .mkdn)
+  * textile (.textile)
+  * reStructuredText (.rst, .rest)
+
+Batteries Included
+
+  *  HTML previewer bottom pane
 
 * N
 ** Remote File System Save Hack
@@ -601,12 +618,12 @@ Gedit plugin: Allows to display a right side pane. A left-right pane manager is 
 # <<runcible>>
 Embedded Runcible (termnal)
 
-** Reflow                                                           :gedit_3:
+** Reflow                                                   :gedit_2:gedit_3:
 # <<reflow>>
 reflow paragraph similarly to emacs <Alt>-q
 https://github.com/guillaumechereau/gedit-reflow-plugin
 
-gedit-3 only.
+gedit-2 version lies in history: https://github.com/guillaumechereau/gedit-reflow-plugin/tree/74ece9c258aba922ab4caf89fc3b5454ae5ac3b9
 
 ** Rewrap
 # <<rewrap>>
@@ -808,7 +825,7 @@ http://sharkbaitbobby.googlepages.com/gedit-webbrowser
 # <<whitespace_terminator>>
 https://github.com/Kozea/Gedit-WhiteSpace-Terminator
 
-** whitespaces
+** whitespaces                                                      :gedit_3:
 # <<whitespace>>
 https://live.gnome.org/Gedit/PluginsOld#line-696
 
@@ -1143,29 +1160,6 @@ Profiling Python programs from within gedit. The statistics is displayed in the 
 also possible to profile the gedit plugins. Project page:
 https://launchpad.net/gedit-pyprofiler. The project is part of Gedit BC Developer Plugins.
 ** misc
-*** TODO django-project                                      :django:gedit_3:
-https://github.com/Quixotix/gedit-django-project
-
-Gedit Django Project adds GUI interfaces for django-admin.py and manage.py commands within Gedit and
-simplifies working with Django projects.
-
-#+begin_comment
-*Features*
-
-  * Create new projects (manage.py startproject) and apps (manage.py startapp).
-  * Supports most of the django-admin.py and manage.py commands.
-  * Run the Django development server (manage.py runserver) in a dedicated bottom panel.
-  * Run the interactive Python interpreter (manage.py shell) in a dedicated bottom panel.
-  * Run the interactive database shell (manage.py dbshell) in a dedicated bottom panel.
-  * Management commands which produce usable output such as dumpdata, sql, inspectdb can optionally
-    be loaded into a new Gedit document.
-  * Select appropriate apps from a GUI list of available apps for management commands which take a
-    list of apps as parameters.
-#+end_comment
-
-intro:      http://www.micahcarrick.com/gedit-as-a-django-ide-for-linux.html
-screenshot: http://is.gd/jZdMaz
-
 *** + PythonDefs                                       :TODO:gedit_2:gedit_3:
 http://code.google.com/p/gedit-python-defs/
 
@@ -1190,7 +1184,7 @@ choose to insert spaces instead of tabs.
 Python code structure outline
 http://www.optionexplicit.be/
 *** + reindent
-https://live.gnome.org/Gedit/Plugins/Reindent
+    https://live.gnome.org/Gedit/Plugins/Reindent
 
 A Simple plugin to reindent the code following PEP008 Guideline, it take the source from reident.py
 at python examples
@@ -1206,7 +1200,7 @@ The current features are:
   * Find function definitions and references (with BicycleRepairMan)
   * Add and remove comments
 
-*** GDP format
+*** ++ GDP format
 # <<gdpformat>>
 Format paragraphs, lists, and imports. Reformat test using regular expressions. Check the syntax and
 style of Python, XML, and plain text. Check and reformat Python doctests.
@@ -1218,7 +1212,30 @@ https://launchpad.net/~gedit-bc-dev-plugins
 *** [[pylint-2]]
 *** [[gedit-python-traceback]]
 *** [[python-traceback]]
-** templates
+** django
+*** TODO django-project                                      :django:gedit_3:
+https://github.com/Quixotix/gedit-django-project
+
+Gedit Django Project adds GUI interfaces for django-admin.py and manage.py commands within Gedit and
+simplifies working with Django projects.
+
+#+begin_comment
+*Features*
+
+  * Create new projects (manage.py startproject) and apps (manage.py startapp).
+  * Supports most of the django-admin.py and manage.py commands.
+  * Run the Django development server (manage.py runserver) in a dedicated bottom panel.
+  * Run the interactive Python interpreter (manage.py shell) in a dedicated bottom panel.
+  * Run the interactive database shell (manage.py dbshell) in a dedicated bottom panel.
+  * Management commands which produce usable output such as dumpdata, sql, inspectdb can optionally
+    be loaded into a new Gedit document.
+  * Select appropriate apps from a GUI list of available apps for management commands which take a
+    list of apps as parameters.
+#+end_comment
+
+intro:      http://www.micahcarrick.com/gedit-as-a-django-ide-for-linux.html
+screenshot: http://is.gd/jZdMaz
+
 *** https://github.com/bigbrozer/gedit-snippets                      :django:
 python & django snippets for gedit
 

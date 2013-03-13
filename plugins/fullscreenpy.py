@@ -24,7 +24,8 @@ class FullscreenPyWindowHelper:
         def __init__(self, plugin, window):
                 self._window = window
                 self._plugin = plugin
-                
+                self._panes_keep_visible = {}
+                 
                 # Insert menu items
                 self._insert_menu()  
         
@@ -103,7 +104,7 @@ class FullscreenPyWindowHelper:
             self._show_hide_ui_parts(show)
         
         def on_toggle_maximize_editor(self):
-            action = self.get_action('GeditWindowAlwaysSensitiveActions', 'ViewToolbar')
+            action = self.get_action('FullscreenPyPluginActions', 'MaximizeEditor')
             if not action:
                 action = self.get_action('PlumaWindowAlwaysSensitiveActions', 'ViewToolbar')
             assert action != None
@@ -111,7 +112,7 @@ class FullscreenPyWindowHelper:
                 
         def _show_hide_ui_parts(self, show):
             #comment the parts you want to keep untouched
-            actions = [
+            actpaths = [
                 '/GeditWindowPanesActions/ViewSidePane',
                 '/GeditWindowPanesActions/ViewBottomPane',
                 '/GeditWindowAlwaysSensitiveActions/ViewToolbar',
@@ -120,15 +121,20 @@ class FullscreenPyWindowHelper:
                 '/PlumaWindowPanesActions/ViewBottomPane',
                 '/PlumaWindowAlwaysSensitiveActions/ViewToolbar',
                 '/PlumaWindowAlwaysSensitiveActions/ViewStatusbar',
-               # '/GeditHideTabbarPluginActions/ShowTabbar',   #showtabbar plugin
-               # '/PlumaHideTabbarPluginActions/ShowTabbar',   #showtabbar plugin
+                '/GeditHideTabbarPluginActions/ShowTabbar',   #showtabbar plugin
+                '/PlumaHideTabbarPluginActions/ShowTabbar',   #showtabbar plugin
                 '/RightPaneActionGroup1/ViewRightSidePane',   #rightpane plugin
                 ]
-            for s in actions:
-                foo, sgroup, saction = s.split('/')
-                action = self.get_action(sgroup, saction)
-                if action and (action.get_active()!=show):
-                    action.activate()
+            for path in actpaths:
+                foo, grpname, actname = path.split('/')
+                action = self.get_action(grpname, actname)
+                if action:
+                    if show:   #we want to restore the editor (show panes)
+                        # remember which panes visible while editor maximized
+                        # so next time when Maximize Editor button clicked, these panes won't be hide
+                        self._panes_keep_visible[path] = action.get_active()
+                    if (action.get_active()!=show) and not self._panes_keep_visible.get(path, False):
+                        action.activate()
 
 class FullscreenPyPlugin(gedit.Plugin):
         DATA_TAG = "FullscreenPyPluginInstance"

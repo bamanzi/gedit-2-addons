@@ -23,6 +23,7 @@ try:
 except:
 	import pluma as gedit
 
+import os.path
 import gtk
 import gobject
 
@@ -33,7 +34,7 @@ class App(gtk.Window):
 
 	def __init__(self):
 		gtk.Window.__init__(self, gtk.WINDOW_TOPLEVEL)
-		self.set_default_size(640,400)
+		self.set_default_size(800, 600)
 		self.set_title("Switcher plugin select document:");
 		self.set_position(gtk.WIN_POS_CENTER)
 		self.set_keep_above(True)
@@ -41,19 +42,28 @@ class App(gtk.Window):
 		sc = gtk.ScrolledWindow()
 		sc.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
 		self.treeview = gtk.TreeView()
-		self.model = gtk.ListStore(gobject.TYPE_OBJECT, gobject.TYPE_STRING, gobject.TYPE_BOOLEAN)
+		self.model = gtk.ListStore(gobject.TYPE_OBJECT, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_BOOLEAN)
 		self.treeview.set_model(self.model)
+		
 		cell = gtk.CellRendererText()
 		col = gtk.TreeViewColumn("Document:", cell)
 		col.set_expand(True)
 		col.add_attribute(cell, "text", 1)
 		self.treeview.append_column(col)
 		self.treeview.set_search_column(1)
+		
+		cell = gtk.CellRendererText()
+		col = gtk.TreeViewColumn("Path:", cell)
+		col.set_expand(True)
+		col.add_attribute(cell, "text", 2)
+		self.treeview.append_column(col)
+		
 		cell = gtk.CellRendererToggle()
 		col = gtk.TreeViewColumn("Modified:", cell)
 		col.set_expand(False)
-		col.add_attribute(cell, "active", 2)
+		col.add_attribute(cell, "active", 3)
 		self.treeview.append_column(col)
+		
 		sc.add(self.treeview)
 		self.add(sc)
 		self.connect("delete_event", self.on_delete_event)
@@ -116,8 +126,9 @@ class App(gtk.Window):
 		for doc in docs:
 			it = self.model.append()
 			self.model.set_value(it, 0, doc)
-			self.model.set_value(it, 1, str(i)+" "+doc.get_uri())
-			self.model.set_value(it, 2, doc.get_modified())
+			self.model.set_value(it, 1, os.path.basename(doc.get_uri()))
+			self.model.set_value(it, 2, doc.get_uri())
+			self.model.set_value(it, 3, doc.get_modified())
 			i=i+1
 			
 		self.show_all()

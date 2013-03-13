@@ -1,6 +1,6 @@
 [Gedit Plugin]
 Loader=python
-Module=Bookmarks
+Module=FileBookmarks
 IAge=2
 Name=Bookmarks
 Description=Bookmark your favorite files.

@@ -89,7 +89,7 @@ class App(gtk.Window):
 		self.ui = window.get_ui_manager()
 		self.action_group=gtk.ActionGroup("Switcher")
 		self.actionSwitchDocument = gtk.Action("actionSwitchDocument", "Switch document", "Switch between windows", 0) 
-		self.action_group.add_action_with_accel(self.actionSwitchDocument,"<Control>Escape")
+		self.action_group.add_action_with_accel(self.actionSwitchDocument,"<Control>grave")
 		self.actionSwitchDocument.connect("activate", self.on_switch_document, window)
 		self.ui.insert_action_group(self.action_group, -1)
 		self.gid = self.ui.new_merge_id();

@@ -17,7 +17,7 @@ ui_string = """<ui>
   <menubar name="MenuBar">
     <menu name="ViewMenu" action="View">
       <placeholder name="ViewOps_2">
-        <menuitem name="ExamplePy" action="ExamplePy"/>
+        <menuitem name="SplitView" action="SplitView"/>
       </placeholder>
     </menu>
   </menubar>
@@ -522,7 +522,7 @@ class PluginHelper:
 
         # Create an action for the "Run in python" menu option
         # and set it to call the "run_document_in_python" function.
-        self.split_view_action = gtk.Action(name="ExamplePy", label="Toggle Split View", tooltip="Create a split view of the current document", stock_id=gtk.STOCK_REFRESH)
+        self.split_view_action = gtk.Action(name="SplitView", label="Toggle Split View", tooltip="Create a split view of the current document", stock_id=gtk.STOCK_REFRESH)
         self.split_view_action.connect("activate", self.toggle_split_view)
 
         # Add the action with Ctrl + F5 as its keyboard shortcut.

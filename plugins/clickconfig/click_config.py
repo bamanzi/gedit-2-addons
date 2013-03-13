@@ -385,7 +385,7 @@ class ClickConfigWindowHelper(object):
         name = 'Configure'
         stock_id = None
         label = 'Configure'
-        accelerator = '<Control>b'
+        accelerator = ''
         tooltip = 'Configure Click Config'
         callback = lambda action: self.open_config_window()
         actions.append((name, stock_id, label, accelerator, tooltip, callback))

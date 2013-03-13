@@ -84,13 +84,13 @@ class LineToolsPlugin(gedit.Plugin):
   def activate(self, window):
     actions = [
       ('LineTools',           None, 'Line Tools'),
-      ('TrimLine',            None, 'Trim Line',        '<Control>t',        'Remove characters between the cursor and the line end',                     self.trim_line),
-      ('ClearLine',           None, 'Clear Line',       '<Control>b',        'Remove all the characters on the current line',                             self.clear_line),
+      ('TrimLine',            None, 'Trim Line',        '<Control>k',        'Remove characters between the cursor and the line end',                     self.trim_line),
+      ('ClearLine',           None, 'Clear Line',       '',                  'Remove all the characters on the current line',                             self.clear_line),
       ('DeleteLine',          None, 'Kill Line Alt.',   '',                  'Completely remove the current line and resets cursor offset',               self.delete_line),
       ('DeleteLine2',         None, 'Kill Line',        '<Shift><Control>d', 'Completely remove the current line and retains cursor offset',              self.delete_line2),
-      ('DuplicateLine',       None, 'Duplicate Line',   '<Control>d',        'Create a duplicate of the current line below the current line',             self.duplicate_line),
-      ('RaiseLine',           None, 'Raise Line',       '<Control>m',        'Transpose the current line with the line above it',                         self.raise_line),
-      ('LowerLine',           None, 'Lower Line',       '<Shift><Control>m', 'Transpose the current line with the line below it',                         self.lower_line),
+      ('DuplicateLine',       None, 'Duplicate Line',   '',                  'Create a duplicate of the current line below the current line',             self.duplicate_line),
+      ('RaiseLine',           None, 'Raise Line',       '<Alt>Up',           'Transpose the current line with the line above it',                         self.raise_line),
+      ('LowerLine',           None, 'Lower Line',       '<Alt>Down',         'Transpose the current line with the line below it',                         self.lower_line),
       ('CopyLine',            None, 'Copy Line',        '<Shift><Control>c', 'Copy the contents of the current line to the clipboard',                    self.copy_line),
       ('CutLine',             None, 'Cut Line',         '<Shift><Control>x', 'Copy the contents of the current line to the clipboard and then remove it', self.cut_line),
       ('PasteLine',           None, 'Paste Line',       '<Shift><Control>v', 'Paste the contents of the clipboard to the current line',                   self.paste_line),

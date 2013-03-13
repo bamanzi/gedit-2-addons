@@ -100,7 +100,11 @@ class AccelDialog:
         self.__model_iters = dict()
         self.__model = gtk.TreeStore(str, str, str)
         self.__my_accel_map = dict()
+        
+        self.__dump_file = file(os.path.expanduser("~/.gedit-accel-dump.txt"), "w")
         gtk.accel_map_foreach(self.populate_tree)
+        self.__dump_file.close()
+        
         self.__model.set_sort_column_id(0, gtk.SORT_ASCENDING)
         self.__tree.set_model(self.__model)
 
@@ -119,6 +123,7 @@ class AccelDialog:
             return
       
         grp, act = m.group(1), m.group(2)
+        self.__dump_file.write(grp + '\t' + act + '\t' + gtk.accelerator_get_label(key,mode) + '\n')
         
         # if new group -> create one
         if not grp in self.__model_iters:

@@ -176,7 +176,7 @@ class window_helper:
         
         self._act_ab = gtk.Action("AdvancedBookmarks", _("Advanced Bookmarks"), _("Advanced Bookmarks"), None)
 
-        self._act_toggle = gtk.Action("ToggleBookmark", _("Toggle"), _("Toggle"), None)
+        self._act_toggle = gtk.Action("ToggleBookmarkAdv", _("Toggle"), _("Toggle"), None)
         self._act_toggle.connect("activate", self._on_toggle_bookmark)
         
         self._act_toggle_adv = gtk.Action("ToggleBookmarkAdvanced", _("Toggle & edit"), _("Toggle & edit"), None)

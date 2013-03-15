@@ -16,11 +16,14 @@ ui_str = """<ui>
         <menu name="ToolsMenu" action="Tools">  
             <placeholder name="ToolsOps_2">
                 <menuitem name="EditShortcuts" action="EditShortcuts"/>
+                <menuitem name="OpenShortcutsConfig" action="OpenShortcutsConfig"/>
+                <menuitem name="ReloadShortcutsConfig" action="ReloadShortcutsConfig"/>
             </placeholder>
         </menu>
     </menubar>
 </ui>"""
 
+accel_map_file = os.path.expanduser("~/.gedit-accel-map.scm")
 
 
 # Plugin-class
@@ -28,8 +31,9 @@ class AccelPlugin(gedit.Plugin):
     def __init__(self):
         gedit.Plugin.__init__(self)
         self._instances = dict()
+        gtk.accel_map_load(accel_map_file)
     
-
+    
     def activate(self, window):
         self._instances[window] = AccelPluginWindowHelper(window)
         
@@ -58,7 +62,14 @@ class AccelPluginWindowHelper:
                                          _("Edit Shortcuts"), None, 
                                          _("Edit keyboard-shortcuts"),
                                          self._on_assign_accelerators)])
-        
+        self._action_group.add_actions([("OpenShortcutsConfig", None, 
+                                         _("Open shortcuts config file in editor"), None, 
+                                         _("Open shortcuts config ~/.gedit-accel-map.scm in editor"),
+                                         self._on_open_config)])
+        self._action_group.add_actions([("ReloadShortcutsConfig", None, 
+                                         _("Reload shortcuts config from file"), None, 
+                                         _("Reload shortcuts config from file ~/.gedit-accel-map.scm"),
+                                         self._on_reload_config)])
         manager.insert_action_group(self._action_group, -1)
         self._ui_id = manager.add_ui_from_string(ui_str)
 
@@ -77,7 +88,21 @@ class AccelPluginWindowHelper:
         dlg = AccelDialog()
         dlg.run()
 
+    def _on_reload_config(self, action):
+        print(_("reloading shortcuts from config file: %s") % accel_map_file)
+        gtk.accel_map_load(accel_map_file)
 
+    def _on_open_config(self, action):
+        print(_("reloading shortcuts from config file: %s") % accel_map_file)
+        uri = "file://" + accel_map_file
+        try:
+            import gedit
+            import gnomevfs
+            uri = gnomevfs.get_uri_from_local_path(accel_map_file)
+        except:
+            import matevfs
+            uri = matevfs.get_uri_from_local_path(accel_map_file)
+        self._window.create_tab_from_uri(uri, None, 0, True, True)
 
 
 # Dialog-Class (impl. controller)
@@ -101,9 +126,7 @@ class AccelDialog:
         self.__model = gtk.TreeStore(str, str, str)
         self.__my_accel_map = dict()
         
-        self.__dump_file = file(os.path.expanduser("~/.gedit-accel-dump.txt"), "w")
         gtk.accel_map_foreach(self.populate_tree)
-        self.__dump_file.close()
         
         self.__model.set_sort_column_id(0, gtk.SORT_ASCENDING)
         self.__tree.set_model(self.__model)
@@ -123,7 +146,6 @@ class AccelDialog:
             return
       
         grp, act = m.group(1), m.group(2)
-        self.__dump_file.write(grp + '\t' + act + '\t' + gtk.accelerator_get_label(key,mode) + '\n')
         
         # if new group -> create one
         if not grp in self.__model_iters:
@@ -164,7 +186,7 @@ class AccelDialog:
     def on_apply_clicked(self, button):
         self.__dialog.response(gtk.RESPONSE_APPLY)
         self.apply_changes_to_accel(self.__model.get_iter_root())
-
+        gtk.accel_map_save(accel_map_file)
 
     def run(self):
         ret = self.__dialog.run()

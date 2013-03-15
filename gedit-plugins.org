@@ -88,7 +88,11 @@ In order to play nice with snippets plugin, trigger is set to Enter.
 * B
 ** bookmarks                                                         :native:
 # <<bookmarks>>
--> [[advanced_bookmarks]] 
+
+** Bookmarks
+# <<Bookmarks>>
+Bookmark your favorite files.
+https://live.gnome.org/Gedit/PluginsOld#line-878
 
 ** Bracket Completion
 # <<bracketcompletion>>
@@ -357,8 +361,9 @@ Highlights lines changed during your edit session. http://1dan.org/gedit-plugins
 screenshot: http://1dan.org/gedit-plugins/highlight-edited-lines/highlight_edited_lines-screencap1.gif
 
 *** TODO gedit-3 version?
-** Html Tidy
+** Html Tidy                                                :gedit_2:gedit_3:
 Clean up your web pages with HTML TIDY
+http://code.google.com/p/gedit-html-tidy-plugin
 * I
 ** Indent Converter
 # <<indent-converter>>
@@ -436,13 +441,19 @@ Current Features
 # <<linespacing>>
 Increase or decrease space between lines
 * M
-** Macropy                                                          :gedit_3:
+** Macropy                                                  :gedit_2:gedit_3:
 This plugin allows to record and execute macros with Gedit 3
 https://github.com/intangir/gedit-macropy
+https://github.com/eguaio/gedit-macropy
+
 ** Macro                                                             :native:
 # <<macro>>
 http://code.google.com/p/gedit-macro-plugin
 Records and executes a macro.
+
+** matchit                                                          :gedit_3:
+http://code.google.com/p/matchit-gedit3-plugin/
+
 ** Make and Run
 # <<MakeAndRun>>
 http://code.google.com/p/gedit-plugin-make-and-run/
@@ -461,8 +472,6 @@ a python source code, it can also run it inside a special
 python-specific "running" window, displaying the stdout/stderr from
 your python-program.
 
-** Macropy                                                 :gedit_2:gedit_3:
-Record and execute macros. https://github.com/eguaio/gedit-macropy
 ** (Multiple) Embedded Terminal
 # <<mterminal>>
 Terminal with multiple windows
@@ -663,7 +672,7 @@ Features:
 *** similar plugin: highlight-text
 but gedit-2 only
 http://code.google.com/p/gedit-highlight-text 
-** Snap Open
+** Snap Open                                                :gedit_2:gedit_3:
 # <<snapopen>>
 Opens files by regex
 https://github.com/MadsBuus/gedit-snapopen-plugin
@@ -821,6 +830,9 @@ replacement in python -> [[completion]]
 A Web Browser within Gedit
 http://sharkbaitbobby.googlepages.com/gedit-webbrowser
 
+** Webkit Panel                                             :gedit_2:gedit_3:
+# <<webkitpanel>>
+http://code.google.com/p/gedit-webkit-panel-plugin/
 ** White Space Terminator                                           :gedit_3:
 # <<whitespace_terminator>>
 https://github.com/Kozea/Gedit-WhiteSpace-Terminator
@@ -854,7 +866,7 @@ Adds the ability to change the text size. http://github.com/algorich/gedit-zoom
 
 * official gedit-plugins
 # <<gedit-plugins>>
-** [[bookmarks]] -> [[advanced_bookmarks]]                                   :native:
+** [[bookmarks]]                                                         :native:
 ** [[bracketcompletion]]
 ** [[charmap]]
 ** [[codecomment]]
@@ -864,7 +876,7 @@ Adds the ability to change the text size. http://github.com/algorich/gedit-zoom
 ** [[joinlines]]
 ** [[multiedit]]   -> [[multi_edit]]
 ** [[sessionsaver]]  
-** [[showtabbar]]
+** [[showtabbar]]                                                        :native:
 ** [[smartspaces]]
 ** [[taglist]]                                                           :native:
 ** [[terminal]]   -> [[mterminal]]
@@ -1073,14 +1085,15 @@ https://github.com/rdunklau/Gedit-checkpython
 
 Gedit Python checker: pep8 & pyflakes (for gedit-3)
 
-*** [ ] pycheck                                                :gedit_2:pep8:
+*** + pycheck                                                  :gedit_2:pep8:
 # <<pycheck>>
 https://github.com/tmf16/gedit-pycheck
 
 Gedit Python pep8 pyflakes
 
   - [ ] not work on windows (tempfile...)
-  - [ ] error: AttributeError: 'Module' object has no attribute 'getChildNodes'
+  - [X] not work on pyflakes < 0.5
+        - error: AttributeError: 'Module' object has no attribute 'getChildNodes'
 
 *** [ ] pylint                                               :gedit_2:pylint:
 https://github.com/phsilva/gedit-pylint
@@ -1101,6 +1114,7 @@ http://code.google.com/p/geditchecker/
 This gedit plugin can check syntax python code with pyflakes and pep8.py a can check css with W3C
 utils.
 
+*** ++ [[gdpformat]]
 ** completion
 *** ++ pythoncompletion                                                :GOOD:
 Python Completion Plugin
@@ -1245,13 +1259,15 @@ Django Snippets for Gedit, converted from TextMate Snippets to Gedit.
 http://code.google.com/p/gedit-django-template-language/
 
 * ruby
-** Rails File Loader                                                :gedit_2:
+** Rails File Loader                                        :gedit_2:gedit_3:
 # <<rubyonrailsloader>>
 website: http://blog.siverti.com.br/gmate  (bad)
 
 Detects if a File is a part of a Rails Project and set the language to RubyOnRails
 
 code: https://github.com/ltoth/gedit-conf/tree/master/plugins
+
+gedit-3: https://github.com/hzamani/Gedit-Stuff/tree/master/plugins
 
 ** Rails Extract Partial
 # <<rails_extract_partial>>

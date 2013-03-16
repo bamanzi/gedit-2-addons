@@ -1,0 +1,16 @@
+[Gedit Plugin]
+Loader=python
+Module=browser
+IAge=2
+Name=Browser Preview
+Name[de]=Browser-Vorschau
+Name[en_CA]=Browser Preview
+Name[en_GB]=Browser Preview
+Description=View the active document in various browsers.
+Description[de]=Das aktuelle Dokument in verschiedenen Browser ansehen.
+Description[en_CA]=View the active document in various browsers.
+Description[en_GB]=View the active document in various browsers.
+Icon=gtk-index
+Authors=Eckhard M. Jäger <Bart@neeneenee.de>
+Copyright=Copyright @ 2007 area42 - Agentur & Systempartner
+Website=http://www.area42.de
